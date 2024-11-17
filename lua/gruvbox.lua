@@ -1091,7 +1091,7 @@ local function get_groups()
     NeoTreeFileIcon = { fg = colors.blue },
     NeoTreeIndentMarker = { fg = colors.bg2 },
     NeoTreeExpander = { fg = colors.bg4 },
-    NeoTreeModified = { fg = colors.orange },
+    NeoTreeModified = { fg = colors.yellow },
     NeoTreeGitAdded = { fg = colors.green },
     NeoTreeGitDeleted = { fg = colors.red },
     NeoTreeGitModified = { fg = colors.orange },
