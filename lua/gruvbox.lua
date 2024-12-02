@@ -40,7 +40,6 @@ local Gruvbox = {}
 ---@field invert_signs boolean?
 ---@field invert_tabline boolean?
 ---@field invert_intend_guides boolean?
----@field inverse boolean?
 ---@field overrides table<string, HighlightDefinition>?
 ---@field palette_overrides table<string, string>?
 Gruvbox.config = {
@@ -60,7 +59,6 @@ Gruvbox.config = {
   invert_signs = false,
   invert_tabline = false,
   invert_intend_guides = false,
-  inverse = true,
   contrast = "",
   palette_overrides = {},
   overrides = {},
@@ -301,13 +299,13 @@ local function get_groups()
     SpecialKey = { link = "GruvboxFg4" },
     Visual = { bg = colors.bg3, reverse = config.invert_selection },
     VisualNOS = { link = "Visual" },
-    Search = { fg = colors.yellow, bg = colors.bg0, reverse = config.inverse },
-    IncSearch = { fg = colors.orange, bg = colors.bg0, reverse = config.inverse },
+    Search = { fg = colors.bg0, bg = colors.yellow },
+    IncSearch = { fg = colors.bg0, bg = colors.orange },
     CurSearch = { link = "IncSearch" },
     QuickFixLine = { link = "GruvboxPurple" },
     Underlined = { fg = colors.blue, underline = config.underline },
-    StatusLine = { fg = colors.bg2, bg = colors.fg1, reverse = config.inverse },
-    StatusLineNC = { fg = colors.bg1, bg = colors.fg4, reverse = config.inverse },
+    StatusLine = { fg = colors.fg1, bg = colors.bg2 },
+    StatusLineNC = { fg = colors.fg4, bg = colors.bg1 },
     WinBar = { fg = colors.fg4, bg = colors.bg0 },
     WinBarNC = { fg = colors.fg3, bg = colors.bg1 },
     WinSeparator = config.transparent_mode and { fg = colors.bg3, bg = nil } or { fg = colors.bg3, bg = colors.bg0 },
@@ -323,7 +321,7 @@ local function get_groups()
     SignColumn = config.transparent_mode and { bg = nil } or { bg = colors.bg1 },
     Folded = { fg = colors.gray, bg = colors.bg1, italic = config.italic.folds },
     FoldColumn = config.transparent_mode and { fg = colors.gray, bg = nil } or { fg = colors.gray, bg = colors.bg1 },
-    Cursor = { reverse = config.inverse },
+    Cursor = { fg = colors.bg0, bg = colors.fg1 },
     vCursor = { link = "Cursor" },
     iCursor = { link = "Cursor" },
     lCursor = { link = "Cursor" },
@@ -331,7 +329,7 @@ local function get_groups()
     Comment = { fg = colors.gray, italic = config.italic.comments },
     Todo = { fg = colors.bg0, bg = colors.yellow, bold = config.bold, italic = config.italic.comments },
     Done = { fg = colors.orange, bold = config.bold, italic = config.italic.comments },
-    Error = { fg = colors.red, bold = config.bold, reverse = config.inverse },
+    Error = { fg = colors.bg0, bg = colors.red, bold = config.bold },
     Statement = { link = "GruvboxRed" },
     Conditional = { link = "GruvboxRed" },
     Repeat = { link = "GruvboxRed" },
