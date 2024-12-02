@@ -306,7 +306,7 @@ local function get_groups()
     SignColumn = config.transparent_mode and { bg = nil } or { bg = colors.bg1 },
     Folded = { fg = colors.gray, bg = colors.bg1, italic = config.italic.folds },
     FoldColumn = config.transparent_mode and { fg = colors.gray, bg = nil } or { fg = colors.gray, bg = colors.bg1 },
-    Cursor = { fg = colors.bg0, bg = colors.fg1 },
+    Cursor = { reverse = true },
     vCursor = { link = "Cursor" },
     iCursor = { link = "Cursor" },
     lCursor = { link = "Cursor" },
