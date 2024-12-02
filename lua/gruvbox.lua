@@ -36,10 +36,6 @@ local Gruvbox = {}
 ---@field italic ItalicConfig?
 ---@field strikethrough boolean?
 ---@field contrast Contrast?
----@field invert_selection boolean?
----@field invert_signs boolean?
----@field invert_tabline boolean?
----@field invert_intend_guides boolean?
 ---@field overrides table<string, HighlightDefinition>?
 ---@field palette_overrides table<string, string>?
 Gruvbox.config = {
@@ -55,10 +51,6 @@ Gruvbox.config = {
     folds = true,
   },
   strikethrough = true,
-  invert_selection = false,
-  invert_signs = false,
-  invert_tabline = false,
-  invert_intend_guides = false,
   contrast = "",
   palette_overrides = {},
   overrides = {},
@@ -262,20 +254,13 @@ local function get_groups()
     GruvboxAquaBold = { fg = colors.aqua, bold = config.bold },
     GruvboxOrange = { fg = colors.orange },
     GruvboxOrangeBold = { fg = colors.orange, bold = config.bold },
-    GruvboxRedSign = config.transparent_mode and { fg = colors.red, reverse = config.invert_signs }
-      or { fg = colors.red, bg = colors.bg1, reverse = config.invert_signs },
-    GruvboxGreenSign = config.transparent_mode and { fg = colors.green, reverse = config.invert_signs }
-      or { fg = colors.green, bg = colors.bg1, reverse = config.invert_signs },
-    GruvboxYellowSign = config.transparent_mode and { fg = colors.yellow, reverse = config.invert_signs }
-      or { fg = colors.yellow, bg = colors.bg1, reverse = config.invert_signs },
-    GruvboxBlueSign = config.transparent_mode and { fg = colors.blue, reverse = config.invert_signs }
-      or { fg = colors.blue, bg = colors.bg1, reverse = config.invert_signs },
-    GruvboxPurpleSign = config.transparent_mode and { fg = colors.purple, reverse = config.invert_signs }
-      or { fg = colors.purple, bg = colors.bg1, reverse = config.invert_signs },
-    GruvboxAquaSign = config.transparent_mode and { fg = colors.aqua, reverse = config.invert_signs }
-      or { fg = colors.aqua, bg = colors.bg1, reverse = config.invert_signs },
-    GruvboxOrangeSign = config.transparent_mode and { fg = colors.orange, reverse = config.invert_signs }
-      or { fg = colors.orange, bg = colors.bg1, reverse = config.invert_signs },
+    GruvboxRedSign = config.transparent_mode and { fg = colors.red } or { fg = colors.red, bg = colors.bg1 },
+    GruvboxGreenSign = config.transparent_mode and { fg = colors.green } or { fg = colors.green, bg = colors.bg1 },
+    GruvboxYellowSign = config.transparent_mode and { fg = colors.yellow } or { fg = colors.yellow, bg = colors.bg1 },
+    GruvboxBlueSign = config.transparent_mode and { fg = colors.blue } or { fg = colors.blue, bg = colors.bg1 },
+    GruvboxPurpleSign = config.transparent_mode and { fg = colors.purple } or { fg = colors.purple, bg = colors.bg1 },
+    GruvboxAquaSign = config.transparent_mode and { fg = colors.aqua } or { fg = colors.aqua, bg = colors.bg1 },
+    GruvboxOrangeSign = config.transparent_mode and { fg = colors.orange } or { fg = colors.orange, bg = colors.bg1 },
     GruvboxRedUnderline = { undercurl = config.undercurl, sp = colors.red },
     GruvboxGreenUnderline = { undercurl = config.undercurl, sp = colors.green },
     GruvboxYellowUnderline = { undercurl = config.undercurl, sp = colors.yellow },
@@ -288,8 +273,8 @@ local function get_groups()
     NormalNC = config.dim_inactive and { fg = colors.fg0, bg = colors.bg1 } or { link = "Normal" },
     CursorLine = { bg = colors.bg1 },
     CursorColumn = { link = "CursorLine" },
-    TabLineFill = { fg = colors.bg4, bg = colors.bg1, reverse = config.invert_tabline },
-    TabLineSel = { fg = colors.green, bg = colors.bg1, reverse = config.invert_tabline },
+    TabLineFill = { fg = colors.bg4, bg = colors.bg1 },
+    TabLineSel = { fg = colors.green, bg = colors.bg1 },
     TabLine = { link = "TabLineFill" },
     MatchParen = { bg = colors.bg3, bold = config.bold },
     ColorColumn = { bg = colors.bg1 },
@@ -297,7 +282,7 @@ local function get_groups()
     CursorLineNr = { fg = colors.yellow, bg = colors.bg1 },
     NonText = { link = "GruvboxBg2" },
     SpecialKey = { link = "GruvboxFg4" },
-    Visual = { bg = colors.bg3, reverse = config.invert_selection },
+    Visual = { bg = colors.bg3 },
     VisualNOS = { link = "Visual" },
     Search = { fg = colors.bg0, bg = colors.yellow },
     IncSearch = { fg = colors.bg0, bg = colors.orange },
@@ -1056,19 +1041,18 @@ local function get_groups()
     MiniStatuslineModeReplace = { fg = colors.bg0, bg = colors.red, bold = config.bold },
     MiniStatuslineModeVisual = { fg = colors.bg0, bg = colors.green, bold = config.bold },
     MiniSurround = { link = "IncSearch" },
-    MiniTablineCurrent = { fg = colors.green, bg = colors.bg1, bold = config.bold, reverse = config.invert_tabline },
+    MiniTablineCurrent = { fg = colors.green, bg = colors.bg1, bold = config.bold },
     MiniTablineFill = { link = "TabLineFill" },
-    MiniTablineHidden = { fg = colors.bg4, bg = colors.bg1, reverse = config.invert_tabline },
+    MiniTablineHidden = { fg = colors.bg4, bg = colors.bg1 },
     MiniTablineModifiedCurrent = {
       fg = colors.bg1,
       bg = colors.green,
       bold = config.bold,
-      reverse = config.invert_tabline,
     },
-    MiniTablineModifiedHidden = { fg = colors.bg1, bg = colors.bg4, reverse = config.invert_tabline },
-    MiniTablineModifiedVisible = { fg = colors.bg1, bg = colors.fg1, reverse = config.invert_tabline },
+    MiniTablineModifiedHidden = { fg = colors.bg1, bg = colors.bg4 },
+    MiniTablineModifiedVisible = { fg = colors.bg1, bg = colors.fg1 },
     MiniTablineTabpagesection = { link = "Search" },
-    MiniTablineVisible = { fg = colors.fg1, bg = colors.bg1, reverse = config.invert_tabline },
+    MiniTablineVisible = { fg = colors.fg1, bg = colors.bg1 },
     MiniTestEmphasis = { bold = config.bold },
     MiniTestFail = { link = "GruvboxRedBold" },
     MiniTestPass = { link = "GruvboxGreenBold" },
