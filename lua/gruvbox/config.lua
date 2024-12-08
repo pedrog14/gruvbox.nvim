@@ -17,7 +17,7 @@ M.default = {
         folds = true,
     },
     strikethrough = true,
-    contrast = "",
+    contrast = nil,
     invert_selection = false,
     invert_signs = false,
     invert_tabline = false,

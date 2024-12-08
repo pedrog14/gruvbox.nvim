@@ -1,27 +1,10 @@
 local M = {}
 
-M.get = function()
-    local bg = vim.o.background
+M.get = function(bg)
     local config = require("gruvbox.config").opts
-
-    local palette = require("gruvbox.colors").palette
-    local palette_overrides = config.palette_overrides
-    if palette_overrides then
-        for color, value in pairs(palette_overrides) do
-            palette[color] = value
-        end
-    end
-
     local colors = require("gruvbox.colors")[bg]
-    local contrast = config.contrast
-    if contrast and contrast ~= "" then
-        colors.bg0 = palette[bg .. "0_" .. contrast]
-        colors.dark_red = palette[bg .. "_red_" .. contrast]
-        colors.dark_green = palette[bg .. "_green_" .. contrast]
-        colors.dark_aqua = palette[bg .. "_aqua_" .. contrast]
-    end
 
-    local groups = {
+    return {
         GruvboxFg0 = { fg = colors.fg0 },
         GruvboxFg1 = { fg = colors.fg1 },
         GruvboxFg2 = { fg = colors.fg2 },
@@ -885,19 +868,50 @@ M.get = function()
         ["@lsp.type.typeParameter"] = { link = "@type.definition" },
         ["@lsp.type.variable"] = { link = "@variable" },
     }
+end
 
-    if config.overrides then
-        for group, hl in pairs(config.overrides) do
-            if groups[group] then
-                -- "link" should not mix with other configs (:h hi-link)
-                groups[group].link = nil
-            end
-
-            groups[group] = vim.tbl_extend("force", groups[group] or {}, hl)
+---@param groups table
+---@param overrides table
+M.overrides = function(groups, overrides)
+    local config = require("gruvbox.config").opts
+    for group, hl in pairs(config.overrides) do
+        if groups[group] then
+            -- "link" should not mix with other configs (:h hi-link)
+            groups[group].link = nil
         end
-    end
 
-    return groups
+        groups[group] = vim.tbl_extend("force", groups[group] or {}, hl)
+    end
+    -- return groups
+end
+
+---@param bg "dark" | "light"
+M.terminal = function(bg)
+    local colors = require("gruvbox.colors")[bg]
+
+    vim.g.terminal_color_0 = colors.bg0
+    vim.g.terminal_color_8 = colors.gray
+
+    vim.g.terminal_color_1 = colors.neutral_red
+    vim.g.terminal_color_9 = colors.red
+
+    vim.g.terminal_color_2 = colors.neutral_green
+    vim.g.terminal_color_10 = colors.green
+
+    vim.g.terminal_color_3 = colors.neutral_yellow
+    vim.g.terminal_color_11 = colors.yellow
+
+    vim.g.terminal_color_4 = colors.neutral_blue
+    vim.g.terminal_color_12 = colors.blue
+
+    vim.g.terminal_color_5 = colors.neutral_purple
+    vim.g.terminal_color_13 = colors.purple
+
+    vim.g.terminal_color_6 = colors.neutral_aqua
+    vim.g.terminal_color_14 = colors.aqua
+
+    vim.g.terminal_color_7 = colors.fg4
+    vim.g.terminal_color_15 = colors.fg1
 end
 
 return M
