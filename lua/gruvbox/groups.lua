@@ -7,7 +7,9 @@ M.get = function()
     local palette = require("gruvbox.colors").palette
     local palette_overrides = config.palette_overrides
     if palette_overrides then
-        palette = vim.tbl_deep_extend("force", palette, palette_overrides)
+        for color, value in pairs(palette_overrides) do
+            palette[color] = value
+        end
     end
 
     local colors = require("gruvbox.colors")[bg]
@@ -884,13 +886,15 @@ M.get = function()
         ["@lsp.type.variable"] = { link = "@variable" },
     }
 
-    for group, hl in pairs(config.overrides) do
-        if groups[group] then
-            -- "link" should not mix with other configs (:h hi-link)
-            groups[group].link = nil
-        end
+    if config.overrides then
+        for group, hl in pairs(config.overrides) do
+            if groups[group] then
+                -- "link" should not mix with other configs (:h hi-link)
+                groups[group].link = nil
+            end
 
-        groups[group] = vim.tbl_extend("force", groups[group] or {}, hl)
+            groups[group] = vim.tbl_extend("force", groups[group] or {}, hl)
+        end
     end
 
     return groups

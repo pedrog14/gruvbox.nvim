@@ -1,4 +1,4 @@
----@alias Contrast "hard" | "soft" | ""
+---@alias Contrast "hard" | "soft"
 
 ---@class ItalicConfig
 ---@field strings boolean
