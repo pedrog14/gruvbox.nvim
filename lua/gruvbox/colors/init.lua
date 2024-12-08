@@ -64,27 +64,30 @@ M.palette = {
 ---@param bg "dark" | "light"
 M.terminal = function(bg)
     local colors = M[bg]
-    local term_colors = {
-        colors.bg0,
-        colors.neutral_red,
-        colors.neutral_green,
-        colors.neutral_yellow,
-        colors.neutral_blue,
-        colors.neutral_purple,
-        colors.neutral_aqua,
-        colors.fg4,
-        colors.gray,
-        colors.red,
-        colors.green,
-        colors.yellow,
-        colors.blue,
-        colors.purple,
-        colors.aqua,
-        colors.fg1,
-    }
-    for index, value in ipairs(term_colors) do
-        vim.g["terminal_color_" .. index - 1] = value
-    end
+
+    vim.g.terminal_color_0 = colors.bg0
+    vim.g.terminal_color_8 = colors.gray
+
+    vim.g.terminal_color_1 = colors.neutral_red
+    vim.g.terminal_color_9 = colors.red
+
+    vim.g.terminal_color_2 = colors.neutral_green
+    vim.g.terminal_color_10 = colors.green
+
+    vim.g.terminal_color_3 = colors.neutral_yellow
+    vim.g.terminal_color_11 = colors.yellow
+
+    vim.g.terminal_color_4 = colors.neutral_blue
+    vim.g.terminal_color_12 = colors.blue
+
+    vim.g.terminal_color_5 = colors.neutral_purple
+    vim.g.terminal_color_13 = colors.purple
+
+    vim.g.terminal_color_6 = colors.neutral_aqua
+    vim.g.terminal_color_14 = colors.aqua
+
+    vim.g.terminal_color_7 = colors.fg4
+    vim.g.terminal_color_15 = colors.fg1
 end
 
 setmetatable(M, {

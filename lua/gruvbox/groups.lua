@@ -12,17 +12,11 @@ M.get = function()
 
     local colors = require("gruvbox.colors")[bg]
     local contrast = config.contrast
-    if contrast then
-        colors.bg0 = contrast ~= "" and palette[bg .. "0_" .. contrast]
-            or palette[bg .. "0"]
-        colors.dark_red = contrast ~= "" and palette[bg .. "_red_" .. contrast]
-            or palette[bg .. "_red"]
-        colors.dark_green = contrast ~= ""
-                and palette[bg .. "_green_" .. contrast]
-            or palette[bg .. "_green"]
-        colors.dark_aqua = contrast ~= ""
-                and palette[bg .. "_aqua_" .. contrast]
-            or palette[bg .. "_aqua"]
+    if contrast and contrast ~= "" then
+        colors.bg0 = palette[bg .. "0_" .. contrast]
+        colors.dark_red = palette[bg .. "_red_" .. contrast]
+        colors.dark_green = palette[bg .. "_green_" .. contrast]
+        colors.dark_aqua = palette[bg .. "_aqua_" .. contrast]
     end
 
     local groups = {
