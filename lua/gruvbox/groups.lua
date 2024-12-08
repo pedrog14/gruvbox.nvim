@@ -5,6 +5,7 @@ M.get = function(bg)
     local colors = require("gruvbox.colors")[bg]
 
     return {
+        -- Gruvbox
         GruvboxFg0 = { fg = colors.fg0 },
         GruvboxFg1 = { fg = colors.fg1 },
         GruvboxFg2 = { fg = colors.fg2 },
@@ -66,52 +67,21 @@ M.get = function(bg)
             reverse = config.invert_signs,
         },
         GruvboxRedUnderline = { undercurl = config.undercurl, sp = colors.red },
-        GruvboxGreenUnderline = {
-            undercurl = config.undercurl,
-            sp = colors.green,
-        },
-        GruvboxYellowUnderline = {
-            undercurl = config.undercurl,
-            sp = colors.yellow,
-        },
-        GruvboxBlueUnderline = {
-            undercurl = config.undercurl,
-            sp = colors.blue,
-        },
-        GruvboxPurpleUnderline = {
-            undercurl = config.undercurl,
-            sp = colors.purple,
-        },
-        GruvboxAquaUnderline = {
-            undercurl = config.undercurl,
-            sp = colors.aqua,
-        },
-        GruvboxOrangeUnderline = {
-            undercurl = config.undercurl,
-            sp = colors.orange,
-        },
-        Normal = {
-            fg = colors.fg1,
-            bg = config.transparent_mode and "NONE" or colors.bg0,
-        },
-        NormalFloat = {
-            fg = colors.fg1,
-            bg = config.transparent_mode and "NONE" or colors.bg1,
-        },
-        NormalNC = config.dim_inactive and { fg = colors.fg0, bg = colors.bg1 }
-            or { link = "Normal" },
+        GruvboxGreenUnderline = { undercurl = config.undercurl, sp = colors.green },
+        GruvboxYellowUnderline = { undercurl = config.undercurl, sp = colors.yellow },
+        GruvboxBlueUnderline = { undercurl = config.undercurl, sp = colors.blue },
+        GruvboxPurpleUnderline = { undercurl = config.undercurl, sp = colors.purple },
+        GruvboxAquaUnderline = { undercurl = config.undercurl, sp = colors.aqua },
+        GruvboxOrangeUnderline = { undercurl = config.undercurl, sp = colors.orange },
+
+        -- Base
+        Normal = { fg = colors.fg1, bg = config.transparent_mode and "NONE" or colors.bg0 },
+        NormalFloat = { fg = colors.fg1, bg = config.transparent_mode and "NONE" or colors.bg1 },
+        NormalNC = config.dim_inactive and { fg = colors.fg0, bg = colors.bg1 } or { link = "Normal" },
         CursorLine = { bg = colors.bg1 },
         CursorColumn = { link = "CursorLine" },
-        TabLineFill = {
-            fg = colors.bg4,
-            bg = colors.bg1,
-            reverse = config.invert_tabline,
-        },
-        TabLineSel = {
-            fg = colors.green,
-            bg = colors.bg1,
-            reverse = config.invert_tabline,
-        },
+        TabLineFill = { fg = colors.bg4, bg = colors.bg1, reverse = config.invert_tabline },
+        TabLineSel = { fg = colors.green, bg = colors.bg1, reverse = config.invert_tabline },
         TabLine = { link = "TabLineFill" },
         MatchParen = { bg = colors.bg3, bold = config.bold },
         ColorColumn = { bg = colors.bg1 },
@@ -130,10 +100,7 @@ M.get = function(bg)
         StatusLineNC = { fg = colors.fg4, bg = colors.bg1 },
         WinBar = { fg = colors.fg4, bg = colors.bg0 },
         WinBarNC = { fg = colors.fg3, bg = colors.bg1 },
-        WinSeparator = {
-            fg = colors.bg3,
-            bg = config.transparent_mode and "NONE" or colors.bg0,
-        },
+        WinSeparator = { fg = colors.bg3, bg = config.transparent_mode and "NONE" or colors.bg0 },
         WildMenu = { fg = colors.blue, bg = colors.bg2, bold = config.bold },
         Directory = { link = "GruvboxGreenBold" },
         Title = { link = "GruvboxGreenBold" },
@@ -144,32 +111,16 @@ M.get = function(bg)
         WarningMsg = { link = "GruvboxRedBold" },
         LineNr = { fg = colors.bg4 },
         SignColumn = { bg = config.transparent_mode and "NONE" or colors.bg1 },
-        Folded = {
-            fg = colors.gray,
-            bg = colors.bg1,
-            italic = config.italic.folds,
-        },
-        FoldColumn = {
-            fg = colors.gray,
-            bg = config.transparent_mode and "NONE" or colors.bg1,
-        },
+        Folded = { fg = colors.gray, bg = colors.bg1, italic = config.italic.folds },
+        FoldColumn = { fg = colors.gray, bg = config.transparent_mode and "NONE" or colors.bg1 },
         Cursor = { reverse = true },
         vCursor = { link = "Cursor" },
         iCursor = { link = "Cursor" },
         lCursor = { link = "Cursor" },
         Special = { link = "GruvboxOrange" },
         Comment = { fg = colors.gray, italic = config.italic.comments },
-        Todo = {
-            fg = colors.bg0,
-            bg = colors.yellow,
-            bold = config.bold,
-            italic = config.italic.comments,
-        },
-        Done = {
-            fg = colors.orange,
-            bold = config.bold,
-            italic = config.italic.comments,
-        },
+        Todo = { fg = colors.bg0, bg = colors.yellow, bold = config.bold, italic = config.italic.comments },
+        Done = { fg = colors.orange, bold = config.bold, italic = config.italic.comments },
         Error = { fg = colors.bg0, bg = colors.red, bold = config.bold },
         Statement = { link = "GruvboxRed" },
         Conditional = { link = "GruvboxRed" },
@@ -210,6 +161,10 @@ M.get = function(bg)
         Whitespace = { fg = colors.bg2 },
         Delimiter = { link = "GruvboxOrange" },
         EndOfBuffer = { link = "NonText" },
+        debugPC = { link = "DiffAdd" },
+        debugBreakpoint = { link = "GruvboxRedSign" },
+
+        -- Diagnostic
         DiagnosticError = { link = "GruvboxRed" },
         DiagnosticSignError = { link = "GruvboxRedSign" },
         DiagnosticUnderlineError = { link = "GruvboxRedUnderline" },
@@ -231,27 +186,52 @@ M.get = function(bg)
         DiagnosticVirtualTextInfo = { link = "GruvboxBlue" },
         DiagnosticVirtualTextHint = { link = "GruvboxAqua" },
         DiagnosticOk = { link = "GruvboxGreenSign" },
+
+        --LSP
         LspReferenceRead = { link = "GruvboxYellowBold" },
         LspReferenceText = { link = "GruvboxYellowBold" },
         LspReferenceWrite = { link = "GruvboxOrangeBold" },
         LspCodeLens = { link = "GruvboxGray" },
         LspSignatureActiveParameter = { link = "Search" },
+        LspInlayHint = { link = "comment" },
+
+        -- Netrw
+        netrwDir = { link = "GruvboxAqua" },
+        netrwClassify = { link = "GruvboxAqua" },
+        netrwLink = { link = "GruvboxGray" },
+        netrwSymLink = { link = "GruvboxFg1" },
+        netrwExe = { link = "GruvboxYellow" },
+        netrwComment = { link = "GruvboxGray" },
+        netrwList = { link = "GruvboxBlue" },
+        netrwHelpCmd = { link = "GruvboxAqua" },
+        netrwCmdSep = { link = "GruvboxFg3" },
+        netrwVersion = { link = "GruvboxGreen" },
+
+        -- Diff
+        diffAdded = { link = "DiffAdd" },
+        diffRemoved = { link = "DiffDelete" },
+        diffChanged = { link = "DiffChange" },
+        diffFile = { link = "GruvboxOrange" },
+        diffNewFile = { link = "GruvboxYellow" },
+        diffOldFile = { link = "GruvboxOrange" },
+        diffLine = { link = "GruvboxBlue" },
+        diffIndexLine = { link = "diffChanged" },
+
+        -- Gitsigns
         gitcommitSelectedFile = { link = "GruvboxGreen" },
         gitcommitDiscardedFile = { link = "GruvboxRed" },
         GitSignsAdd = { link = "GruvboxGreen" },
         GitSignsChange = { link = "GruvboxOrange" },
         GitSignsDelete = { link = "GruvboxRed" },
+
+        -- Nvim-Tree
         NvimTreeSymlink = { fg = colors.neutral_aqua },
         NvimTreeRootFolder = { fg = colors.neutral_purple, bold = true },
         NvimTreeFolderIcon = { fg = colors.neutral_blue, bold = true },
         NvimTreeFileIcon = { fg = colors.light2 },
         NvimTreeExecFile = { fg = colors.neutral_green, bold = true },
         NvimTreeOpenedFile = { fg = colors.bright_red, bold = true },
-        NvimTreeSpecialFile = {
-            fg = colors.neutral_yellow,
-            bold = true,
-            underline = true,
-        },
+        NvimTreeSpecialFile = { fg = colors.neutral_yellow, bold = true, underline = true },
         NvimTreeImageFile = { fg = colors.neutral_purple },
         NvimTreeIndentMarker = { fg = colors.dark3 },
         NvimTreeGitDirty = { fg = colors.neutral_yellow },
@@ -261,8 +241,8 @@ M.get = function(bg)
         NvimTreeGitNew = { fg = colors.neutral_yellow },
         NvimTreeGitDeleted = { fg = colors.neutral_red },
         NvimTreeWindowPicker = { bg = colors.aqua },
-        debugPC = { link = "DiffAdd" },
-        debugBreakpoint = { link = "GruvboxRedSign" },
+
+        -- Startify
         StartifyBracket = { link = "GruvboxFg3" },
         StartifyFile = { link = "GruvboxFg1" },
         StartifyNumber = { link = "GruvboxBlue" },
@@ -274,18 +254,12 @@ M.get = function(bg)
         StartifyFooter = { link = "GruvboxBg2" },
         StartifyVar = { link = "StartifyPath" },
         StartifySelect = { link = "Title" },
+
+        -- Dirvish
         DirvishPathTail = { link = "GruvboxAqua" },
         DirvishArg = { link = "GruvboxYellow" },
-        netrwDir = { link = "GruvboxAqua" },
-        netrwClassify = { link = "GruvboxAqua" },
-        netrwLink = { link = "GruvboxGray" },
-        netrwSymLink = { link = "GruvboxFg1" },
-        netrwExe = { link = "GruvboxYellow" },
-        netrwComment = { link = "GruvboxGray" },
-        netrwList = { link = "GruvboxBlue" },
-        netrwHelpCmd = { link = "GruvboxAqua" },
-        netrwCmdSep = { link = "GruvboxFg3" },
-        netrwVersion = { link = "GruvboxGreen" },
+
+        -- NERDTree
         NERDTreeDir = { link = "GruvboxAqua" },
         NERDTreeDirSlash = { link = "GruvboxAqua" },
         NERDTreeOpenable = { link = "GruvboxOrange" },
@@ -297,6 +271,8 @@ M.get = function(bg)
         NERDTreeHelp = { link = "GruvboxFg1" },
         NERDTreeToggleOn = { link = "GruvboxGreen" },
         NERDTreeToggleOff = { link = "GruvboxRed" },
+
+        -- CoC
         CocErrorSign = { link = "GruvboxRedSign" },
         CocWarningSign = { link = "GruvboxOrangeSign" },
         CocInfoSign = { link = "GruvboxBlueSign" },
@@ -316,6 +292,8 @@ M.get = function(bg)
         CocWarningHighlight = { link = "GruvboxOrangeUnderline" },
         CocInfoHighlight = { link = "GruvboxBlueUnderline" },
         CocHintHighlight = { link = "GruvboxAquaUnderline" },
+
+        -- Telescope
         TelescopeNormal = { link = "GruvboxFg1" },
         TelescopeSelection = { link = "GruvboxOrangeBold" },
         TelescopeSelectionCaret = { link = "GruvboxRed" },
@@ -327,6 +305,8 @@ M.get = function(bg)
         TelescopeMatching = { link = "GruvboxBlue" },
         TelescopePromptPrefix = { link = "GruvboxRed" },
         TelescopePrompt = { link = "TelescopeNormal" },
+
+        -- Cmp
         CmpItemAbbr = { link = "GruvboxFg0" },
         CmpItemAbbrDeprecated = { link = "GruvboxFg1" },
         CmpItemAbbrMatch = { link = "GruvboxBlueBold" },
@@ -357,14 +337,8 @@ M.get = function(bg)
         CmpItemKindConstant = { link = "GruvboxOrange" },
         CmpItemKindStruct = { link = "GruvboxYellow" },
         CmpItemKindTypeParameter = { link = "GruvboxYellow" },
-        diffAdded = { link = "DiffAdd" },
-        diffRemoved = { link = "DiffDelete" },
-        diffChanged = { link = "DiffChange" },
-        diffFile = { link = "GruvboxOrange" },
-        diffNewFile = { link = "GruvboxYellow" },
-        diffOldFile = { link = "GruvboxOrange" },
-        diffLine = { link = "GruvboxBlue" },
-        diffIndexLine = { link = "diffChanged" },
+
+        -- Navic
         NavicIconsFile = { link = "GruvboxBlue" },
         NavicIconsModule = { link = "GruvboxOrange" },
         NavicIconsNamespace = { link = "GruvboxBlue" },
@@ -393,6 +367,8 @@ M.get = function(bg)
         NavicIconsTypeParameter = { link = "GruvboxRed" },
         NavicText = { link = "GruvboxWhite" },
         NavicSeparator = { link = "GruvboxWhite" },
+
+        -- LSPSaga
         LspSagaCodeActionTitle = { link = "Title" },
         LspSagaCodeActionBorder = { link = "GruvboxFg1" },
         LspSagaCodeActionContent = { fg = colors.green, bold = config.bold },
@@ -408,30 +384,27 @@ M.get = function(bg)
         LspSagaDiagnosticHeader = { link = "GruvboxGreen" },
         LspSagaSignatureHelpBorder = { link = "GruvboxGreen" },
         SagaShadow = { link = "GruvboxBg0" },
+
+        -- Dashboard
         DashboardShortCut = { link = "GruvboxOrange" },
         DashboardHeader = { link = "GruvboxAqua" },
         DashboardCenter = { link = "GruvboxYellow" },
         DashboardFooter = { fg = colors.purple, italic = true },
+
+        -- Mason
         MasonHighlight = { link = "GruvboxAqua" },
         MasonHighlightBlock = { fg = colors.bg0, bg = colors.blue },
-        MasonHighlightBlockBold = {
-            fg = colors.bg0,
-            bg = colors.blue,
-            bold = true,
-        },
+        MasonHighlightBlockBold = { fg = colors.bg0, bg = colors.blue, bold = true },
         MasonHighlightSecondary = { fg = colors.yellow },
         MasonHighlightBlockSecondary = { fg = colors.bg0, bg = colors.yellow },
-        MasonHighlightBlockBoldSecondary = {
-            fg = colors.bg0,
-            bg = colors.yellow,
-            bold = true,
-        },
+        MasonHighlightBlockBoldSecondary = { fg = colors.bg0, bg = colors.yellow, bold = true },
         MasonHeader = { link = "MasonHighlightBlockBoldSecondary" },
         MasonHeaderSecondary = { link = "MasonHighlightBlockBold" },
         MasonMuted = { fg = colors.fg4 },
         MasonMutedBlock = { fg = colors.bg0, bg = colors.fg4 },
         MasonMutedBlockBold = { fg = colors.bg0, bg = colors.fg4, bold = true },
-        LspInlayHint = { link = "comment" },
+
+        -- Carbon
         CarbonFile = { link = "GruvboxFg1" },
         CarbonExe = { link = "GruvboxYellow" },
         CarbonSymlink = { link = "GruvboxAqua" },
@@ -439,12 +412,16 @@ M.get = function(bg)
         CarbonIndicator = { link = "GruvboxGray" },
         CarbonDanger = { link = "GruvboxRed" },
         CarbonPending = { link = "GruvboxYellow" },
+
+        -- Noice
         NoiceCursor = { link = "TermCursor" },
-        NoiceCmdlinePopupBorder = { fg = colors.blue, bg = nil },
+        NoiceCmdlinePopupBorder = { fg = colors.blue, bg = "NONE" },
         NoiceCmdlineIcon = { link = "NoiceCmdlinePopupBorder" },
         NoiceConfirmBorder = { link = "NoiceCmdlinePopupBorder" },
-        NoiceCmdlinePopupBorderSearch = { fg = colors.yellow, bg = nil },
+        NoiceCmdlinePopupBorderSearch = { fg = colors.yellow, bg = "NONE" },
         NoiceCmdlineIconSearch = { link = "NoiceCmdlinePopupBorderSearch" },
+
+        -- Notify
         NotifyDEBUGBorder = { link = "GruvboxBlue" },
         NotifyDEBUGIcon = { link = "GruvboxBlue" },
         NotifyDEBUGTitle = { link = "GruvboxBlue" },
@@ -460,16 +437,13 @@ M.get = function(bg)
         NotifyWARNBorder = { link = "GruvboxYellow" },
         NotifyWARNIcon = { link = "GruvboxYellow" },
         NotifyWARNTitle = { link = "GruvboxYellow" },
+
+        -- Illuminate
         IlluminatedWordText = { link = "LspReferenceText" },
         IlluminatedWordRead = { link = "LspReferenceRead" },
         IlluminatedWordWrite = { link = "LspReferenceWrite" },
-        TSRainbowRed = { fg = colors.red },
-        TSRainbowOrange = { fg = colors.orange },
-        TSRainbowYellow = { fg = colors.yellow },
-        TSRainbowGreen = { fg = colors.green },
-        TSRainbowBlue = { fg = colors.blue },
-        TSRainbowViolet = { fg = colors.purple },
-        TSRainbowCyan = { fg = colors.aqua },
+
+        -- Rainbow Delimiters
         RainbowDelimiterRed = { fg = colors.red },
         RainbowDelimiterOrange = { fg = colors.orange },
         RainbowDelimiterYellow = { fg = colors.yellow },
@@ -477,6 +451,8 @@ M.get = function(bg)
         RainbowDelimiterBlue = { fg = colors.blue },
         RainbowDelimiterViolet = { fg = colors.purple },
         RainbowDelimiterCyan = { fg = colors.aqua },
+
+        -- DAP
         DapBreakpointSymbol = { fg = colors.red, bg = colors.bg1 },
         DapStoppedSymbol = { fg = colors.green, bg = colors.bg1 },
         DapUIBreakpointsCurrentLine = { link = "GruvboxYellow" },
@@ -507,13 +483,19 @@ M.get = function(bg)
         DapUIWatchesError = { link = "GruvboxRed" },
         DapUIWatchesValue = { link = "GruvboxYellow" },
         DapUIWinSelect = { link = "GruvboxYellow" },
+
+        -- NeoGit
         NeogitDiffDelete = { link = "DiffDelete" },
         NeogitDiffAdd = { link = "DiffAdd" },
         NeogitHunkHeader = { link = "WinBar" },
         NeogitHunkHeaderHighlight = { link = "WinBarNC" },
+
+        -- Diffview
         DiffviewStatusModified = { link = "GruvboxGreenBold" },
         DiffviewFilePanelInsertions = { link = "GruvboxGreenBold" },
         DiffviewFilePanelDeletions = { link = "GruvboxRedBold" },
+
+        -- Mini.nvim
         MiniAnimateCursor = { reverse = true, nocombine = true },
         MiniAnimateNormalFloat = { fg = colors.fg1, bg = colors.bg1 },
         MiniClueBorder = { link = "FloatBorder" },
@@ -551,26 +533,10 @@ M.get = function(bg)
         MiniFilesNormal = { link = "NormalFloat" },
         MiniFilesTitle = { link = "FloatTitle" },
         MiniFilesTitleFocused = { link = "GruvboxOrangeBold" },
-        MiniHipatternsFixme = {
-            fg = colors.bg0,
-            bg = colors.red,
-            bold = config.bold,
-        },
-        MiniHipatternsHack = {
-            fg = colors.bg0,
-            bg = colors.yellow,
-            bold = config.bold,
-        },
-        MiniHipatternsNote = {
-            fg = colors.bg0,
-            bg = colors.blue,
-            bold = config.bold,
-        },
-        MiniHipatternsTodo = {
-            fg = colors.bg0,
-            bg = colors.aqua,
-            bold = config.bold,
-        },
+        MiniHipatternsFixme = { fg = colors.bg0, bg = colors.red, bold = config.bold },
+        MiniHipatternsHack = { fg = colors.bg0, bg = colors.yellow, bold = config.bold },
+        MiniHipatternsNote = { fg = colors.bg0, bg = colors.blue, bold = config.bold },
+        MiniHipatternsTodo = { fg = colors.bg0, bg = colors.aqua, bold = config.bold },
         MiniIconsAzure = { link = "GruvboxBlue" },
         MiniIconsBlue = { link = "GruvboxBlue" },
         MiniIconsCyan = { link = "GruvboxAqua" },
@@ -584,21 +550,9 @@ M.get = function(bg)
         MiniIndentscopeSymbolOff = { link = "GruvboxYellow" },
         MiniJump = { link = "GruvboxOrangeUnderline" },
         MiniJump2dDim = { link = "GruvboxGray" },
-        MiniJump2dSpot = {
-            fg = colors.orange,
-            bold = config.bold,
-            nocombine = true,
-        },
-        MiniJump2dSpotAhead = {
-            fg = colors.aqua,
-            bg = colors.bg0,
-            nocombine = true,
-        },
-        MiniJump2dSpotUnique = {
-            fg = colors.yellow,
-            bold = config.bold,
-            nocombine = true,
-        },
+        MiniJump2dSpot = { fg = colors.orange, bold = config.bold, nocombine = true },
+        MiniJump2dSpotAhead = { fg = colors.aqua, bg = colors.bg0, nocombine = true },
+        MiniJump2dSpotUnique = { fg = colors.yellow, bold = config.bold, nocombine = true },
         MiniMapNormal = { link = "NormalFloat" },
         MiniMapSymbolCount = { link = "Special" },
         MiniMapSymbolLine = { link = "Title" },
@@ -633,75 +587,32 @@ M.get = function(bg)
         MiniStatuslineFileinfo = { link = "StatusLine" },
         MiniStatuslineFilename = { link = "StatusLineNC" },
         MiniStatuslineInactive = { link = "StatusLineNC" },
-        MiniStatuslineModeCommand = {
-            fg = colors.bg0,
-            bg = colors.yellow,
-            bold = config.bold,
-        },
-        MiniStatuslineModeInsert = {
-            fg = colors.bg0,
-            bg = colors.blue,
-            bold = config.bold,
-        },
-        MiniStatuslineModeNormal = {
-            fg = colors.bg0,
-            bg = colors.fg1,
-            bold = config.bold,
-        },
-        MiniStatuslineModeOther = {
-            fg = colors.bg0,
-            bg = colors.aqua,
-            bold = config.bold,
-        },
-        MiniStatuslineModeReplace = {
-            fg = colors.bg0,
-            bg = colors.red,
-            bold = config.bold,
-        },
-        MiniStatuslineModeVisual = {
-            fg = colors.bg0,
-            bg = colors.green,
-            bold = config.bold,
-        },
+        MiniStatuslineModeCommand = { fg = colors.bg0, bg = colors.yellow, bold = config.bold },
+        MiniStatuslineModeInsert = { fg = colors.bg0, bg = colors.blue, bold = config.bold },
+        MiniStatuslineModeNormal = { fg = colors.bg0, bg = colors.fg1, bold = config.bold },
+        MiniStatuslineModeOther = { fg = colors.bg0, bg = colors.aqua, bold = config.bold },
+        MiniStatuslineModeReplace = { fg = colors.bg0, bg = colors.red, bold = config.bold },
+        MiniStatuslineModeVisual = { fg = colors.bg0, bg = colors.green, bold = config.bold },
         MiniSurround = { link = "IncSearch" },
-        MiniTablineCurrent = {
-            fg = colors.green,
-            bg = colors.bg1,
-            bold = config.bold,
-            reverse = config.invert_tabline,
-        },
+        MiniTablineCurrent = { fg = colors.green, bg = colors.bg1, bold = config.bold, reverse = config.invert_tabline },
         MiniTablineFill = { link = "TabLineFill" },
-        MiniTablineHidden = {
-            fg = colors.bg4,
-            bg = colors.bg1,
-            reverse = config.invert_tabline,
-        },
+        MiniTablineHidden = { fg = colors.bg4, bg = colors.bg1, reverse = config.invert_tabline },
         MiniTablineModifiedCurrent = {
             fg = colors.bg1,
             bg = colors.green,
             bold = config.bold,
             reverse = config.invert_tabline,
         },
-        MiniTablineModifiedHidden = {
-            fg = colors.bg1,
-            bg = colors.bg4,
-            reverse = config.invert_tabline,
-        },
-        MiniTablineModifiedVisible = {
-            fg = colors.bg1,
-            bg = colors.fg1,
-            reverse = config.invert_tabline,
-        },
+        MiniTablineModifiedHidden = { fg = colors.bg1, bg = colors.bg4, reverse = config.invert_tabline },
+        MiniTablineModifiedVisible = { fg = colors.bg1, bg = colors.fg1, reverse = config.invert_tabline },
         MiniTablineTabpagesection = { link = "Search" },
-        MiniTablineVisible = {
-            fg = colors.fg1,
-            bg = colors.bg1,
-            reverse = config.invert_tabline,
-        },
+        MiniTablineVisible = { fg = colors.fg1, bg = colors.bg1, reverse = config.invert_tabline },
         MiniTestEmphasis = { bold = config.bold },
         MiniTestFail = { link = "GruvboxRedBold" },
         MiniTestPass = { link = "GruvboxGreenBold" },
         MiniTrailspace = { bg = colors.red },
+
+        -- Neo-Tree
         NeoTreeFloatTitle = { link = "FloatTitle" },
         NeoTreeFloatNormal = { fg = colors.fg1, bg = colors.bg0 },
         NeoTreeFloatBorder = { fg = colors.bg3, bg = colors.bg0 },
@@ -729,6 +640,8 @@ M.get = function(bg)
         NeoTreeTabSeparatorInactive = { bg = colors.bg0, fg = colors.gray },
         NeoTreeFileStats = { fg = colors.bg3 },
         NeoTreeFileStatsHeader = { fg = colors.bg4, bold = true },
+
+        -- Treesitter
         ["@comment"] = { link = "Comment" },
         ["@none"] = { bg = "NONE", fg = "NONE" },
         ["@preproc"] = { link = "PreProc" },
@@ -837,11 +750,7 @@ M.get = function(bg)
         ["@text.note.comment"] = { fg = colors.purple, bold = config.bold },
         ["@text.warning"] = { link = "WarningMsg" },
         ["@text.danger"] = { link = "ErrorMsg" },
-        ["@text.danger.comment"] = {
-            fg = colors.fg0,
-            bg = colors.red,
-            bold = config.bold,
-        },
+        ["@text.danger.comment"] = { fg = colors.fg0, bg = colors.red, bold = config.bold },
         ["@text.diff.add"] = { link = "diffAdded" },
         ["@text.diff.delete"] = { link = "diffRemoved" },
         ["@tag"] = { link = "Tag" },
@@ -850,6 +759,8 @@ M.get = function(bg)
         ["@punctuation"] = { link = "Delimiter" },
         ["@macro"] = { link = "Macro" },
         ["@structure"] = { link = "Structure" },
+
+        -- Semantic Tokens
         ["@lsp.type.class"] = { link = "@type" },
         ["@lsp.type.comment"] = { link = "@comment" },
         ["@lsp.type.decorator"] = { link = "@macro" },
@@ -872,20 +783,16 @@ end
 
 ---@param groups table
 ---@param overrides table
-M.overrides = function(groups, overrides)
-    local config = require("gruvbox.config").opts
-    for group, hl in pairs(config.overrides) do
+M.overrides = function(overrides, groups)
+    for group, hl in pairs(overrides) do
         if groups[group] then
-            -- "link" should not mix with other configs (:h hi-link)
             groups[group].link = nil
         end
-
         groups[group] = vim.tbl_extend("force", groups[group] or {}, hl)
     end
-    -- return groups
 end
 
----@param bg "dark" | "light"
+---@param bg Background
 M.terminal = function(bg)
     local colors = require("gruvbox.colors")[bg]
 

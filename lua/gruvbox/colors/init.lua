@@ -81,9 +81,8 @@ M.set_contrast = function(contrast, bg)
 end
 
 setmetatable(M, {
-    __index = function(t, k)
-        t[k] = require("gruvbox.colors." .. k)
-        return t[k]
+    __index = function(_, k)
+        return require("gruvbox.colors." .. k)
     end,
 })
 

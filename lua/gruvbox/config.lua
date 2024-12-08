@@ -17,13 +17,10 @@ M.default = {
         folds = true,
     },
     strikethrough = true,
-    contrast = nil,
     invert_selection = false,
     invert_signs = false,
     invert_tabline = false,
     invert_intend_guides = false,
-    overrides = nil,
-    palette_overrides = nil,
     dim_inactive = false,
     transparent_mode = false,
 }

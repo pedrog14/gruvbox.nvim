@@ -23,7 +23,7 @@ M.load = function()
     local groups = require("gruvbox.groups").get(bg)
 
     if opts.overrides then
-        require("gruvbox.groups").overrides(groups, opts.overrides)
+        require("gruvbox.groups").overrides(opts.overrides, groups)
     end
 
     for group, hl in pairs(groups) do

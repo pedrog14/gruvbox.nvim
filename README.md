@@ -49,7 +49,7 @@ Inside `init.lua`
 
 ```lua
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd.colorscheme("gruvbox")
 ```
 
 # Configuration
@@ -76,12 +76,12 @@ require("gruvbox").setup({
   invert_signs = false,
   invert_tabline = false,
   invert_intend_guides = false,
-  palette_overrides = {},
   overrides = {},
+  palette_overrides = {},
   dim_inactive = false,
   transparent_mode = false,
 })
-vim.cmd("colorscheme gruvbox")
+vim.cmd.colorscheme("gruvbox")
 ```
 
 **VERY IMPORTANT**: Make sure to call setup() **BEFORE** calling the colorscheme command, to use your custom configs
@@ -98,7 +98,7 @@ require("gruvbox").setup({
         bright_green = "#990000",
     }
 })
-vim.cmd("colorscheme gruvbox")
+vim.cmd.colorscheme("gruvbox")
 ```
 
 ### Highlight groups
@@ -112,7 +112,7 @@ require("gruvbox").setup({
         SignColumn = {bg = "#ff9900"}
     }
 })
-vim.cmd("colorscheme gruvbox")
+vim.cmd.colorscheme("gruvbox")
 ```
 
 It also works with treesitter groups and lsp semantic highlight tokens
@@ -124,7 +124,7 @@ require("gruvbox").setup({
         ["@comment.lua"] = { bg = "#000000" },
     }
 })
-vim.cmd("colorscheme gruvbox")
+vim.cmd.colorscheme("gruvbox")
 ```
 
 Please note that the override values must follow the attributes from the highlight group map, such as:

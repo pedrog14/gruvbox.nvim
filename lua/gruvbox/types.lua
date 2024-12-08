@@ -1,4 +1,6 @@
----@alias Contrast "hard" | "soft"
+---@alias Background "light" | "dark"
+
+---@alias Contrast "soft" | "hard"
 
 ---@class ItalicConfig
 ---@field strings boolean
