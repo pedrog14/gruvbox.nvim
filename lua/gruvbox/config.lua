@@ -36,12 +36,4 @@ M.setup = function(opts)
     M.opts = vim.tbl_deep_extend("force", M.default, opts or {})
 end
 
-setmetatable(M, {
-    __index = function(_, k)
-        if k == "opts" then
-            return M.default
-        end
-    end,
-})
-
 return M
