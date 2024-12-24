@@ -2,8 +2,8 @@ local M = {}
 
 ---@class GruvboxConfig
 ---@field contrast Contrast?
----@field overrides table<string, HighlightDefinition>?
----@field palette_overrides table<string, string>?
+---@field override table<string, HighlightDefinition>?
+---@field palette_override table<string, string>?
 M.default = {
     terminal_colors = true,
     undercurl = true,

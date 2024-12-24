@@ -76,8 +76,8 @@ require("gruvbox").setup({
   invert_signs = false,
   invert_tabline = false,
   invert_intend_guides = false,
-  overrides = {},
-  palette_overrides = {},
+  override = {},
+  palette_override = {},
   dim_inactive = false,
   transparent_mode = false,
 })
@@ -94,7 +94,7 @@ You can specify your own palette colors. For example:
 
 ```lua
 require("gruvbox").setup({
-    palette_overrides = {
+    palette_override = {
         bright_green = "#990000",
     }
 })
@@ -108,7 +108,7 @@ example:
 
 ```lua
 require("gruvbox").setup({
-    overrides = {
+    override = {
         SignColumn = {bg = "#ff9900"}
     }
 })
@@ -119,7 +119,7 @@ It also works with treesitter groups and lsp semantic highlight tokens
 
 ```lua
 require("gruvbox").setup({
-    overrides = {
+    override = {
         ["@lsp.type.method"] = { bg = "#ff9900" },
         ["@comment.lua"] = { bg = "#000000" },
     }
