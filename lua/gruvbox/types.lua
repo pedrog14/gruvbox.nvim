@@ -1,5 +1,4 @@
 ---@alias Background "light" | "dark"
-
 ---@alias Contrast "soft" | "hard"
 
 ---@class ItalicConfig
@@ -20,6 +19,7 @@
 ---@field undercurl boolean?
 ---@field underdouble boolean?
 ---@field underdotted boolean?
+---@field underdashed boolean?
 ---@field strikethrough boolean?
 ---@field italic boolean?
 ---@field reverse boolean?

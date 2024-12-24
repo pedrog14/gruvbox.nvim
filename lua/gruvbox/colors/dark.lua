@@ -1,5 +1,5 @@
 ---@class GruvboxDark
-return {
+local colors = {
     bg0 = "#282828",
     bg1 = "#3c3836",
     bg2 = "#504945",
@@ -29,4 +29,8 @@ return {
     neutral_purple = "#b16286",
 
     gray = "#928374",
+
+    none = "NONE",
 }
+
+return colors
