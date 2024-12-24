@@ -817,20 +817,13 @@ M.get = function(bg)
     }
 
     if config.group_override then
-        local convert_link
-        convert_link = function(link)
-            if groups[link] and groups[link].link then
-                return convert_link(groups[link].link)
-            end
-            return vim.deepcopy(groups[link])
-        end
-
         for hl, content in pairs(config.group_override) do
-            groups[hl] = vim.tbl_extend(
-                "force",
-                groups[hl] and (groups[hl].link and convert_link(groups[hl].link) or groups[hl]) or {},
-                content or {}
-            )
+            if groups[hl] and groups[hl].link then
+                while groups[hl] and groups[hl].link do
+                    groups[hl] = groups[groups[hl].link]
+                end
+            end
+            groups[hl] = vim.tbl_extend("force", groups[hl] or {}, content or {})
         end
     end
 
