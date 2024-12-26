@@ -71,13 +71,13 @@ require("gruvbox").setup({
     folds = true,
   },
   strikethrough = true,
-  contrast = "", -- can be "hard", "soft" or empty string
+  contrast = "", -- can be "soft" or "hard"
   invert_selection = false,
   invert_signs = false,
   invert_tabline = false,
   invert_intend_guides = false,
-  override = {},
-  palette_override = {},
+  color_override = {},
+  group_override = {},
   dim_inactive = false,
   transparent_mode = false,
 })
@@ -88,14 +88,14 @@ vim.cmd.colorscheme("gruvbox")
 
 ## Overriding
 
-### Palette
+### Colors
 
-You can specify your own palette colors. For example:
+You can specify your own colors. For example:
 
 ```lua
 require("gruvbox").setup({
-    palette_override = {
-        bright_green = "#990000",
+    color_override = {
+        red = "#990000",
     }
 })
 vim.cmd.colorscheme("gruvbox")
@@ -108,8 +108,8 @@ example:
 
 ```lua
 require("gruvbox").setup({
-    override = {
-        SignColumn = {bg = "#ff9900"}
+    group_override = {
+        SignColumn = { bg = "#ff9900" }
     }
 })
 vim.cmd.colorscheme("gruvbox")
@@ -119,7 +119,7 @@ It also works with treesitter groups and lsp semantic highlight tokens
 
 ```lua
 require("gruvbox").setup({
-    override = {
+    group_override = {
         ["@lsp.type.method"] = { bg = "#ff9900" },
         ["@comment.lua"] = { bg = "#000000" },
     }

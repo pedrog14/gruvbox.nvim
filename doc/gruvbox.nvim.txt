@@ -1,4 +1,4 @@
-*gruvbox.nvim.txt*      For Neovim >= 0.8.0      Last change: 2024 November 24
+*gruvbox.nvim.txt*      For Neovim >= 0.8.0      Last change: 2024 December 26
 
 ==============================================================================
 Table of Contents                             *gruvbox.nvim-table-of-contents*
@@ -97,8 +97,8 @@ Additional settings for gruvbox are:
       invert_signs = false,
       invert_tabline = false,
       invert_intend_guides = false,
-      palette_override = {},
-      overrides = {},
+      color_override = {},
+      group_override = {},
       dim_inactive = false,
       transparent_mode = false,
     })
@@ -118,9 +118,9 @@ You can specify your own palette colors. For example:
 
 >lua
     require("gruvbox").setup({
-        palette_override = {
-            bright_green = "#990000",
-        }
+	color_override = {
+	    red = "#990000",
+	}
     })
     vim.cmd.colorscheme("gruvbox")
 <
@@ -133,9 +133,9 @@ can just override it in the setup. For example:
 
 >lua
     require("gruvbox").setup({
-        override = {
-            SignColumn = {bg = "#ff9900"}
-        }
+	group_override = {
+	    SignColumn = { bg = "#ff9900" }
+	}
     })
     vim.cmd.colorscheme("gruvbox")
 <
@@ -144,10 +144,10 @@ It also works with treesitter groups and lsp semantic highlight tokens
 
 >lua
     require("gruvbox").setup({
-        override = {
-            ["@lsp.type.method"] = { bg = "#ff9900" },
-            ["@comment.lua"] = { bg = "#000000" },
-        }
+	group_override = {
+	    ["@lsp.type.method"] = { bg = "#ff9900" },
+	    ["@comment.lua"] = { bg = "#000000" },
+	}
     })
     vim.cmd.colorscheme("gruvbox")
 <

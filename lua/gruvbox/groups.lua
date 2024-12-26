@@ -2,8 +2,9 @@ local M = {}
 
 ---@param colors GruvboxDark | GruvboxLight
 ---@param config GruvboxConfig
----@return table<string,table>
+---@return table<string, vim.api.keyset.highlight>
 M.get = function(colors, config)
+    ---@type vim.api.keyset.highlight
     local groups = {
         -- Base
         ColorColumn = { bg = colors.bg1 },
