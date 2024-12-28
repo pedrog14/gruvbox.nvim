@@ -71,13 +71,13 @@ require("gruvbox").setup({
     folds = true,
   },
   strikethrough = true,
-  contrast = "", -- can be "soft" or "hard"
+  contrast = nil, -- can be "soft" or "hard"
   invert_selection = false,
   invert_signs = false,
   invert_tabline = false,
-  invert_intend_guides = false,
-  color_override = {},
-  group_override = {},
+  invert_indent_guides = false,
+  color_override = nil,
+  group_override = nil,
   dim_inactive = false,
   transparent_mode = false,
 })

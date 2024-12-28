@@ -20,7 +20,7 @@ M.default = {
     invert_selection = false,
     invert_signs = false,
     invert_tabline = false,
-    invert_intend_guides = false,
+    invert_indent_guites = false,
     dim_inactive = false,
     transparent_mode = false,
 }
