@@ -29,7 +29,6 @@ M.get = function(colors, opts)
         ["@string.special.url"] = {
             fg = colors.blue,
             underline = style.underline,
-            sp = colors.blue,
         },
 
         ["@character"] = { link = "Character" },

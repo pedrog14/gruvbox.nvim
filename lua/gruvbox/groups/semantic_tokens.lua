@@ -5,7 +5,7 @@ M.get = function(colors, opts)
     return {
         ["@lsp.type.class"] = { link = "@type" },
         ["@lsp.type.comment"] = { link = "@comment" },
-        ["@lsp.type.decorator"] = { link = "@macro" },
+        ["@lsp.type.decorator"] = { link = "@function.macro" },
         ["@lsp.type.enum"] = { link = "@type" },
         ["@lsp.type.enumMember"] = { link = "@constant" },
         ["@lsp.type.event"] = { link = "@type" },
