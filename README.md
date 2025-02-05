@@ -88,7 +88,7 @@ The default settings for gruvbox are:
 You can specify your own colors. For example:
 
 ```lua
-require("gruvbox").setup({
+{
     color_override = {
         bg0 = "#000000"
     }
@@ -100,22 +100,22 @@ require("gruvbox").setup({
 If you don't enjoy the current color for a specific highlight group, now you can just override it in the setup. For example:
 
 ```lua
-require("gruvbox").setup({
+{
     group_override = {
         SignColumn = { bg = "#ff9900" }
     }
-})
+}
 ```
 
 It also works with treesitter groups and lsp semantic highlight tokens:
 
 ```lua
-require("gruvbox").setup({
+{
     group_override = {
         ["@lsp.type.method"] = { bg = "#ff9900" },
         ["@comment.lua"] = { bg = "#000000" },
     }
-})
+}
 ```
 
 Please note that the override values must follow the attributes from the highlight group map \([vim.api.keyset.highlight](<https://neovim.io/doc/user/api.html#nvim_set_hl()>)\):
