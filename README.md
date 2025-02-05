@@ -92,7 +92,7 @@ You can specify your own colors. For example:
     color_override = {
         bg0 = "#000000"
     }
-})
+}
 ```
 
 ### Highlight groups
