@@ -1,7 +1,9 @@
 local M = {} --[[@type { plugins: table<string, string> } | GruvboxGroup]]
 
 -- stylua: ignore
-M.plugins = {}
+M.plugins = {
+    ["gitsigns.nvim"] = "gitsigns"
+}
 
 M.get = function(colors, opts)
     local groups = { --[[@type table<string, boolean>]]
