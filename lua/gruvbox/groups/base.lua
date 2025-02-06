@@ -65,7 +65,7 @@ M.get = function(colors, opts)
         MsgArea = { fg = colors.fg1 },
         MsgSeparator = { link = "StatusLine" },
         MoreMsg = { fg = colors.blue, bold = style.bold },
-        NonText = { fg = colors.bg2 },
+        NonText = { fg = colors.bg4 },
         Normal = {
             fg = colors.fg1,
             bg = opts.transparent_mode and colors.none or colors.bg0,

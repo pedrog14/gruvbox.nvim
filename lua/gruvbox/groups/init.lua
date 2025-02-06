@@ -2,7 +2,15 @@ local M = {} --[[@type { plugins: table<string, string> } | GruvboxGroup]]
 
 -- stylua: ignore
 M.plugins = {
-    ["gitsigns.nvim"] = "gitsigns"
+    ["bufferline.nvim"] = "bufferline",
+    ["gitsigns.nvim"]   = "gitsigns",
+
+    ["mini.icons"]      = "mini.icons",
+    ["mini.snippets"]   = "mini.snippets",
+
+    ["mason.nvim"]      = "mason",
+    ["noice.nvim"]      = "noice",
+    ["snacks.nvim"]     = "snacks",
 }
 
 M.get = function(colors, opts)
