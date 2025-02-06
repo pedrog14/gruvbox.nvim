@@ -249,6 +249,10 @@ M.get = function(colors, opts)
         LspCodeLensSeparator = { fg = colors.bg3 },
 
         LspSignatureActiveParameter = { fg = colors.bg0, bg = colors.yellow },
+
+        -- Misc
+        Bold = { bold = style.bold },
+        Italic = { italic = style.italic },
     }
 end
 

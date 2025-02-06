@@ -4,6 +4,7 @@ local M = {} --[[@type { plugins: table<string, string> } | GruvboxGroup]]
 M.plugins = {
     ["bufferline.nvim"] = "bufferline",
     ["gitsigns.nvim"]   = "gitsigns",
+    ["lazy.nvim"]       = "lazy",
 
     ["mini.icons"]      = "mini.icons",
     ["mini.snippets"]   = "mini.snippets",
