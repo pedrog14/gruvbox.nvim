@@ -207,12 +207,6 @@ M.get = function(colors, opts)
         DiagnosticHint = { fg = colors.aqua },
         DiagnosticOk = { fg = colors.green },
 
-        DiagnosticVirtualTextError = { link = "DiagnosticError" },
-        DiagnosticVirtualTextWarn = { link = "DiagnosticWarn" },
-        DiagnosticVirtualTextInfo = { link = "DiagnosticInfo" },
-        DiagnosticVirtualTextHint = { link = "DiagnosticHint" },
-        DiagnosticVirtualTextOk = { link = "DiagnosticOk" },
-
         DiagnosticUnderlineError = {
             sp = colors.red,
             undercurl = style.undercurl,
@@ -233,12 +227,6 @@ M.get = function(colors, opts)
             sp = colors.green,
             undercurl = style.undercurl,
         },
-
-        DiagnosticFloatingError = { link = "DiagnosticError" },
-        DiagnosticFloatingWarn = { link = "DiagnosticWarn" },
-        DiagnosticFloatingInfo = { link = "DiagnosticInfo" },
-        DiagnosticFloatingHint = { link = "DiagnosticHint" },
-        DiagnosticFloatingOk = { link = "DiagnosticOk" },
 
         DiagnosticSignError = { fg = colors.red, style = style.signs },
         DiagnosticSignWarn = { fg = colors.yellow, style = style.signs },
