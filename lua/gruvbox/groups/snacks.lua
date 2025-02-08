@@ -11,12 +11,12 @@ M.get = function(colors, opts)
 
         SnacksInputIcon = { fg = colors.red },
 
-        SnacksDashboardKey = { fg = colors.blue },
         SnacksDashboardDesc = { fg = colors.gray },
         SnacksDashboardIcon = { link = "SnacksDashboardDesc" },
+        SnacksDashboardKey = { fg = colors.blue },
         SnacksDashboardSpecial = { link = "Special" },
         SnacksDashboardTitle = { fg = colors.blue },
-        SnacksDashboardFooter = { fg = colors.purple },
+        SnacksDashboardFooter = { fg = colors.blue },
         SnacksDashboardHeader = { fg = colors.blue },
     }
 end

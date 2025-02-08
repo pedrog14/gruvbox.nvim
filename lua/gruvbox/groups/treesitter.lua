@@ -12,7 +12,7 @@ M.get = function(colors, opts)
         ["@variable.member"] = { link = "Identifier" },
 
         ["@constant"] = { link = "Constant" },
-        ["@constant.builtin"] = { link = "Constant" },
+        ["@constant.builtin"] = { link = "Special" },
         ["@constant.macro"] = { link = "Macro" },
 
         ["@module"] = { link = "Label" },
@@ -136,8 +136,8 @@ M.get = function(colors, opts)
 
         ["@tag"] = { link = "Tag" },
         ["@tag.builtin"] = { link = "Special" },
-        ["@tag.attribute"] = { link = "Tag" },
-        ["@tag.delimiter"] = { link = "Tag" },
+        ["@tag.attribute"] = { link = "Macro" },
+        ["@tag.delimiter"] = { link = "Delimiter" },
     }
 end
 
