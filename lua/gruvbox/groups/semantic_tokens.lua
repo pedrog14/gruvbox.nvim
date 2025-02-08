@@ -1,8 +1,7 @@
----@type GruvboxGroup
 local M = {}
 
-M.get = function(colors, opts)
-    local style = opts.style
+---@type GruvboxHighlightsGet
+M.get = function(_, _)
     ---@type GruvboxHighlights
     return {
         ["@lsp.type.class"] = { link = "@type" },

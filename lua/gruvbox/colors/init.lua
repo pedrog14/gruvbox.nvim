@@ -1,17 +1,8 @@
-local M = {} --[[@type { get: fun(opts: GruvboxConfig, bg?: "dark"|"light"): GruvboxColors; dark: GruvboxColors; light: GruvboxColors; palette: GruvboxPalette }]]
-
-setmetatable(M, {
-    __index = function(_, k)
-        if k == "dark" or k == "light" then
-            local opts = require("gruvbox.config").opts
-            return require("gruvbox.colors").get(opts, k)
-        end
-        return require("gruvbox.colors." .. k)
-    end,
-})
+---@type { get: fun(opts: GruvboxConfig, bg?: GruvboxBackground): GruvboxColors; dark: GruvboxColors; light: GruvboxColors; palette: GruvboxPalette }
+local M = {}
 
 M.get = function(opts, bg)
-    bg = bg == nil and vim.o.background or bg
+    bg = bg or vim.o.background
     local fg = bg == "dark" and "light" or "dark"
     local variant = bg == "dark" and "bright" or "faded"
 
@@ -64,4 +55,14 @@ M.get = function(opts, bg)
     return colors
 end
 
-return M
+return setmetatable(M, {
+    __index = function(_, k)
+        if k == "dark" or k == "light" then
+            local opts = require("gruvbox.colors").opts
+            return M.get(opts, k)
+        end
+        if k == "palette" then
+            return require("gruvbox.colors.palette")
+        end
+    end,
+})

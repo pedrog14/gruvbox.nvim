@@ -8,7 +8,7 @@ M.default = {
     terminal_colors = true,
     transparent_mode = false,
     color_override = {}, --[[@type GruvboxColors]]
-    group_override = {}, --[[@type GruvboxHighlights]]
+    group_override = {}, --[[@type table<string, vim.api.keyset.highlight>]]
     plugins = {
         all = package.loaded.lazy == nil,
         auto = true,
@@ -38,11 +38,9 @@ M.default.style.comments = { italic = M.default.style.italic }
 M.opts = nil
 
 M.setup = function()
-    local opts = M.opts
+    local opts = M.opts or M.default
 
-    local bg = vim.o.background
-
-    local colors = require("gruvbox.colors")[bg] --[[@as GruvboxColors]]
+    local colors = require("gruvbox.colors").get(opts) --[[@as GruvboxColors]]
     local groups = require("gruvbox.groups").get(colors, opts)
 
     for group, hl in pairs(groups) do

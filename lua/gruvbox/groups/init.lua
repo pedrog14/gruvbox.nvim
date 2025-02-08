@@ -1,7 +1,8 @@
-local M = {} --[[@type { plugins: table<string, string> } | GruvboxGroup]]
+local M = {}
 
 -- stylua: ignore
-M.plugins = {
+M.plugins = { --[[@class GruvboxPlugins]]
+    ["blink.cmp"]       = "blink",
     ["bufferline.nvim"] = "bufferline",
     ["gitsigns.nvim"]   = "gitsigns",
     ["lazy.nvim"]       = "lazy",
@@ -14,9 +15,11 @@ M.plugins = {
     ["snacks.nvim"]     = "snacks",
 }
 
+---@type fun(colors: GruvboxColors, opts: GruvboxConfig): table<string, vim.api.keyset.highlight>
 M.get = function(colors, opts)
-    local groups = { --[[@type table<string, boolean>]]
+    local groups = {
         base = true,
+        kinds = true,
         semantic_tokens = true,
         treesitter = true,
     }
@@ -73,7 +76,6 @@ M.get = function(colors, opts)
         },
     }
 
-    ---@type GruvboxHighlights | false | nil
     local ret = cache and vim.deep_equal(inputs, cache.inputs) and cache.groups
 
     if not ret then
