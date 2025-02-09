@@ -65,7 +65,7 @@ M.get = function(colors, opts)
         MsgArea = { fg = colors.fg1 },
         MsgSeparator = { link = "StatusLine" },
         MoreMsg = { fg = colors.blue, bold = style.bold },
-        NonText = { fg = colors.bg4 },
+        NonText = { fg = colors.bg2 },
         Normal = {
             fg = colors.fg1,
             bg = opts.transparent_mode and colors.none or colors.bg0,
@@ -240,9 +240,9 @@ M.get = function(colors, opts)
         debugPC = { fg = colors.fg3 },
         debugBreakpoint = { fg = colors.fg3, bg = colors.bg3 },
 
-        LspReferenceText = { fg = colors.orange, bold = style.bold },
-        LspReferenceWrite = { fg = colors.orange, bold = style.bold },
-        LspReferenceRead = { fg = colors.orange, bold = style.bold },
+        LspReferenceText = { bg = colors.bg2 },
+        LspReferenceWrite = { bg = colors.bg2 },
+        LspReferenceRead = { bg = colors.bg2 },
         LspInlayHint = { fg = colors.gray },
 
         LspCodeLens = { fg = colors.gray },

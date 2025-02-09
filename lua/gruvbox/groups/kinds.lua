@@ -43,12 +43,15 @@ local kinds = function(colors)
     }
 end
 
+---@param colors GruvboxColors
+---@param hl? GruvboxHighlights
+---@param pattern? string
+---@return GruvboxHighlights
 M.kinds = function(colors, hl, pattern)
     hl = hl or {}
     for kind, value in pairs(kinds(colors)) do
         local base = "LspKind" .. kind
         if pattern then
-            ---@type vim.api.keyset.highlight
             hl[pattern:format(kind)] = { link = base }
         else
             hl[base] = value
@@ -59,7 +62,6 @@ end
 
 ---@type GruvboxHighlightsGet
 M.get = function(colors, _)
-    ---@type GruvboxHighlights
     return M.kinds(colors)
 end
 

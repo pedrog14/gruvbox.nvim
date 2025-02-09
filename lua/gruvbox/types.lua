@@ -17,4 +17,4 @@
 
 ---@alias GruvboxHighlights table<string, GruvboxHighlight>
 
----@alias GruvboxHighlightsGet fun(colors?: GruvboxColors, opts?: GruvboxConfig): GruvboxHighlights
+---@alias GruvboxHighlightsGet fun(colors: GruvboxColors, opts?: GruvboxConfig): GruvboxHighlights
