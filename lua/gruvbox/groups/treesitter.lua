@@ -8,15 +8,15 @@ M.get = function(colors, opts)
         ["@variable"] = { fg = colors.fg1 },
         ["@variable.builtin"] = { link = "Keyword" },
         ["@variable.parameter"] = { link = "Identifier" },
-        ["@variable.parameter.builtin"] = { link = "Keyword" },
+        ["@variable.parameter.builtin"] = { link = "Identifier" },
         ["@variable.member"] = { link = "Identifier" },
 
         ["@constant"] = { link = "Constant" },
-        ["@constant.builtin"] = { link = "Keyword" },
+        ["@constant.builtin"] = { link = "Constant" },
         ["@constant.macro"] = { link = "Macro" },
 
         ["@module"] = { link = "Label" },
-        ["@module.builtin"] = { link = "Keyword" },
+        ["@module.builtin"] = { link = "Label" },
         ["@label"] = { link = "Label" },
 
         ["@string"] = { link = "String" },
@@ -36,15 +36,15 @@ M.get = function(colors, opts)
         ["@number.float"] = { link = "Number" },
 
         ["@type"] = { link = "Type" },
-        ["@type.builtin"] = { link = "Keyword" },
+        ["@type.builtin"] = { link = "Type" },
         ["@type.definition"] = { link = "Typedef" },
 
         ["@attribute"] = { link = "Macro" },
-        ["@attribute.builtin"] = { link = "Keyword" },
+        ["@attribute.builtin"] = { link = "Macro" },
         ["@property"] = { link = "Identifier" },
 
         ["@function"] = { link = "Function" },
-        ["@function.builtin"] = { link = "Keyword" },
+        ["@function.builtin"] = { link = "Function" },
         ["@function.call"] = { link = "Function" },
         ["@function.macro"] = { link = "Macro" },
 
@@ -116,7 +116,7 @@ M.get = function(colors, opts)
         ["@diff.delta"] = { link = "Changed" },
 
         ["@tag"] = { link = "Tag" },
-        ["@tag.builtin"] = { link = "Keyword" },
+        ["@tag.builtin"] = { link = "Tag" },
         ["@tag.attribute"] = { link = "Macro" },
         ["@tag.delimiter"] = { link = "Delimiter" },
     }
