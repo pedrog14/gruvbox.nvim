@@ -6,17 +6,17 @@ M.get = function(colors, opts)
     ---@type GruvboxHighlights
     return {
         ["@variable"] = { fg = colors.fg1 },
-        ["@variable.builtin"] = { link = "Special" },
+        ["@variable.builtin"] = { link = "Keyword" },
         ["@variable.parameter"] = { link = "Identifier" },
-        ["@variable.parameter.builtin"] = { link = "Special" },
+        ["@variable.parameter.builtin"] = { link = "Keyword" },
         ["@variable.member"] = { link = "Identifier" },
 
         ["@constant"] = { link = "Constant" },
-        ["@constant.builtin"] = { link = "Special" },
+        ["@constant.builtin"] = { link = "Keyword" },
         ["@constant.macro"] = { link = "Macro" },
 
         ["@module"] = { link = "Label" },
-        ["@module.builtin"] = { link = "Special" },
+        ["@module.builtin"] = { link = "Keyword" },
         ["@label"] = { link = "Label" },
 
         ["@string"] = { link = "String" },
@@ -26,10 +26,7 @@ M.get = function(colors, opts)
         ["@string.special"] = { link = "Special" },
         ["@string.special.symbol"] = { link = "Special" },
         ["@string.special.path"] = { link = "Special" },
-        ["@string.special.url"] = {
-            fg = colors.blue,
-            underline = style.underline,
-        },
+        ["@string.special.url"] = { link = "Underlined", fg = colors.blue },
 
         ["@character"] = { link = "Character" },
         ["@character.special"] = { link = "SpecialChar" },
@@ -39,15 +36,15 @@ M.get = function(colors, opts)
         ["@number.float"] = { link = "Number" },
 
         ["@type"] = { link = "Type" },
-        ["@type.builtin"] = { link = "Special" },
+        ["@type.builtin"] = { link = "Keyword" },
         ["@type.definition"] = { link = "Typedef" },
 
         ["@attribute"] = { link = "Macro" },
-        ["@attribute.builtin"] = { link = "Special" },
+        ["@attribute.builtin"] = { link = "Keyword" },
         ["@property"] = { link = "Identifier" },
 
         ["@function"] = { link = "Function" },
-        ["@function.builtin"] = { link = "Special" },
+        ["@function.builtin"] = { link = "Keyword" },
         ["@function.call"] = { link = "Function" },
         ["@function.macro"] = { link = "Macro" },
 
@@ -72,8 +69,8 @@ M.get = function(colors, opts)
         ["@keyword.conditional"] = { link = "Keyword" },
         ["@keyword.conditional.ternary"] = { link = "Keyword" },
 
-        ["@keyword.directive"] = { link = "PreProc" },
-        ["@keyword.directive.define"] = { link = "PreProc" },
+        ["@keyword.directive"] = { link = "Keyword" },
+        ["@keyword.directive.define"] = { link = "Keyword" },
 
         ["@punctuation.delimiter"] = { link = "SpecialChar" },
         ["@punctuation.bracket"] = { link = "SpecialChar" },
@@ -82,26 +79,10 @@ M.get = function(colors, opts)
         ["@comment"] = { link = "Comment" },
         ["@comment.documentation"] = { link = "Comment" },
 
-        ["@comment.error"] = {
-            fg = colors.bg0,
-            bg = colors.red,
-            bold = style.bold,
-        },
-        ["@comment.warning"] = {
-            fg = colors.bg0,
-            bg = colors.yellow,
-            bold = style.bold,
-        },
-        ["@comment.todo"] = {
-            fg = colors.bg0,
-            bg = colors.aqua,
-            bold = style.bold,
-        },
-        ["@comment.note"] = {
-            fg = colors.bg0,
-            bg = colors.blue,
-            bold = style.bold,
-        },
+        ["@comment.error"] = { fg = colors.red, bold = style.bold },
+        ["@comment.warning"] = { fg = colors.yellow, bold = style.bold },
+        ["@comment.todo"] = { fg = colors.aqua, bold = style.bold },
+        ["@comment.note"] = { fg = colors.blue, bold = style.bold },
 
         ["@markup.strong"] = { bold = style.bold },
         ["@markup.italic"] = { italic = style.italic },
@@ -135,7 +116,7 @@ M.get = function(colors, opts)
         ["@diff.delta"] = { link = "Changed" },
 
         ["@tag"] = { link = "Tag" },
-        ["@tag.builtin"] = { link = "Special" },
+        ["@tag.builtin"] = { link = "Keyword" },
         ["@tag.attribute"] = { link = "Macro" },
         ["@tag.delimiter"] = { link = "Delimiter" },
     }

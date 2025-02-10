@@ -184,7 +184,7 @@ M.get = function(colors, opts)
         SpecialComment = { link = "Special" },
         Debug = { link = "Special" },
 
-        Underlined = { sp = colors.blue, undercurl = style.undercurl },
+        Underlined = { underline = style.underline },
 
         Ignore = { link = "Comment" },
 

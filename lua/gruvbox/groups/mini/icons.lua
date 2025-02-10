@@ -1,8 +1,7 @@
 local M = {}
 
 ---@type GruvboxHighlightsGet
-M.get = function(colors, opts)
-    local style = opts.style
+M.get = function(colors, _)
     ---@type GruvboxHighlights
     return {
         MiniIconsPurple = { fg = colors.purple },
