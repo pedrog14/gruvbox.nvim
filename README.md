@@ -8,16 +8,16 @@ Neovim 0.9.0+
 
 # Installing
 
-## Using `packer`
-
-```lua
-use { "pedrog14/gruvbox.nvim" }
-```
-
 ## Using `lazy.nvim`
 
 ```lua
 { "pedrog14/gruvbox.nvim", lazy = false, priority = 1000, opts = {...} }
+```
+
+## Using `packer`
+
+```lua
+use { "pedrog14/gruvbox.nvim" }
 ```
 
 ## Using `vim-plug`
@@ -28,14 +28,14 @@ Plug 'pedrog14/gruvbox.nvim'
 
 # Basic Usage
 
-Inside `init.vim`
+Inside your `init.vim`
 
 ```vim
 set background=dark " or light if you want light mode
 colorscheme gruvbox
 ```
 
-Inside `init.lua`
+Inside your lua config
 
 ```lua
 vim.opt.background = "dark" -- or "light" for light mode
@@ -54,7 +54,7 @@ The default settings for gruvbox are:
     terminal_colors = true,
     transparent_mode = false,
     color_override = {}, --[[@type GruvboxColors]]
-    group_override = {}, --[[@type GruvboxHighlights]]
+    group_override = {}, --[[@type table<string, vim.api.keyset.highlight>]]
     plugins = {
         all = package.loaded.lazy == nil,
         auto = true,
@@ -68,7 +68,7 @@ The default settings for gruvbox are:
         undercurl     = true,
         underline     = true,
 
-        comments      = { italic = true }, --[[@type vim.api.keyset.highlight]]
+        comments      = {}, --[[@type vim.api.keyset.highlight]]
         indent        = {}, --[[@type vim.api.keyset.highlight]]
         operators     = {}, --[[@type vim.api.keyset.highlight]]
         selection     = {}, --[[@type vim.api.keyset.highlight]]
@@ -118,6 +118,4 @@ It also works with treesitter groups and lsp semantic highlight tokens:
 }
 ```
 
-Please note that the override values must follow the attributes from the highlight group map \([vim.api.keyset.highlight](<https://neovim.io/doc/user/api.html#nvim_set_hl()>)\):
-
-Other values can be seen in [`synIDattr`](<https://neovim.io/doc/user/builtin.html#synIDattr()>)
+Please notice that the values on the overrides must follow the pattern that can be seen on [`synIDattr`](<https://neovim.io/doc/user/builtin.html#synIDattr()>).
