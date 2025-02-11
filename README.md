@@ -1,4 +1,4 @@
-# Gruvbox.nvim
+# gruvbox.nvim
 
 A complete overhaul of the gruvbox original theme, based on both ellisonleao's [gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim) and folke's [tokyonight.nvim](https://github.com/folke/tokyonight.nvim) themes.
 
@@ -28,18 +28,18 @@ Plug 'pedrog14/gruvbox.nvim'
 
 # Basic Usage
 
-Inside your `init.vim`
-
-```vim
-set background=dark " or light if you want light mode
-colorscheme gruvbox
-```
-
-Inside your lua config
+Inside your lua config:
 
 ```lua
 vim.opt.background = "dark" -- or "light" for light mode
 vim.cmd.colorscheme("gruvbox")
+```
+
+Inside `init.vim`:
+
+```vim
+set background=dark " or light if you want light mode
+colorscheme gruvbox
 ```
 
 # Configuration
