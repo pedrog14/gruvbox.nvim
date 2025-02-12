@@ -17,8 +17,6 @@ M.get = function(opts, bg)
         bg3            = palette[bg .. 3],
         bg4            = palette[bg .. 4],
 
-        gray           = palette["gray"],
-
         fg0            = palette[fg .. 0],
         fg1            = palette[fg .. 1],
         fg2            = palette[fg .. 2],
@@ -40,6 +38,8 @@ M.get = function(opts, bg)
         neutral_aqua   = palette["neutral_aqua"],
         neutral_blue   = palette["neutral_blue"],
         neutral_purple = palette["neutral_purple"],
+
+        gray           = palette["gray"],
 
         none           = palette["none"],
     }

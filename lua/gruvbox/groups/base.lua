@@ -85,7 +85,9 @@ M.get = function(colors, opts)
         FloatFooter = { link = "FloatTitle" },
         NormalNC = {
             fg = colors.fg1,
-            bg = opts.dim_inactive and colors.bg1 or colors.bg0,
+            bg = opts.transparent_mode and colors.none
+                or opts.dim_inactive and colors.bg1
+                or colors.bg0,
         },
         Pmenu = { fg = colors.fg1, bg = colors.bg2 },
         PmenuSel = { fg = colors.bg2, bg = colors.blue, bold = style.bold },
@@ -106,7 +108,6 @@ M.get = function(colors, opts)
             bg = colors.bg0,
             reverse = style.reverse,
         },
-        -- SnippetTabstop = {},
         SpecialKey = { fg = colors.fg4 },
         SpellBad = { sp = colors.red, undercurl = style.undercurl },
         SpellCap = { sp = colors.blue, undercurl = style.undercurl },
@@ -142,15 +143,12 @@ M.get = function(colors, opts)
         WinBar = { fg = colors.fg4, bg = colors.bg0 },
         WinBarNC = { fg = colors.fg3, bg = colors.bg1 },
 
-        -- Menu = {},
-        -- Scrollbar = {},
-        -- Tooltip = {},
-
         Comment = { fg = colors.gray, style = style.comments },
 
-        Constant = { fg = colors.purple },
+        Character = { fg = colors.green },
         String = { fg = colors.green, style = style.strings },
-        Character = { fg = colors.purple },
+
+        Constant = { fg = colors.purple },
         Number = { fg = colors.purple },
         Boolean = { fg = colors.purple },
         Float = { fg = colors.purple },
@@ -234,8 +232,11 @@ M.get = function(colors, opts)
         DiagnosticSignHint = { fg = colors.aqua, style = style.signs },
         DiagnosticSignOk = { fg = colors.green, style = style.signs },
 
-        DiagnosticDeprecated = { fg = colors.yellow },
-        DiagnosticUnnecessary = { fg = colors.gray },
+        DiagnosticDeprecated = {
+            fg = colors.yellow,
+            strikethrough = style.strikethrough,
+        },
+        DiagnosticUnnecessary = { link = "Comment" },
 
         debugPC = { fg = colors.fg3 },
         debugBreakpoint = { fg = colors.fg3, bg = colors.bg3 },
@@ -250,7 +251,6 @@ M.get = function(colors, opts)
 
         LspSignatureActiveParameter = { fg = colors.bg0, bg = colors.yellow },
 
-        -- Misc
         Bold = { bold = style.bold },
         Italic = { italic = style.italic },
     }
