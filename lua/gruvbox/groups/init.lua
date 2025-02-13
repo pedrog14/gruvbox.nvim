@@ -1,7 +1,8 @@
 local M = {}
 
 -- stylua: ignore
-M.plugins = { --[[@class GruvboxPlugins]]
+
+M.plugins = {
     ["blink.cmp"]       = "blink",
     ["bufferline.nvim"] = "bufferline",
     ["gitsigns.nvim"]   = "gitsigns",
@@ -72,6 +73,7 @@ M.get = function(colors, opts)
             contrast = opts.contrast,
             dim_inactive = opts.dim_inactive,
             transparent_mode = opts.transparent_mode,
+
             style = opts.style,
         },
     }

@@ -1,7 +1,6 @@
 local M = {}
 
----@class GruvboxConfig
-M.default = {
+M.default = { --[[@class GruvboxConfig]]
     cache = true,
     contrast = nil, --[[@type GruvboxContrast]]
     dim_inactive = false,
@@ -13,7 +12,9 @@ M.default = {
         all = package.loaded.lazy == nil,
         auto = true,
     },
+
     -- stylua: ignore
+
     style = {
         bold          = true,
         italic        = true,
@@ -40,7 +41,7 @@ M.opts = nil
 M.setup = function()
     local opts = M.opts or M.default
 
-    local colors = require("gruvbox.colors").get(opts) --[[@as GruvboxColors]]
+    local colors = require("gruvbox.colors").get(opts)
     local groups = require("gruvbox.groups").get(colors, opts)
 
     for group, hl in pairs(groups) do

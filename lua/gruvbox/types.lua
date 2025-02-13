@@ -1,8 +1,12 @@
----@alias GruvboxBackground "dark" | "light"
+---@alias Background "dark" | "light"
 
 ---@class GruvboxCache
 ---@field inputs GruvboxInputs
 ---@field groups table<string, vim.api.keyset.highlight>
+
+---@alias GruvboxColors GruvboxDark | GruvboxLight
+
+---@alias GruvboxColorsGet fun(opts: GruvboxConfig, bg?: Background): GruvboxColors
 
 ---@alias GruvboxContrast "hard" | "soft"
 
