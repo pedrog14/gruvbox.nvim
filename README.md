@@ -55,16 +55,16 @@ Neovim 0.9.0+
 { "pedrog14/gruvbox.nvim", lazy = false, priority = 1000, opts = {...} }
 ```
 
-## Using `packer`
-
-```lua
-use { "pedrog14/gruvbox.nvim" }
-```
-
 ## Using `vim-plug`
 
 ```vim
 Plug 'pedrog14/gruvbox.nvim'
+```
+
+## Using `packer`
+
+```lua
+use { "pedrog14/gruvbox.nvim" }
 ```
 
 # Basic Usage
@@ -79,7 +79,7 @@ vim.cmd.colorscheme("gruvbox")
 Inside `init.vim`:
 
 ```vim
-set background=dark " or light if you want light mode
+set background=dark " or "light" for light mode
 colorscheme gruvbox
 ```
 
@@ -129,11 +129,11 @@ The default settings for gruvbox are:
 You can specify your own colors. For example:
 
 ```lua
-{
+require("gruvbox").setup({
     color_override = {
         bg0 = "#000000"
     }
-}
+})
 ```
 
 ### Highlight groups
@@ -141,22 +141,22 @@ You can specify your own colors. For example:
 If you don't enjoy the current color for a specific highlight group, now you can just override it in the setup. For example:
 
 ```lua
-{
+require("gruvbox").setup({
     group_override = {
         SignColumn = { bg = "#ff9900" }
     }
-}
+})
 ```
 
 It also works with treesitter groups and lsp semantic highlight tokens:
 
 ```lua
-{
+require("gruvbox").setup({
     group_override = {
         ["@lsp.type.method"] = { bg = "#ff9900" },
         ["@comment.lua"] = { bg = "#000000" },
     }
-}
+})
 ```
 
 Please notice that the values on the overrides must follow the pattern that can be seen on [`synIDattr`](<https://neovim.io/doc/user/builtin.html#synIDattr()>).
