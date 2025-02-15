@@ -17,7 +17,7 @@ local kinds = function(colors)
         Event         = { fg = colors.yellow },
         Field         = { fg = colors.blue   },
         File          = { fg = colors.fg3    },
-        Folder        = { fg = colors.green  },
+        Folder        = { fg = colors.fg3    },
         Function      = { fg = colors.green  },
         Interface     = { fg = colors.yellow },
         Key           = { fg = colors.purple },
