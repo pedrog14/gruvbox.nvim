@@ -1,6 +1,6 @@
 # gruvbox.nvim
 
-A complete overhaul of the gruvbox original theme, based on both ellisonleao's [gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim) and folke's [tokyonight.nvim](https://github.com/folke/tokyonight.nvim) themes.
+A complete overhaul of the [gruvbox original theme](https://github.com/morhetz/gruvbox), based on both ellisonleao's [gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim) and folke's [tokyonight.nvim](https://github.com/folke/tokyonight.nvim) themes.
 
 # Prerequisites
 
