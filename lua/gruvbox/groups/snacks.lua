@@ -1,7 +1,8 @@
 local M = {}
 
 ---@type GruvboxHighlightsGet
-M.get = function(colors, _)
+M.get = function(colors, opts)
+    local style = opts.style
     ---@type GruvboxHighlights
     return {
         SnacksPickerFile = { fg = colors.fg1 },
@@ -19,13 +20,16 @@ M.get = function(colors, _)
 
         SnacksInputIcon = { fg = colors.red },
 
-        SnacksDashboardDesc = { fg = colors.gray },
-        SnacksDashboardIcon = { link = "SnacksDashboardDesc" },
-        SnacksDashboardKey = { fg = colors.blue },
-        SnacksDashboardSpecial = { link = "Special" },
-        SnacksDashboardTitle = { fg = colors.blue },
-        SnacksDashboardFooter = { fg = colors.blue },
         SnacksDashboardHeader = { fg = colors.blue },
+        SnacksDashboardTitle = { fg = colors.blue, bold = style.bold },
+
+        SnacksDashboardIcon = { link = "SnacksDashboardDesc" },
+        SnacksDashboardDesc = { fg = colors.gray },
+        SnacksDashboardKey = { fg = colors.blue },
+
+        SnacksDashboardFooter = { fg = colors.blue },
+
+        SnacksDashboardSpecial = { link = "Special" },
     }
 end
 
