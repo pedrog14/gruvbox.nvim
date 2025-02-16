@@ -2,7 +2,7 @@ name: panvimdoc
 
 on:
   push:
-    branches: [main]
+    branches: [master]
     paths:
       - README.md 
       - .github/workflows/panvimdoc.yml 
@@ -19,6 +19,8 @@ jobs:
       - uses: kdheepak/panvimdoc@main
         with:
           vimdoc: ${{ github.event.repository.name }}
+          treesitter: true # Use treesitter for highlighting codeblocks
+          ignorerawblocks: true # Ignore raw html blocks in markdown when converting to vimdoc
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Auto generate docs"
