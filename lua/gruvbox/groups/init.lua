@@ -7,10 +7,8 @@ M.plugins = {
     ["bufferline.nvim"] = "bufferline",
     ["gitsigns.nvim"]   = "gitsigns",
     ["lazy.nvim"]       = "lazy",
-
     ["mini.icons"]      = "mini.icons",
     ["mini.snippets"]   = "mini.snippets",
-
     ["mason.nvim"]      = "mason",
     ["noice.nvim"]      = "noice",
     ["snacks.nvim"]     = "snacks",
@@ -69,11 +67,9 @@ M.get = function(colors, opts)
         colors = colors,
         plugins = names,
         opts = {
-            background = vim.o.background,
             contrast = opts.contrast,
             dim_inactive = opts.dim_inactive,
             transparent_mode = opts.transparent_mode,
-
             style = opts.style,
         },
     }
