@@ -63,7 +63,7 @@ Inside your lua config:
     vim.cmd.colorscheme("gruvbox")
 <
 
-Inside `init.vim`:
+Inside `init.vim`
 
 >vim
     set background=dark " or "light" for light mode
@@ -74,7 +74,7 @@ Inside `init.vim`:
 ==============================================================================
 5. Configuration                                  *gruvbox.nvim-configuration*
 
-The default settings for gruvbox are:
+Thedefault settings for gruvbox are:
 
 >lua
     {
@@ -109,8 +109,8 @@ The default settings for gruvbox are:
     }
 <
 
-**VERY IMPORTANT**: Make sure to call setup() **BEFORE** calling the
-colorscheme command, to use your custom configs!
+**VERY IMPORTANT**Make sure to call setup() **BEFORE** calling the colorscheme
+command, to use your custom configs!
 
 
 OVERRIDING                             *gruvbox.nvim-configuration-overriding*
