@@ -13,13 +13,13 @@ A complete overhaul of the [gruvbox original theme](https://github.com/morhetz/g
     </tr>
     <tr>
         <th width="33%">
-            <img src="https://github.com/user-attachments/assets/0a906edb-638b-4c34-ac97-f2f116226889"/>
+            <img src="https://github.com/user-attachments/assets/d9e6d8a3-eec9-4e12-82d1-961ede6fc237"/>
         </th>
         <th width="33%">
-            <img src="https://github.com/user-attachments/assets/c7d584ea-8682-4bc7-8235-ca97b41ddf34"/>
+            <img src="https://github.com/user-attachments/assets/4f68383d-9bd8-4198-89ca-a7a78bc4cca6"/>
         </th>
         <th width="33%">
-            <img src="https://github.com/user-attachments/assets/2a1328d8-e31a-45ae-9d9d-62eafa06ef75"/>
+            <img src="https://github.com/user-attachments/assets/3e2ad5ac-66d0-4cfa-a026-696e6ac7325d"/>
         </th>
     </tr>
     <tr>
@@ -32,13 +32,13 @@ A complete overhaul of the [gruvbox original theme](https://github.com/morhetz/g
     </tr>
     <tr>
         <th width="33%">
-            <img src="https://github.com/user-attachments/assets/276bda2c-f10c-4af9-8a32-ababbd54720d"/>
+            <img src="https://github.com/user-attachments/assets/d67802c2-326b-4b23-9aa0-72cd07cae5f7"/>
         </th>
         <th width="33%">
-            <img src="https://github.com/user-attachments/assets/7ebaf912-270f-4e20-9c85-754486f932cf"/>
+            <img src="https://github.com/user-attachments/assets/cc152b1f-fea0-4d9a-bd72-ff20671df1ae"/>
         </th>
         <th width="33%">
-            <img src="https://github.com/user-attachments/assets/0cb92fbe-ca7b-4fc7-973a-6be9c0c79715"/>
+            <img src="https://github.com/user-attachments/assets/e9d9e7f9-d99c-4217-aae8-c6a5f9512051"/>
         </th>
     </tr>
 </table>
