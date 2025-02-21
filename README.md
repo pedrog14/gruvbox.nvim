@@ -124,9 +124,9 @@ The default settings for gruvbox are:
 
 ## Overriding
 
-### Palette
+### Colors
 
-You can specify your own colors. For example:
+You can modify and specify your own colors. For example:
 
 ```lua
 require("gruvbox").setup({
