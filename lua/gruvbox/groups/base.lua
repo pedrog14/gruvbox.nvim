@@ -105,18 +105,14 @@ M.get = function(colors, opts)
         WinBarNC = { fg = colors.fg3, bg = colors.bg1 },
 
         Comment = { fg = colors.gray, style = style.comments },
-
-        Character = { fg = colors.green },
-        String = { fg = colors.green, style = style.strings },
-
         Constant = { fg = colors.purple },
+        String = { fg = colors.green, style = style.strings },
+        Character = { fg = colors.purple },
         Number = { fg = colors.purple },
         Boolean = { fg = colors.purple },
         Float = { fg = colors.purple },
-
         Identifier = { fg = colors.blue },
-        Function = { fg = colors.green, bold = style.bold },
-
+        Function = { fg = colors.blue },
         Statement = { fg = colors.red },
         Conditional = { fg = colors.red },
         Repeat = { fg = colors.red },
@@ -124,18 +120,15 @@ M.get = function(colors, opts)
         Operator = { fg = colors.orange, style = style.operators },
         Keyword = { fg = colors.red },
         Exception = { fg = colors.red },
-
         PreProc = { fg = colors.aqua },
         Include = { fg = colors.aqua },
         Define = { fg = colors.aqua },
         Macro = { fg = colors.aqua },
         PreCondit = { fg = colors.aqua },
-
         Type = { fg = colors.yellow },
         StorageClass = { fg = colors.yellow },
         Structure = { fg = colors.yellow },
         Typedef = { fg = colors.yellow },
-
         Special = { fg = colors.orange },
         SpecialChar = { link = "Special" },
         Tag = { fg = colors.green },
@@ -144,9 +137,7 @@ M.get = function(colors, opts)
         Debug = { link = "Special" },
 
         Underlined = { underline = style.underline },
-
-        Ignore = { link = "Comment" },
-
+        Ignore = { link = "Normal" },
         Error = { fg = colors.red, bold = style.bold },
 
         Todo = {
