@@ -69,7 +69,7 @@ M.get = function(colors, opts)
         opts = {
             contrast = opts.contrast,
             dim_inactive = opts.dim_inactive,
-            transparent_mode = opts.transparent_mode,
+            transparent = opts.transparent,
             style = opts.style,
         },
     }
@@ -79,9 +79,7 @@ M.get = function(colors, opts)
     if not ret then
         ret = {}
         for group, _ in pairs(groups) do
-            local group_hl = utils.resolve(
-                require("gruvbox.groups." .. group).get(colors, opts)
-            )
+            local group_hl = utils.resolve(require("gruvbox.groups." .. group).get(colors, opts))
             for key, value in pairs(group_hl) do
                 ret[key] = value
             end
@@ -91,13 +89,7 @@ M.get = function(colors, opts)
         end
     end
 
-    for group, hl in pairs(opts.group_override) do
-        ret[group] = ret[group] or {}
-        if ret[group].link then
-            ret[group].link = nil
-        end
-        ret[group] = vim.tbl_extend("force", ret[group] or {}, hl)
-    end
+    opts.group_override(ret, colors)
 
     return ret
 end

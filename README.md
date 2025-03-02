@@ -93,26 +93,32 @@ The default settings for gruvbox are:
     contrast = nil, --[[@type GruvboxContrast]]
     dim_inactive = false,
     terminal_colors = true,
-    transparent_mode = false,
-    color_override = {}, --[[@type GruvboxColors]]
-    group_override = {}, --[[@type table<string, vim.api.keyset.highlight>]]
+    transparent = false,
+
+    ---@type fun(colors: GruvboxColors)
+    color_override = function(colors) end,
+
+    ---@type fun(highlights: table<string, vim.api.keyset.highlight>, colors: GruvboxColors)
+    group_override = function(highlights, colors) end,
+
     plugins = {
         all = package.loaded.lazy == nil,
         auto = true,
     },
+
     style = { --[[@type table<string, vim.api.keyset.highlight>]]
-        comments      = { italic = true },
-        indent        = {},
-        operators     = {},
-        selection     = {},
-        signs         = {},
-        strings       = {},
-        tabline       = {},
+        comments = { italic = true },
+        indent = {},
+        operators = {},
+        selection = {},
+        signs = {},
+        strings = {},
+        tabline = {},
     },
 }
 ```
 
-**VERY IMPORTANT**: Make sure to call setup() **BEFORE** calling the colorscheme command, to use your custom configs!
+**VERY IMPORTANT**: Make sure to call setup() **BEFORE** calling the colorscheme!
 
 ## Overriding
 
@@ -122,9 +128,10 @@ You can modify and specify your own colors. For example:
 
 ```lua
 require("gruvbox").setup({
-    color_override = {
-        bg0 = "#000000"
-    }
+    color_override = function(colors)
+        colors.bg0 = colors.gray
+        colors.fg1 = "#ffffff"
+    end
 })
 ```
 
@@ -134,21 +141,11 @@ If you don't enjoy the current color for a specific highlight group, now you can
 
 ```lua
 require("gruvbox").setup({
-    group_override = {
-        SignColumn = { bg = "#ff9900" }
-    }
+    group_override = function(highlights, colors)
+        highlights.Normal = { bg = "#000000" }
+        highlights.SignColumn = { fg = colors.orange }
+    end
 })
 ```
 
-It also works with treesitter groups and lsp semantic highlight tokens:
-
-```lua
-require("gruvbox").setup({
-    group_override = {
-        ["@lsp.type.method"] = { bg = "#ff9900" },
-        ["@comment.lua"] = { bg = "#000000" },
-    }
-})
-```
-
-Please notice that the values on the overrides must follow the pattern that can be seen on [`synIDattr`](<https://neovim.io/doc/user/builtin.html#synIDattr()>).
+Please notice that the values of the highlights must follow the fields as seen on [`synIDattr`](<https://neovim.io/doc/user/builtin.html#synIDattr()>).

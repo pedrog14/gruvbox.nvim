@@ -19,9 +19,7 @@ M.get = function(opts, bg)
         colors["bg0"] = palette[bg .. "0_" .. opts.contrast]
     end
 
-    for color, value in pairs(opts.color_override) do
-        colors[color] = value
-    end
+    opts.color_override(colors)
 
     return colors
 end
