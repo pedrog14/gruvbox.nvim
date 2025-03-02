@@ -7,6 +7,28 @@ M.setup = function(opts)
     config.opts = vim.tbl_deep_extend("force", config.default, opts or {})
 end
 
+M.load = function()
+    if vim.g.colors_name then
+        vim.cmd.hi("clear")
+    end
+
+    vim.g.colors_name = "gruvbox"
+    vim.o.termguicolors = true
+
+    local opts = config.opts
+
+    local colors = require("gruvbox.colors").get(opts)
+    local groups = require("gruvbox.groups").get(colors, opts)
+
+    for group, hl in pairs(groups) do
+        vim.api.nvim_set_hl(0, group, hl)
+    end
+
+    if opts.terminal_colors then
+        M.terminal(colors)
+    end
+end
+
 ---@param colors GruvboxColors
 M.terminal = function(colors)
     vim.g.terminal_color_0 = colors.bg0
@@ -32,28 +54,6 @@ M.terminal = function(colors)
 
     vim.g.terminal_color_7 = colors.fg4
     vim.g.terminal_color_15 = colors.fg1
-end
-
-M.load = function()
-    if vim.g.colors_name then
-        vim.cmd.hi("clear")
-    end
-
-    vim.g.colors_name = "gruvbox"
-    vim.o.termguicolors = true
-
-    local opts = config.opts
-
-    local colors = require("gruvbox.colors").get(opts)
-    local groups = require("gruvbox.groups").get(colors, opts)
-
-    for group, hl in pairs(groups) do
-        vim.api.nvim_set_hl(0, group, hl)
-    end
-
-    if opts.terminal_colors then
-        M.terminal(colors)
-    end
 end
 
 return M

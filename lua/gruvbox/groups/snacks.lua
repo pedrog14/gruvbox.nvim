@@ -1,12 +1,11 @@
 local M = {}
 
 ---@type GruvboxHighlightsGet
-M.get = function(colors, opts)
-    local style = opts.style
+M.get = function(colors, _)
     ---@type GruvboxHighlights
     return {
         SnacksDashboardHeader = { fg = colors.blue },
-        SnacksDashboardTitle = { fg = colors.blue, bold = style.bold },
+        SnacksDashboardTitle = { fg = colors.blue, bold = true },
         SnacksDashboardIcon = { link = "SnacksDashboardDesc" },
         SnacksDashboardDesc = { fg = colors.gray },
         SnacksDashboardKey = { fg = colors.blue },

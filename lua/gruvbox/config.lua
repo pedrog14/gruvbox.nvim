@@ -15,27 +15,17 @@ M.default = { --[[@class GruvboxConfig]]
 
     -- stylua: ignore
 
-    style = {
-        bold          = true,
-        italic        = true,
-        reverse       = true,
-        strikethrough = true,
-        undercurl     = true,
-        underline     = true,
-
-        comments      = {}, --[[@type vim.api.keyset.highlight]]
-        indent        = {}, --[[@type vim.api.keyset.highlight]]
-        operators     = {}, --[[@type vim.api.keyset.highlight]]
-        selection     = {}, --[[@type vim.api.keyset.highlight]]
-        signs         = {}, --[[@type vim.api.keyset.highlight]]
-        strings       = {}, --[[@type vim.api.keyset.highlight]]
-        tabline       = {}, --[[@type vim.api.keyset.highlight]]
+    style = { --[[@type table<string, vim.api.keyset.highlight>]]
+        comments      = { italic = true },
+        indent        = {},
+        operators     = {},
+        selection     = {},
+        signs         = {},
+        strings       = {},
+        tabline       = {},
     },
 }
 
-M.default.style.comments = { italic = M.default.style.italic }
-
----@type GruvboxConfig
-M.opts = nil
+M.opts = nil --[[@type GruvboxConfig]]
 
 return M

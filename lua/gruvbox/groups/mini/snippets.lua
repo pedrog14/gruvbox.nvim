@@ -1,24 +1,15 @@
 local M = {}
 
 ---@type GruvboxHighlightsGet
-M.get = function(colors, opts)
-    local style = opts.style
+M.get = function(colors, _)
     ---@type GruvboxHighlights
+    -- stylua: ignore
     return {
-        MiniSnippetsFinal = { sp = colors.green, underline = style.underline },
-        MiniSnippetsCurrent = {
-            sp = colors.yellow,
-            underline = style.underline,
-        },
-        MiniSnippetsVisited = { sp = colors.aqua, underline = style.underline },
-        MiniSnippetsUnvisited = {
-            sp = colors.blue,
-            underline = style.underline,
-        },
-        MiniSnippetsCurrentReplace = {
-            sp = colors.orange,
-            underline = style.underline,
-        },
+        MiniSnippetsFinal          = { sp = colors.green,  underline = true },
+        MiniSnippetsCurrent        = { sp = colors.yellow, underline = true },
+        MiniSnippetsVisited        = { sp = colors.aqua,   underline = true },
+        MiniSnippetsUnvisited      = { sp = colors.blue,   underline = true },
+        MiniSnippetsCurrentReplace = { sp = colors.orange, underline = true },
     }
 end
 

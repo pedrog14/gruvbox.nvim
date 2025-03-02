@@ -21,7 +21,7 @@ local kinds = function(colors)
         Function      = { fg = colors.blue   },
         Interface     = { fg = colors.yellow },
         Key           = { fg = colors.purple },
-        Keyword       = { fg = colors.red    },
+        Keyword       = { fg = colors.orange },
         Method        = { fg = colors.green  },
         Module        = { fg = colors.aqua   },
         Namespace     = { fg = colors.aqua   },
