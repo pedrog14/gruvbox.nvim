@@ -2,7 +2,6 @@ local M = {}
 
 ---@type GruvboxHighlightsGet
 M.get = function(colors, opts)
-    local style = opts.style
     ---@type GruvboxHighlights
     -- stylua: ignore
     return {
@@ -64,10 +63,10 @@ M.get = function(colors, opts)
         StatusLine                  = { fg = colors.fg1, bg = colors.bg2 },
         StatusLineNC                = { fg = colors.fg4, bg = colors.bg1 },
         TabLine                     = { link = "TabLineFill" },
-        TabLineFill                 = { fg = colors.bg4, bg = colors.bg1, style = style.tabline },
-        TabLineSel                  = { fg = colors.green, bg = colors.bg1, style = style.tabline },
+        TabLineFill                 = { fg = colors.bg4, bg = colors.bg1 },
+        TabLineSel                  = { fg = colors.green, bg = colors.bg1 },
         Title                       = { fg = colors.green, bold = true },
-        Visual                      = { bg = colors.bg3, style = style.selection },
+        Visual                      = { bg = colors.bg3, style = "selection" },
         VisualNOS                   = { link = "Visual" },
         WarningMsg                  = { fg = colors.yellow, bold = true },
         Whitespace                  = { fg = colors.bg2 },
@@ -75,9 +74,9 @@ M.get = function(colors, opts)
         WinBar                      = { fg = colors.fg4, bg = colors.bg0 },
         WinBarNC                    = { fg = colors.fg3, bg = colors.bg1 },
 
-        Comment                     = { fg = colors.gray, style = style.comments },
+        Comment                     = { fg = colors.gray, style = "comments" },
         Constant                    = { fg = colors.purple },
-        String                      = { fg = colors.green, style = style.strings },
+        String                      = { fg = colors.green, style = "strings" },
         Character                   = { fg = colors.purple },
         Number                      = { fg = colors.purple },
         Boolean                     = { fg = colors.purple },
@@ -88,7 +87,7 @@ M.get = function(colors, opts)
         Conditional                 = { fg = colors.red },
         Repeat                      = { fg = colors.red },
         Label                       = { fg = colors.red },
-        Operator                    = { fg = colors.orange, style = style.operators },
+        Operator                    = { fg = colors.orange, style = "operators" },
         Keyword                     = { fg = colors.red },
         Exception                   = { fg = colors.red },
         PreProc                     = { fg = colors.aqua },
@@ -129,11 +128,11 @@ M.get = function(colors, opts)
         DiagnosticUnderlineHint     = { sp = colors.aqua, undercurl = true },
         DiagnosticUnderlineOk       = { sp = colors.green, undercurl = true },
 
-        DiagnosticSignError         = { fg = colors.red, style = style.signs },
-        DiagnosticSignWarn          = { fg = colors.yellow, style = style.signs },
-        DiagnosticSignInfo          = { fg = colors.blue, style = style.signs },
-        DiagnosticSignHint          = { fg = colors.aqua, style = style.signs },
-        DiagnosticSignOk            = { fg = colors.green, style = style.signs },
+        DiagnosticSignError         = { fg = colors.red, style = "signs" },
+        DiagnosticSignWarn          = { fg = colors.yellow, style = "signs" },
+        DiagnosticSignInfo          = { fg = colors.blue, style = "signs" },
+        DiagnosticSignHint          = { fg = colors.aqua, style = "signs" },
+        DiagnosticSignOk            = { fg = colors.green, style = "signs" },
 
         DiagnosticDeprecated        = { fg = colors.yellow, strikethrough = true },
         DiagnosticUnnecessary       = { link = "Comment" },

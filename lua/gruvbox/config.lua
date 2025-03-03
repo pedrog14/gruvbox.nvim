@@ -7,10 +7,11 @@ M.default = { --[[@class GruvboxConfig]]
     terminal_colors = true,
     transparent = false,
 
-    ---@type fun(colors: GruvboxColors)
+    ---@param colors GruvboxColors
     color_override = function(colors) end,
 
-    ---@type fun(highlights: table<string, vim.api.keyset.highlight>, colors: GruvboxColors)
+    ---@param highlights table<string, vim.api.keyset.highlight>
+    ---@param colors GruvboxColors
     group_override = function(highlights, colors) end,
 
     plugins = {
@@ -25,7 +26,6 @@ M.default = { --[[@class GruvboxConfig]]
         selection = {},
         signs = {},
         strings = {},
-        tabline = {},
     },
 }
 

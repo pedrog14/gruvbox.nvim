@@ -11,7 +11,7 @@
 ---@alias GruvboxContrast "hard" | "soft"
 
 ---@class GruvboxHighlight: vim.api.keyset.highlight
----@field style? vim.api.keyset.highlight
+---@field style? string
 
 ---@alias GruvboxHighlights table<string, GruvboxHighlight>
 

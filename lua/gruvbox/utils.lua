@@ -3,9 +3,11 @@ local M = {}
 ---@param groups GruvboxHighlights
 ---@return table<string, vim.api.keyset.highlight>
 M.resolve = function(groups)
+    local opts = require("gruvbox.config").opts
     for _, hl in pairs(groups) do
-        if type(hl.style) == "table" then
-            for k, v in pairs(hl.style) do
+        if type(hl.style) == "string" then
+            local style = opts.style[hl.style]
+            for k, v in pairs(style) do
                 hl[k] = v
             end
             hl.style = nil
