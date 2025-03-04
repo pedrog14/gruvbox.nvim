@@ -148,4 +148,4 @@ require("gruvbox").setup({
 })
 ```
 
-Please notice that the values of the highlights must follow the fields as seen on [`synIDattr`](<https://neovim.io/doc/user/builtin.html#synIDattr()>).
+Please notice that the values of the highlights must follow the fields as seen on [here](<https://neovim.io/doc/user/api.html#nvim_set_hl()>), in the `{val}` parameter section.
