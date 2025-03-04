@@ -57,22 +57,24 @@ M.get = function(colors, _)
         ["@keyword"]                     = { link = "Keyword" },
         ["@keyword.coroutine"]           = { link = "Keyword" },
         ["@keyword.function"]            = { link = "Keyword" },
-        ["@keyword.operator"]            = { link = "Keyword" },
-        ["@keyword.return"]              = { link = "Keyword" },
-        ["@keyword.type"]                = { link = "Keyword" },
         ["@keyword.modifier"]            = { link = "Keyword" },
+        ["@keyword.return"]              = { link = "Keyword" },
 
-        ["@keyword.exception"]           = { link = "Exception" },
-        ["@keyword.repeat"]              = { link = "Repeat" },
         ["@keyword.debug"]               = { link = "Debug" },
+        ["@keyword.exception"]           = { link = "Exception" },
+        ["@keyword.import"]              = { link = "Include" },
+        ["@keyword.operator"]            = { link = "Operator" },
+        ["@keyword.repeat"]              = { link = "Repeat" },
+        ["@keyword.type"]                = { link = "Type" },
+
         ["@keyword.conditional"]         = { link = "Conditional" },
         ["@keyword.conditional.ternary"] = { link = "Operator" },
-        ["@keyword.import"]              = { link = "Include" },
+
         ["@keyword.directive"]           = { link = "PreProc" },
         ["@keyword.directive.define"]    = { link = "Define" },
 
-        ["@punctuation.delimiter"]       = { link = "Delimiter" },
         ["@punctuation.bracket"]         = { link = "Delimiter" },
+        ["@punctuation.delimiter"]       = { link = "Delimiter" },
         ["@punctuation.special"]         = { link = "Special" },
 
         ["@comment"]                     = { link = "Comment" },

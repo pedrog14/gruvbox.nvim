@@ -6,12 +6,12 @@ local kinds = function(colors)
     ---@type GruvboxHighlights
     -- stylua: ignore
     return {
-        Array         = { fg = colors.orange },
+        Array         = { fg = colors.yellow },
         Boolean       = { fg = colors.purple },
         Class         = { fg = colors.yellow },
         Color         = { fg = colors.purple },
         Constant      = { fg = colors.purple },
-        Constructor   = { fg = colors.orange },
+        Constructor   = { fg = colors.green  },
         Enum          = { fg = colors.yellow },
         EnumMember    = { fg = colors.purple },
         Event         = { fg = colors.yellow },
