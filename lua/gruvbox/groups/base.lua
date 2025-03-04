@@ -150,7 +150,7 @@ M.get = function(colors, opts)
         LspReferenceText            = { bg = colors.bg2 },
         LspReferenceWrite           = { bg = colors.bg2 },
         LspReferenceRead            = { bg = colors.bg2 },
-        LspInlayHint                = { fg = colors.gray },
+        LspInlayHint                = { fg = colors.gray, bg = colors.bg1 },
 
         LspCodeLens                 = { fg = colors.gray },
         LspCodeLensSeparator        = { fg = colors.bg3 },
