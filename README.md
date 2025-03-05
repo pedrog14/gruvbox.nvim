@@ -113,7 +113,6 @@ The default settings for gruvbox are:
         selection = {},
         signs = {},
         strings = {},
-        tabline = {},
     },
 }
 ```
