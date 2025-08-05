@@ -1,4 +1,4 @@
----@type { default: { dark: GruvboxDark, light: GruvboxLight }, get: GruvboxColorsGet, dark: GruvboxDark, light: GruvboxLight }
+---@type { default: { dark: GruvboxDark, light: GruvboxLight }, get: GruvboxColorsGet, dark: GruvboxDark, light: GruvboxLight, palette: GruvboxPalette }
 local M = {}
 
 M.default = setmetatable({}, {
