@@ -3,15 +3,16 @@ local M = {}
 -- stylua: ignore
 
 M.plugins = {
-    ["blink.cmp"]       = "blink",
-    ["bufferline.nvim"] = "bufferline",
-    ["gitsigns.nvim"]   = "gitsigns",
-    ["lazy.nvim"]       = "lazy",
-    ["mini.icons"]      = "mini.icons",
-    ["mini.snippets"]   = "mini.snippets",
-    ["mason.nvim"]      = "mason",
-    ["noice.nvim"]      = "noice",
-    ["snacks.nvim"]     = "snacks",
+    ["blink.cmp"]             = "blink",
+    ["bufferline.nvim"]       = "bufferline",
+    ["gitsigns.nvim"]         = "gitsigns",
+    ["indent-blankline.nvim"] = "ibl",
+    ["lazy.nvim"]             = "lazy",
+    ["mini.icons"]            = "mini.icons",
+    ["mini.snippets"]         = "mini.snippets",
+    ["mason.nvim"]            = "mason",
+    ["noice.nvim"]            = "noice",
+    ["snacks.nvim"]           = "snacks",
 }
 
 ---@type fun(colors: GruvboxColors, opts: GruvboxConfig): table<string, vim.api.keyset.highlight>
