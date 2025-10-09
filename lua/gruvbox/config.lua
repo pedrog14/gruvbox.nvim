@@ -1,8 +1,8 @@
 local M = {}
 
-M.default = { --[[@class GruvboxConfig]]
+M.default = { ---@class GruvboxConfig
     cache = true,
-    contrast = nil, --[[@type GruvboxContrast]]
+    contrast = nil, ---@type GruvboxContrast
     dim_inactive = false,
     terminal_colors = true,
     transparent = false,
@@ -19,7 +19,7 @@ M.default = { --[[@class GruvboxConfig]]
         auto = true,
     },
 
-    style = { --[[@type table<string, vim.api.keyset.highlight>]]
+    style = { ---@type table<string, vim.api.keyset.highlight>
         comments = { italic = true },
         indent = {},
         operators = {},
@@ -29,6 +29,6 @@ M.default = { --[[@class GruvboxConfig]]
     },
 }
 
-M.opts = nil --[[@type GruvboxConfig]]
+M.opts = nil ---@type GruvboxConfig
 
 return M

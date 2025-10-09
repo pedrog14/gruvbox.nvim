@@ -10,10 +10,11 @@ M.default = setmetatable({}, {
 })
 
 M.get = function(opts, bg)
+    opts = opts or {}
     bg = bg or vim.o.background
 
     local palette = require("gruvbox.colors.palette")
-    local colors = require("gruvbox.colors." .. bg) --[[@type GruvboxColors]]
+    local colors = require("gruvbox.colors." .. bg) ---@type GruvboxColors
 
     if opts.contrast then
         colors["bg0"] = palette[bg .. "0_" .. opts.contrast]
@@ -27,7 +28,7 @@ end
 return setmetatable(M, {
     __index = function(_, k)
         if k == "dark" or k == "light" then
-            local opts = require("gruvbox.config").opts
+            local opts = require("gruvbox.config").opts or {}
             return M.get(opts, k)
         end
         if k == "palette" then
