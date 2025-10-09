@@ -15,7 +15,7 @@ M.load = function()
     vim.g.colors_name = "gruvbox"
     vim.o.termguicolors = true
 
-    local opts = config.opts
+    local opts = config.opts or {}
 
     local colors = require("gruvbox.colors").get(opts)
     local groups = require("gruvbox.groups").get(colors, opts)
