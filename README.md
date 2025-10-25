@@ -90,15 +90,16 @@ The default settings for gruvbox are:
 ```lua
 {
     cache = true,
-    contrast = nil, --[[@type GruvboxContrast]]
+    contrast = nil, ---@type GruvboxContrast
     dim_inactive = false,
     terminal_colors = true,
     transparent = false,
 
-    ---@type fun(colors: GruvboxColors)
+    ---@param colors GruvboxColors
     color_override = function(colors) end,
 
-    ---@type fun(highlights: table<string, vim.api.keyset.highlight>, colors: GruvboxColors)
+    ---@param highlights table<string, vim.api.keyset.highlight>
+    ---@param colors GruvboxColors
     group_override = function(highlights, colors) end,
 
     plugins = {
@@ -106,7 +107,7 @@ The default settings for gruvbox are:
         auto = true,
     },
 
-    style = { --[[@type table<string, vim.api.keyset.highlight>]]
+    style = { ---@type table<string, vim.api.keyset.highlight>
         comments = { italic = true },
         indent = {},
         operators = {},
@@ -115,6 +116,7 @@ The default settings for gruvbox are:
         strings = {},
     },
 }
+
 ```
 
 **VERY IMPORTANT**: Make sure to call setup() **BEFORE** calling the colorscheme!
@@ -147,4 +149,4 @@ require("gruvbox").setup({
 })
 ```
 
-Please notice that the values of the highlights must follow the fields as seen on [here](<https://neovim.io/doc/user/api.html#nvim_set_hl()>), in the `{val}` parameter section.
+Please notice that the highlight table must be defined as seen on `:h nvim_set_hl()`, in the `{val}` parameter section.

@@ -6,8 +6,6 @@
 
 ---@alias GruvboxColors GruvboxDark | GruvboxLight
 
----@alias GruvboxColorsGet fun(opts: GruvboxConfig, bg?: Background): GruvboxColors
-
 ---@alias GruvboxContrast "hard" | "soft"
 
 ---@class GruvboxHighlight: vim.api.keyset.highlight

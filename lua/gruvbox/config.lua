@@ -1,6 +1,7 @@
 local M = {}
 
-M.default = { ---@class GruvboxConfig
+---@class GruvboxConfig
+M.default = {
     cache = true,
     contrast = nil, ---@type GruvboxContrast
     dim_inactive = false,
