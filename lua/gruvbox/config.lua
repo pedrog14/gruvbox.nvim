@@ -1,6 +1,8 @@
 local M = {}
 
 ---@class GruvboxConfig
+---@field color_override fun(colors: GruvboxColors)
+---@field group_override fun(highlights: table<string, vim.api.keyset.highlight>, colors: GruvboxColors)
 M.default = {
     cache = true,
     contrast = nil, ---@type GruvboxContrast
@@ -8,11 +10,7 @@ M.default = {
     terminal_colors = true,
     transparent = false,
 
-    ---@param colors GruvboxColors
     color_override = function(colors) end,
-
-    ---@param highlights table<string, vim.api.keyset.highlight>
-    ---@param colors GruvboxColors
     group_override = function(highlights, colors) end,
 
     plugins = {
