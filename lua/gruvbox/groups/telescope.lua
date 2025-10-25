@@ -5,8 +5,8 @@ M.get = function(colors, opts)
     ---@type GruvboxHighlights
     return {
         TelescopeNormal = { link = "NormalFloat" },
-        TelescopeTitle = { fg = colors.blue, bold = true },
-        TelescopeBorder = { fg = colors.bg3 },
+        TelescopeTitle = { link = "FloatTitle" },
+        TelescopeBorder = { link = "FloatBorder" },
     }
 end
 
