@@ -13,6 +13,7 @@ M.plugins = {
     ["mason.nvim"]            = "mason",
     ["noice.nvim"]            = "noice",
     ["snacks.nvim"]           = "snacks",
+    ["telescope.nvim"]        = "telescope",
 }
 
 ---@type fun(colors: GruvboxColors, opts: GruvboxConfig): table<string, vim.api.keyset.highlight>
