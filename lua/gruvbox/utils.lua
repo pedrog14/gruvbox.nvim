@@ -1,9 +1,9 @@
 local M = {}
 
 ---@param groups GruvboxHighlights
+---@param opts GruvboxConfig
 ---@return table<string, vim.api.keyset.highlight>
-M.resolve = function(groups)
-    local opts = require("gruvbox.config").opts
+M.resolve = function(groups, opts)
     for _, hl in pairs(groups) do
         if type(hl.style) == "string" then
             local style = opts.style[hl.style]

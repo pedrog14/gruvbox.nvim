@@ -80,7 +80,7 @@ M.get = function(colors, opts)
     if not ret then
         ret = {}
         for group, _ in pairs(groups) do
-            local group_hl = utils.resolve(require("gruvbox.groups." .. group).get(colors, opts))
+            local group_hl = utils.resolve(require("gruvbox.groups." .. group).get(colors, opts), opts)
             for key, value in pairs(group_hl) do
                 ret[key] = value
             end
