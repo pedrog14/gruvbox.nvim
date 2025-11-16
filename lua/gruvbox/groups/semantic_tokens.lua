@@ -2,8 +2,8 @@ local M = {}
 
 ---@type GruvboxHighlightsGet
 M.get = function(_, _)
-    ---@type GruvboxHighlights
     -- stylua: ignore
+    ---@type GruvboxHighlights
     return {
         ["@lsp.type.class"]         = { link = "@type" },
         ["@lsp.type.comment"]       = { link = "@comment" },

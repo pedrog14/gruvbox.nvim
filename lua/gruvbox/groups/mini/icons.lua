@@ -2,8 +2,8 @@ local M = {}
 
 ---@type GruvboxHighlightsGet
 M.get = function(colors, _)
-    ---@type GruvboxHighlights
     -- stylua: ignore
+    ---@type GruvboxHighlights
     return {
         MiniIconsPurple = { fg = colors.purple },
         MiniIconsBlue   = { fg = colors.blue   },

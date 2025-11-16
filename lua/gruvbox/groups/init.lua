@@ -36,7 +36,6 @@ M.get = function(colors, opts)
                 groups[group] = true
             end
         end
-
         if plugins["mini.nvim"] then
             for _, group in pairs(M.plugins) do
                 if group:find("^mini.") then
@@ -62,7 +61,7 @@ M.get = function(colors, opts)
     local names = vim.tbl_keys(groups)
     table.sort(names)
 
-    local cache_key = vim.o.background
+    local cache_key = vim.api.nvim_get_option_value("background", {})
     local cache = opts.cache and utils.cache.read(cache_key)
 
     local inputs = {
@@ -91,7 +90,9 @@ M.get = function(colors, opts)
         end
     end
 
-    opts.group_override(ret, colors)
+    if opts.group_override then
+        opts.group_override(ret, colors)
+    end
 
     return ret
 end

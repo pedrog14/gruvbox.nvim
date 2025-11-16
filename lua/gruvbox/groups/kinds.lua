@@ -3,8 +3,8 @@ local M = {}
 ---@param colors GruvboxColors
 ---@return GruvboxHighlights
 local kinds = function(colors)
-    ---@type GruvboxHighlights
     -- stylua: ignore
+    ---@type GruvboxHighlights
     return {
         Array         = { fg = colors.yellow },
         Boolean       = { fg = colors.purple },

@@ -17,7 +17,7 @@ M.default = setmetatable({}, {
 ---@param bg? Background
 ---@return GruvboxColors
 M.get = function(opts, bg)
-    bg = bg or vim.o.background
+    bg = bg or vim.api.nvim_get_option_value("background", {})
 
     local palette = require("gruvbox.colors.palette")
     local colors = require("gruvbox.colors." .. bg) ---@type GruvboxColors
@@ -26,7 +26,9 @@ M.get = function(opts, bg)
         colors["bg0"] = palette[bg .. "0_" .. opts.contrast]
     end
 
-    opts.color_override(colors)
+    if opts.color_override then
+        opts.color_override(colors)
+    end
 
     return colors
 end

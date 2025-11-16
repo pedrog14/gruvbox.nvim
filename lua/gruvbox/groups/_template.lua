@@ -2,8 +2,8 @@ local M = {}
 
 ---@type GruvboxHighlightsGet
 M.get = function(colors, opts)
-    ---@type GruvboxHighlights
     -- stylua: ignore
+    ---@type GruvboxHighlights
     return { --[[ INSERT HIGHLIGHT GROUPS HERE ]] }
 end
 

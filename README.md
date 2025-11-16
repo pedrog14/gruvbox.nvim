@@ -90,17 +90,16 @@ The default settings for gruvbox are:
 ```lua
 {
     cache = true,
-    contrast = nil, ---@type GruvboxContrast
+    contrast = nil, ---@type Contrast
     dim_inactive = false,
     terminal_colors = true,
     transparent = false,
 
-    ---@param colors GruvboxColors
-    color_override = function(colors) end,
+    ---@type fun(colors: GruvboxColors)
+    color_override = nil,
 
-    ---@param highlights table<string, vim.api.keyset.highlight>
-    ---@param colors GruvboxColors
-    group_override = function(highlights, colors) end,
+    ---@type fun(highlights: table<string, vim.api.keyset.highlight>, colors: GruvboxColors)
+    group_override = nil,
 
     plugins = {
         all = package.loaded.lazy == nil,
@@ -119,7 +118,7 @@ The default settings for gruvbox are:
 
 ```
 
-**VERY IMPORTANT**: Make sure to call setup() **BEFORE** calling the colorscheme!
+You can modify your settings by calling the `require("gruvbox").setup` lua function before setting your colorscheme to gruvbox, with the proper argument table.
 
 ## Overriding
 

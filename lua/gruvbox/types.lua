@@ -1,12 +1,12 @@
----@alias Background "dark" | "light"
+---@alias Background "light"|"dark"
+---
+---@alias Contrast "soft"|"hard"
 
 ---@class GruvboxCache
 ---@field inputs GruvboxInputs
 ---@field groups table<string, vim.api.keyset.highlight>
 
----@alias GruvboxColors GruvboxDark | GruvboxLight
-
----@alias GruvboxContrast "hard" | "soft"
+---@alias GruvboxColors GruvboxLight|GruvboxDark
 
 ---@class GruvboxHighlight: vim.api.keyset.highlight
 ---@field style? string
@@ -16,7 +16,7 @@
 ---@alias GruvboxHighlightsGet fun(colors: GruvboxColors, opts: GruvboxConfig): GruvboxHighlights
 
 ---@class GruvboxInputs
+---@field opts? GruvboxConfig
 ---@field colors GruvboxColors
----@field opts GruvboxConfig?
 ---@field plugins table<string, string>
----@field style table<string, vim.api.keyset.highlight> | vim.api.keyset.highlight
+---@field style vim.api.keyset.highlight|table<string, vim.api.keyset.highlight>
