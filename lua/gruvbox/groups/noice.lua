@@ -1,7 +1,7 @@
 local M = {}
 
 ---@type GruvboxHighlightsGet
-M.get = function(colors, _)
+M.get = function(colors)
     -- stylua: ignore
     ---@type GruvboxHighlights
     local ret = {
@@ -20,6 +20,13 @@ M.get = function(colors, _)
         NoiceCmdlinePopupBorder          = { fg = colors.bg3 },
 
         NoiceConfirmBorder               = { link = "NoiceCmdlinePopupBorder" },
+
+        NoiceFormatProgressTodo          = { bg = colors.bg1, fg = colors.fg1 },
+        NoiceFormatProgressDone          = { bg = colors.yellow, fg = colors.bg0 },
+
+        NoiceLspProgressTitle            = { link = "Comment" },
+        NoiceLspProgressClient           = { fg = colors.green, bold = true },
+        NoiceLspProgressSpinner          = { fg = colors.purple },
     }
     return require("gruvbox.groups.kinds").kinds(colors, ret, "NoiceCompletionItemKind%s")
 end
