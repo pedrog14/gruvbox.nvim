@@ -71,8 +71,8 @@ M.get = function(colors, opts)
         WarningMsg                  = { fg = colors.yellow, bold = true },
         Whitespace                  = { fg = colors.bg2 },
         WildMenu                    = { fg = colors.blue, bg = colors.bg2, bold = true },
-        WinBar                      = { fg = colors.fg4, bg = colors.bg0 },
-        WinBarNC                    = { fg = colors.fg3, bg = colors.bg1 },
+        WinBar                      = { fg = colors.fg1 },
+        WinBarNC                    = { fg = colors.fg4 },
 
         Comment                     = { fg = colors.gray, style = "comments" },
 
