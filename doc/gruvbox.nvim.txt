@@ -54,14 +54,16 @@ BUILT-IN PLUGIN MANAGER (VIM.PACK): ~
 ==============================================================================
 4. Basic Usage                                      *gruvbox.nvim-basic-usage*
 
-Inside your lua config:
+
+INSIDE YOUR LUA CONFIG: ~
 
 >lua
     vim.opt.background = "dark" -- or "light" for light mode
     vim.cmd.colorscheme("gruvbox")
 <
 
-Inside `init.vim`:
+
+INSIDE INIT.VIM: ~
 
 >vim
     set background=dark " or 'light' for light mode
