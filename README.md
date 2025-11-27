@@ -48,24 +48,23 @@ A complete overhaul of the [gruvbox original theme](https://github.com/morhetz/g
 - Neovim >= 0.9.0
 - Git (Any recent version may work)
 
-# Installing
+# Installation
 
-## Using `lazy.nvim`
+### [`lazy.nvim`](https://github.com/folke/lazy.nvim):
 
 ```lua
-{ "pedrog14/gruvbox.nvim", lazy = false, priority = 1000, opts = {...} }
+{ "pedrog14/gruvbox.nvim", lazy = false, priority = 1000 }
 ```
 
-## Using `vim-plug`
+### [`vim-plug`](https://github.com/junegunn/vim-plug):
 
 ```vim
 Plug 'pedrog14/gruvbox.nvim'
 ```
 
-## Using `packer`
-
+### Built-in plugin manager ([`vim.pack`](https://neovim.io/doc/user/pack.html#vim.pack)):
 ```lua
-use { "pedrog14/gruvbox.nvim" }
+vim.pack.add({ src = "https://github.com/pedrog14/gruvbox.nvim" })
 ```
 
 # Basic Usage
@@ -116,10 +115,9 @@ The default settings for gruvbox are:
         strings = {},
     },
 }
-
 ```
 
-You can modify your settings by calling the `require("gruvbox").setup` lua function before setting your colorscheme to gruvbox, with the proper argument table.
+You can modify your settings by calling the `require("gruvbox").setup` lua function before setting your colorscheme to gruvbox, with the proper argument table as presented above.
 
 ## Overriding
 
