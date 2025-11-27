@@ -69,14 +69,14 @@ vim.pack.add({ src = "https://github.com/pedrog14/gruvbox.nvim" })
 
 # Basic Usage
 
-Inside your lua config:
+### Inside your lua config:
 
 ```lua
 vim.opt.background = "dark" -- or "light" for light mode
 vim.cmd.colorscheme("gruvbox")
 ```
 
-Inside `init.vim`:
+### Inside `init.vim`:
 
 ```vim
 set background=dark " or 'light' for light mode
