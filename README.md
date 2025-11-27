@@ -63,6 +63,7 @@ Plug 'pedrog14/gruvbox.nvim'
 ```
 
 ### Built-in plugin manager ([`vim.pack`](https://neovim.io/doc/user/pack.html#vim.pack)):
+
 ```lua
 vim.pack.add({ { src = "https://github.com/pedrog14/gruvbox.nvim" } })
 ```
@@ -147,4 +148,4 @@ require("gruvbox").setup({
 })
 ```
 
-Please notice that the highlight table must be defined as seen on [`:h nvim_set_hl()`](https://neovim.io/doc/user/api.html#nvim_set_hl()), in the `{val}` parameter section.
+Please notice that the highlight table must be defined as seen on `:h nvim_set_hl()`, in the `{val}` parameter section.
