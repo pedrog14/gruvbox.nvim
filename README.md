@@ -64,7 +64,7 @@ Plug 'pedrog14/gruvbox.nvim'
 
 ### Built-in plugin manager ([`vim.pack`](https://neovim.io/doc/user/pack.html#vim.pack)):
 ```lua
-vim.pack.add({ src = "https://github.com/pedrog14/gruvbox.nvim" })
+vim.pack.add({ { src = "https://github.com/pedrog14/gruvbox.nvim" } })
 ```
 
 # Basic Usage
