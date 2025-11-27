@@ -13,13 +13,13 @@ A complete overhaul of the [gruvbox original theme](https://github.com/morhetz/g
     </tr>
     <tr>
         <th width="33%">
-            <img src="https://github.com/user-attachments/assets/d9e6d8a3-eec9-4e12-82d1-961ede6fc237"/>
+            <img width="800" height="600" alt="dark-hard" src="https://github.com/user-attachments/assets/a78fdebb-7d45-4b32-ba31-e7fee22e937b" />
         </th>
         <th width="33%">
-            <img src="https://github.com/user-attachments/assets/4f68383d-9bd8-4198-89ca-a7a78bc4cca6"/>
+            <img width="800" height="600" alt="dark-medium" src="https://github.com/user-attachments/assets/debcb3bd-1de0-4cce-9ed0-20b417af2d5b" />
         </th>
         <th width="33%">
-            <img src="https://github.com/user-attachments/assets/3e2ad5ac-66d0-4cfa-a026-696e6ac7325d"/>
+            <img width="800" height="600" alt="dark-soft" src="https://github.com/user-attachments/assets/80cc891c-7203-4298-af56-86b10c77d108" />
         </th>
     </tr>
     <tr>
@@ -32,13 +32,13 @@ A complete overhaul of the [gruvbox original theme](https://github.com/morhetz/g
     </tr>
     <tr>
         <th width="33%">
-            <img src="https://github.com/user-attachments/assets/d67802c2-326b-4b23-9aa0-72cd07cae5f7"/>
+            <img width="800" height="600" alt="light-hard" src="https://github.com/user-attachments/assets/b8187d58-ef44-46d5-bda6-f2eb000aa83b" />
         </th>
         <th width="33%">
-            <img src="https://github.com/user-attachments/assets/cc152b1f-fea0-4d9a-bd72-ff20671df1ae"/>
+            <img width="800" height="600" alt="light-medium" src="https://github.com/user-attachments/assets/ad292c2b-0fdf-4dea-8927-4db8e7dd949d" />
         </th>
         <th width="33%">
-            <img src="https://github.com/user-attachments/assets/e9d9e7f9-d99c-4217-aae8-c6a5f9512051"/>
+            <img width="800" height="600" alt="light-soft" src="https://github.com/user-attachments/assets/2c1026cd-01d4-4eb7-959e-a8752fac1a8c" />
         </th>
     </tr>
 </table>
