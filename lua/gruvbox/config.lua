@@ -4,6 +4,7 @@ local M = {}
 ---@field contrast Contrast?
 ---@field color_override fun(colors: GruvboxColors)?
 ---@field group_override fun(hl: GruvboxHighlightsResolved, colors: GruvboxColors)?
+---@field style table<Style, vim.api.keyset.highlight>?
 M.default = {
     cache = true,
     dim_inactive = false,
@@ -15,7 +16,7 @@ M.default = {
         auto = true,
     },
 
-    style = { ---@type table<Style, vim.api.keyset.highlight>
+    style = {
         comment = { italic = true },
         operator = {},
         selection = {},
