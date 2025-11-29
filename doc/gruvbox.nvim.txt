@@ -1,4 +1,4 @@
-*gruvbox.nvim.txt*      For Neovim >= 0.9.0      Last change: 2025 November 27
+*gruvbox.nvim.txt*      For Neovim >= 0.9.0      Last change: 2025 November 29
 
 ==============================================================================
 Table of Contents                             *gruvbox.nvim-table-of-contents*
@@ -58,7 +58,7 @@ BUILT-IN PLUGIN MANAGER (VIM.PACK): ~
 INSIDE YOUR LUA CONFIG: ~
 
 >lua
-    vim.opt.background = "dark" -- or "light" for light mode
+    vim.o.background = "dark" -- or "light" for light mode
     vim.cmd.colorscheme("gruvbox")
 <
 
@@ -95,13 +95,12 @@ The default settings for gruvbox are:
             auto = true,
         },
     
-        style = { ---@type table<string, vim.api.keyset.highlight>
-            comments = { italic = true },
-            indent = {},
-            operators = {},
+        style = { ---@type table<Style, vim.api.keyset.highlight>
+            comment = { italic = true },
+            operator = {},
             selection = {},
-            signs = {},
-            strings = {},
+            sign = {},
+            string = {},
         },
     }
 <
