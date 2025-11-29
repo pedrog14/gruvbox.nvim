@@ -1,6 +1,6 @@
 ---@alias Background "dark"|"light"
-
 ---@alias Contrast "hard"|"soft"
+---@alias Style "comment"|"operator"|"selection"|"sign"|"string"
 
 ---@class GruvboxCache
 ---@field inputs GruvboxInputs
@@ -9,7 +9,7 @@
 ---@alias GruvboxColors GruvboxLight|GruvboxDark
 
 ---@class GruvboxHighlight: vim.api.keyset.highlight
----@field style string?
+---@field style Style?
 
 ---@alias GruvboxHighlights table<string, GruvboxHighlight>
 ---@alias GruvboxHighlightsResolved table<string, vim.api.keyset.highlight>

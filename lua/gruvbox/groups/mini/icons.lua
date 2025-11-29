@@ -2,18 +2,19 @@ local M = {}
 
 ---@type GruvboxHighlightsGet
 M.get = function(colors)
-    -- stylua: ignore
     ---@type GruvboxHighlights
+    -- stylua: ignore
     return {
-        MiniIconsPurple = { fg = colors.purple },
-        MiniIconsBlue   = { fg = colors.blue   },
-        MiniIconsAzure  = { fg = colors.blue   },
-        MiniIconsCyan   = { fg = colors.aqua   },
-        MiniIconsGreen  = { fg = colors.green  },
-        MiniIconsYellow = { fg = colors.yellow },
-        MiniIconsOrange = { fg = colors.orange },
+        MiniIconsGrey   = { fg = colors.gray },
+
         MiniIconsRed    = { fg = colors.red    },
-        MiniIconsGrey   = { fg = colors.gray   },
+        MiniIconsOrange = { fg = colors.orange },
+        MiniIconsYellow = { fg = colors.yellow },
+        MiniIconsGreen  = { fg = colors.green  },
+        MiniIconsCyan   = { fg = colors.aqua   },
+        MiniIconsAzure  = { fg = colors.blue   },
+        MiniIconsBlue   = { fg = colors.blue   },
+        MiniIconsPurple = { fg = colors.purple },
     }
 end
 

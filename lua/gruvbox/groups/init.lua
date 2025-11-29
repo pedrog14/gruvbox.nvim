@@ -1,20 +1,21 @@
 local M = {}
 
----@type string[]
 -- stylua: ignore
 M.plugins = {
-    ["blink.cmp"]             = "blink.cmp",
-    ["blink.indent"]          = "blink.indent",
     ["bufferline.nvim"]       = "bufferline",
     ["gitsigns.nvim"]         = "gitsigns",
     ["indent-blankline.nvim"] = "ibl",
     ["lazy.nvim"]             = "lazy",
-    ["mini.icons"]            = "mini.icons",
-    ["mini.snippets"]         = "mini.snippets",
     ["mason.nvim"]            = "mason",
     ["noice.nvim"]            = "noice",
     ["snacks.nvim"]           = "snacks",
     ["telescope.nvim"]        = "telescope",
+
+    ["blink.cmp"]             = "blink.cmp",
+    ["blink.indent"]          = "blink.indent",
+
+    ["mini.icons"]            = "mini.icons",
+    ["mini.snippets"]         = "mini.snippets",
 }
 
 ---@param colors GruvboxColors
@@ -36,11 +37,13 @@ M.get = function(colors, opts)
         end
     elseif opts.plugins.auto and package.loaded.lazy then
         local lazy = require("lazy.core.config").plugins
+
         for plugin, group in pairs(M.plugins) do
             if lazy[plugin] then
                 groups[group] = true
             end
         end
+
         if lazy["blink.nvim"] then
             for _, group in pairs(M.plugins) do
                 if group:find("^blink%.") then
@@ -48,6 +51,7 @@ M.get = function(colors, opts)
                 end
             end
         end
+
         if lazy["mini.nvim"] then
             for _, group in pairs(M.plugins) do
                 if group:find("^mini%.") then

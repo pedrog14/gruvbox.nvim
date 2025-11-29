@@ -2,8 +2,8 @@ local M = {}
 
 ---@type GruvboxHighlightsGet
 M.get = function(colors)
-    -- stylua: ignore
     ---@type GruvboxHighlights
+    -- stylua: ignore
     local ret = {
         NoiceCmdlineIcon                 = { fg = colors.red },
         NoiceCmdlineIconLua              = { fg = colors.blue },

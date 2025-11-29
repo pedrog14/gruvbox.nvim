@@ -15,13 +15,12 @@ M.default = {
         auto = true,
     },
 
-    style = { ---@type table<string, vim.api.keyset.highlight>
-        comments = { italic = true },
-        indent = {},
-        operators = {},
+    style = { ---@type table<Style, vim.api.keyset.highlight>
+        comment = { italic = true },
+        operator = {},
         selection = {},
-        signs = {},
-        strings = {},
+        sign = {},
+        string = {},
     },
 }
 

@@ -2,8 +2,8 @@ local M = {}
 
 ---@type GruvboxHighlightsGet
 M.get = function(colors)
-    -- stylua: ignore
     ---@type GruvboxHighlights
+    -- stylua: ignore
     return {
         MasonMuted                       = { fg = colors.gray },
         MasonMutedBlock                  = { fg = colors.bg0, bg = colors.gray },

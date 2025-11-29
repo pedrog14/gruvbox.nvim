@@ -21,12 +21,12 @@ M.get = function(colors)
 
         ["@string"]                      = { link = "String" },
         ["@string.documentation"]        = { link = "String" },
-        ["@string.regexp"]               = { link = "Special" },
-        ["@string.escape"]               = { link = "Special" },
-        ["@string.special"]              = { link = "Special" },
-        ["@string.special.symbol"]       = { link = "Identifier" },
-        ["@string.special.path"]         = { link = "Underlined" },
-        ["@string.special.url"]          = { fg = colors.blue, underline = true },
+        ["@string.regexp"]               = { link = "Special", style = "string" },
+        ["@string.escape"]               = { link = "Special", style = "string" },
+        ["@string.special"]              = { link = "Special", style = "string" },
+        ["@string.special.symbol"]       = { link = "Identifier", style = "string" },
+        ["@string.special.path"]         = { link = "Underlined", style = "string" },
+        ["@string.special.url"]          = { fg = colors.blue, underline = true, style = "string" },
 
         ["@character"]                   = { link = "Character" },
         ["@character.special"]           = { link = "SpecialChar" },
@@ -79,10 +79,10 @@ M.get = function(colors)
         ["@comment"]                     = { link = "Comment" },
         ["@comment.documentation"]       = { link = "Comment" },
 
-        ["@comment.error"]               = { fg = colors.red, bold = true },
-        ["@comment.warning"]             = { fg = colors.yellow, bold = true },
-        ["@comment.todo"]                = { fg = colors.aqua, bold = true },
-        ["@comment.note"]                = { fg = colors.blue, bold = true },
+        ["@comment.error"]               = { fg = colors.red, bold = true, style = "comment" },
+        ["@comment.warning"]             = { fg = colors.yellow, bold = true, style = "comment" },
+        ["@comment.todo"]                = { fg = colors.aqua, bold = true, style = "comment" },
+        ["@comment.note"]                = { fg = colors.blue, bold = true, style = "comment" },
 
         ["@markup.strong"]               = { bold = true },
         ["@markup.italic"]               = { italic = true },

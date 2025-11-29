@@ -8,21 +8,21 @@ M.get = function(colors)
         BlinkIndent = { fg = colors.bg2 },
         BlinkIndentScope = { fg = colors.orange },
 
-        BlinkIndentViolet = { fg = colors.purple },
-        BlinkIndentBlue   = { fg = colors.blue },
-        BlinkIndentCyan   = { fg = colors.aqua },
-        BlinkIndentGreen  = { fg = colors.green },
-        BlinkIndentYellow = { fg = colors.yellow },
-        BlinkIndentOrange = { fg = colors.orange },
         BlinkIndentRed    = { fg = colors.red },
+        BlinkIndentOrange = { fg = colors.orange },
+        BlinkIndentYellow = { fg = colors.yellow },
+        BlinkIndentGreen  = { fg = colors.green },
+        BlinkIndentCyan   = { fg = colors.aqua },
+        BlinkIndentBlue   = { fg = colors.blue },
+        BlinkIndentViolet = { fg = colors.purple },
 
-        BlinkIndentVioletUnderline = { sp = colors.purple, underline = true },
-        BlinkIndentBlueUnderline   = { sp = colors.blue, underline = true },
-        BlinkIndentCyanUnderline   = { sp = colors.aqua, underline = true },
-        BlinkIndentGreenUnderline  = { sp = colors.green, underline = true },
-        BlinkIndentYellowUnderline = { sp = colors.yellow, underline = true },
-        BlinkIndentOrangeUnderline = { sp = colors.orange, underline = true },
         BlinkIndentRedUnderline    = { sp = colors.red, underline = true },
+        BlinkIndentOrangeUnderline = { sp = colors.orange, underline = true },
+        BlinkIndentYellowUnderline = { sp = colors.yellow, underline = true },
+        BlinkIndentGreenUnderline  = { sp = colors.green, underline = true },
+        BlinkIndentCyanUnderline   = { sp = colors.aqua, underline = true },
+        BlinkIndentBlueUnderline   = { sp = colors.blue, underline = true },
+        BlinkIndentVioletUnderline = { sp = colors.purple, underline = true },
     }
 end
 

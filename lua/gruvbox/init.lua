@@ -29,9 +29,8 @@ M.load = function()
     end
 end
 
--- stylua: ignore
-
 ---@param colors GruvboxColors
+-- stylua: ignore
 M.terminal = function(colors)
     vim.g.terminal_color_0  = colors.bg0
     vim.g.terminal_color_8  = colors.gray

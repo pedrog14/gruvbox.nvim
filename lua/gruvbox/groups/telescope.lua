@@ -2,8 +2,8 @@ local M = {}
 
 ---@type GruvboxHighlightsGet
 M.get = function()
-    -- stylua: ignore
     ---@type GruvboxHighlights
+    -- stylua: ignore
     return {
         TelescopeNormal = { link = "NormalFloat" },
         TelescopeTitle  = { link = "FloatTitle" },

@@ -2,8 +2,8 @@ local M = {}
 
 ---@type GruvboxHighlightsGet
 M.get = function(colors)
-    -- stylua: ignore
     ---@type GruvboxHighlights
+    -- stylua: ignore
     return {
         SnacksDashboardHeader  = { fg = colors.blue },
         SnacksDashboardTitle   = { fg = colors.blue, bold = true },

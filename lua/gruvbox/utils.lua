@@ -1,5 +1,15 @@
 local M = {}
 
+---@param cwd string
+---@return string
+M.git_id = function(cwd)
+    if vim.fn.has("nvim-0.10.0") == 1 then
+        return vim.system({ "git", "rev-parse", "HEAD" }, { cwd = cwd, text = true }):wait().stdout
+    else
+        return vim.fn.system("git -C " .. cwd .. " rev-parse HEAD")
+    end
+end
+
 ---@param groups GruvboxHighlights
 ---@param opts GruvboxConfig
 ---@return GruvboxHighlightsResolved
@@ -14,16 +24,6 @@ M.resolve = function(groups, opts)
         end
     end
     return groups
-end
-
----@param cwd string
----@return string
-M.git_id = function(cwd)
-    if vim.fn.has("nvim-0.10.0") == 1 then
-        return vim.system({ "git", "rev-parse", "HEAD" }, { cwd = cwd, text = true }):wait().stdout
-    else
-        return vim.fn.system("git -C " .. cwd .. " rev-parse HEAD")
-    end
 end
 
 local uv = vim.uv or vim.loop

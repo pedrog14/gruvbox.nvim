@@ -2,8 +2,8 @@ local M = {}
 
 ---@type GruvboxHighlightsGet
 M.get = function(colors, opts)
-    -- stylua: ignore
     ---@type GruvboxHighlights
+    -- stylua: ignore
     return {
         ColorColumn                 = { bg = colors.bg1 },
         Conceal                     = { fg = colors.blue },
@@ -75,7 +75,7 @@ M.get = function(colors, opts)
         WinBar                      = { fg = colors.fg1 },
         WinBarNC                    = { fg = colors.fg4 },
 
-        Comment                     = { fg = colors.gray, style = "comments" },
+        Comment                     = { fg = colors.gray, style = "comment" },
 
         Conditional                 = { fg = colors.red },
         Exception                   = { fg = colors.red },
@@ -86,7 +86,7 @@ M.get = function(colors, opts)
 
         Debug                       = { fg = colors.orange },
         Delimiter                   = { fg = colors.orange },
-        Operator                    = { fg = colors.orange, style = "operators" },
+        Operator                    = { fg = colors.orange, style = "operator" },
         Special                     = { fg = colors.orange },
         SpecialChar                 = { fg = colors.orange },
         SpecialComment              = { fg = colors.orange },
@@ -97,7 +97,7 @@ M.get = function(colors, opts)
         Typedef                     = { fg = colors.yellow },
 
         Function                    = { fg = colors.green, bold = true },
-        String                      = { fg = colors.green, style = "strings" },
+        String                      = { fg = colors.green, style = "string" },
         Tag                         = { fg = colors.green },
 
         PreProc                     = { fg = colors.aqua },
@@ -136,11 +136,11 @@ M.get = function(colors, opts)
         DiagnosticUnderlineHint     = { sp = colors.aqua, undercurl = true },
         DiagnosticUnderlineOk       = { sp = colors.green, undercurl = true },
 
-        DiagnosticSignError         = { fg = colors.red, style = "signs" },
-        DiagnosticSignWarn          = { fg = colors.yellow, style = "signs" },
-        DiagnosticSignInfo          = { fg = colors.blue, style = "signs" },
-        DiagnosticSignHint          = { fg = colors.aqua, style = "signs" },
-        DiagnosticSignOk            = { fg = colors.green, style = "signs" },
+        DiagnosticSignError         = { fg = colors.red, style = "sign" },
+        DiagnosticSignWarn          = { fg = colors.yellow, style = "sign" },
+        DiagnosticSignInfo          = { fg = colors.blue, style = "sign" },
+        DiagnosticSignHint          = { fg = colors.aqua, style = "sign" },
+        DiagnosticSignOk            = { fg = colors.green, style = "sign" },
 
         DiagnosticDeprecated        = { fg = colors.yellow, strikethrough = true },
         DiagnosticUnnecessary       = { link = "Comment" },
