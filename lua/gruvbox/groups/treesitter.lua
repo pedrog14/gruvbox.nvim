@@ -2,8 +2,8 @@ local M = {}
 
 ---@type GruvboxHighlightsGet
 M.get = function(colors)
-    -- stylua: ignore
     ---@type GruvboxHighlights
+    -- stylua: ignore
     return {
         ["@variable"]                    = { fg = colors.fg1 },
         ["@variable.builtin"]            = { link = "Special" },

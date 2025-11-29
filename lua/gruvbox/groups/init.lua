@@ -3,7 +3,8 @@ local M = {}
 ---@type string[]
 -- stylua: ignore
 M.plugins = {
-    ["blink.cmp"]             = "blink",
+    ["blink.cmp"]             = "blink.cmp",
+    ["blink.indent"]          = "blink.indent",
     ["bufferline.nvim"]       = "bufferline",
     ["gitsigns.nvim"]         = "gitsigns",
     ["indent-blankline.nvim"] = "ibl",
@@ -38,6 +39,13 @@ M.get = function(colors, opts)
         for plugin, group in pairs(M.plugins) do
             if lazy[plugin] then
                 groups[group] = true
+            end
+        end
+        if lazy["blink.nvim"] then
+            for _, group in pairs(M.plugins) do
+                if group:find("^blink%.") then
+                    groups[group] = true
+                end
             end
         end
         if lazy["mini.nvim"] then
