@@ -44,8 +44,8 @@ local kinds = function(colors)
 end
 
 ---@param colors GruvboxColors
----@param hl? GruvboxHighlights
----@param pattern? string
+---@param hl GruvboxHighlights?
+---@param pattern string?
 ---@return GruvboxHighlights
 M.kinds = function(colors, hl, pattern)
     hl = hl or {}
@@ -61,7 +61,7 @@ M.kinds = function(colors, hl, pattern)
 end
 
 ---@type GruvboxHighlightsGet
-M.get = function(colors, _)
+M.get = function(colors)
     return M.kinds(colors)
 end
 
