@@ -6,7 +6,7 @@ M.get = function(colors)
     -- stylua: ignore
     return {
         GitSignsAdd    = { fg = colors.green  },
-        GitSignsChange = { fg = colors.orange },
+        GitSignsChange = { fg = colors.yellow },
         GitSignsDelete = { fg = colors.red    },
     }
 end
