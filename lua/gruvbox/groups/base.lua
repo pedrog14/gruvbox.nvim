@@ -44,14 +44,14 @@ M.get = function(colors, opts)
 
         Underlined = { underline = true },
 
-        Ignore = {},
+        Ignore = { link = "Normal" },
 
         Error = { fg = colors.red, bold = true },
 
         Todo = { fg = colors.bg0, bg = colors.yellow, bold = true },
 
         Added = { fg = colors.green },
-        Changed = { fg = colors.yellow },
+        Changed = { fg = colors.aqua },
         Removed = { fg = colors.red },
 
         ColorColumn = { bg = colors.bg1 },
@@ -64,9 +64,9 @@ M.get = function(colors, opts)
         CursorLine = { bg = colors.bg1 },
         Directory = { fg = colors.green, bold = true },
         DiffAdd = { fg = colors.bg0, bg = colors.green },
-        DiffChange = { fg = colors.bg0, bg = colors.yellow },
+        DiffChange = { fg = colors.bg0, bg = colors.aqua },
         DiffDelete = { fg = colors.bg0, bg = colors.red },
-        DiffText = { fg = colors.bg0, bg = colors.orange },
+        DiffText = { fg = colors.bg0, bg = colors.yellow },
         DiffTextAdd = { link = "DiffText" },
         EndOfBuffer = { link = "NonText" },
         TermCursor = { link = "Cursor" },
@@ -174,6 +174,7 @@ M.get = function(colors, opts)
         LspReferenceRead = { bg = colors.bg2 },
         LspReferenceWrite = { bg = colors.bg2 },
         LspReferenceTarget = { bg = colors.bg2 },
+
         LspInlayHint = { fg = colors.gray },
 
         LspCodeLens = { fg = colors.gray },
