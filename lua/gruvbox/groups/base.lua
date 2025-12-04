@@ -3,44 +3,45 @@ local M = {}
 ---@type GruvboxHighlightsGet
 M.get = function(colors, opts)
     ---@type GruvboxHighlights
+    -- stylua: ignore
     return {
         Comment = { fg = colors.gray, style = "comment" },
 
-        Constant = { fg = colors.purple },
-        String = { fg = colors.green, style = "string" },
-        Character = { fg = colors.purple, style = "string" },
-        Number = { fg = colors.purple },
-        Boolean = { fg = colors.purple },
-        Float = { fg = colors.purple },
+        Constant  = { fg = colors.purple },
+        String    = { fg = colors.green  , style = "string" },
+        Character = { fg = colors.purple , style = "string" },
+        Number    = { fg = colors.purple },
+        Boolean   = { fg = colors.purple },
+        Float     = { fg = colors.purple },
 
         Identifier = { fg = colors.blue },
-        Function = { fg = colors.green, bold = true },
+        Function   = { fg = colors.green, bold = true },
 
-        Statement = { fg = colors.red },
-        Conditional = { fg = colors.red },
-        Repeat = { fg = colors.red },
-        Label = { fg = colors.red },
-        Operator = { fg = colors.orange },
-        Keyword = { fg = colors.red },
-        Exception = { fg = colors.red },
+        Statement   = { fg = colors.red    },
+        Conditional = { fg = colors.red    },
+        Repeat      = { fg = colors.red    },
+        Label       = { fg = colors.red    },
+        Operator    = { fg = colors.orange },
+        Keyword     = { fg = colors.red    },
+        Exception   = { fg = colors.red    },
 
-        PreProc = { fg = colors.aqua },
-        Include = { fg = colors.aqua },
-        Define = { fg = colors.aqua },
-        Macro = { fg = colors.aqua },
+        PreProc   = { fg = colors.aqua },
+        Include   = { fg = colors.aqua },
+        Define    = { fg = colors.aqua },
+        Macro     = { fg = colors.aqua },
         PreCondit = { fg = colors.aqua },
 
-        Type = { fg = colors.yellow },
+        Type         = { fg = colors.yellow },
         StorageClass = { fg = colors.yellow },
-        Structure = { fg = colors.yellow },
-        Typedef = { fg = colors.yellow },
+        Structure    = { fg = colors.yellow },
+        Typedef      = { fg = colors.yellow },
 
-        Special = { fg = colors.orange },
-        SpecialChar = { fg = colors.orange },
-        Tag = { fg = colors.green },
-        Delimiter = { fg = colors.orange },
+        Special        = { fg = colors.orange },
+        SpecialChar    = { fg = colors.orange },
+        Tag            = { fg = colors.green  },
+        Delimiter      = { fg = colors.orange },
         SpecialComment = { fg = colors.orange },
-        Debug = { fg = colors.orange },
+        Debug          = { fg = colors.orange },
 
         Underlined = { underline = true },
 
@@ -50,9 +51,9 @@ M.get = function(colors, opts)
 
         Todo = { fg = colors.bg0, bg = colors.yellow, bold = true },
 
-        Added = { fg = colors.green },
-        Changed = { fg = colors.aqua },
-        Removed = { fg = colors.red },
+        Added   = { fg = colors.green },
+        Changed = { fg = colors.aqua  },
+        Removed = { fg = colors.red   },
 
         ColorColumn = { bg = colors.bg1 },
         Conceal = { fg = colors.blue },
@@ -146,38 +147,38 @@ M.get = function(colors, opts)
         WinBar = { fg = colors.fg1 },
         WinBarNC = { fg = colors.fg4 },
 
-        debugPC = { fg = colors.fg3 },
+        debugPC         = { fg = colors.fg3 },
         debugBreakpoint = { fg = colors.fg3, bg = colors.bg3 },
 
         DiagnosticError = { fg = colors.red },
-        DiagnosticWarn = { fg = colors.yellow },
-        DiagnosticInfo = { fg = colors.blue },
-        DiagnosticHint = { fg = colors.aqua },
-        DiagnosticOk = { fg = colors.green },
+        DiagnosticWarn  = { fg = colors.yellow },
+        DiagnosticInfo  = { fg = colors.blue },
+        DiagnosticHint  = { fg = colors.aqua },
+        DiagnosticOk    = { fg = colors.green },
 
         DiagnosticUnderlineError = { sp = colors.red, undercurl = true },
-        DiagnosticUnderlineWarn = { sp = colors.yellow, undercurl = true },
-        DiagnosticUnderlineInfo = { sp = colors.blue, undercurl = true },
-        DiagnosticUnderlineHint = { sp = colors.aqua, undercurl = true },
-        DiagnosticUnderlineOk = { sp = colors.green, undercurl = true },
+        DiagnosticUnderlineWarn  = { sp = colors.yellow, undercurl = true },
+        DiagnosticUnderlineInfo  = { sp = colors.blue, undercurl = true },
+        DiagnosticUnderlineHint  = { sp = colors.aqua, undercurl = true },
+        DiagnosticUnderlineOk    = { sp = colors.green, undercurl = true },
 
         DiagnosticSignError = { fg = colors.red, style = "sign" },
-        DiagnosticSignWarn = { fg = colors.yellow, style = "sign" },
-        DiagnosticSignInfo = { fg = colors.blue, style = "sign" },
-        DiagnosticSignHint = { fg = colors.aqua, style = "sign" },
-        DiagnosticSignOk = { fg = colors.green, style = "sign" },
+        DiagnosticSignWarn  = { fg = colors.yellow, style = "sign" },
+        DiagnosticSignInfo  = { fg = colors.blue, style = "sign" },
+        DiagnosticSignHint  = { fg = colors.aqua, style = "sign" },
+        DiagnosticSignOk    = { fg = colors.green, style = "sign" },
 
         DiagnosticDeprecated = { fg = colors.yellow, strikethrough = true },
         DiagnosticUnnecessary = { link = "Comment" },
 
-        LspReferenceText = { bg = colors.bg2 },
-        LspReferenceRead = { bg = colors.bg2 },
-        LspReferenceWrite = { bg = colors.bg2 },
+        LspReferenceText   = { bg = colors.bg2 },
+        LspReferenceRead   = { bg = colors.bg2 },
+        LspReferenceWrite  = { bg = colors.bg2 },
         LspReferenceTarget = { bg = colors.bg2 },
 
         LspInlayHint = { fg = colors.gray },
 
-        LspCodeLens = { fg = colors.gray },
+        LspCodeLens          = { fg = colors.gray },
         LspCodeLensSeparator = { link = "LspCodeLens" },
 
         LspSignatureActiveParameter = { bg = colors.bg2, bold = true },

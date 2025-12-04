@@ -6,7 +6,7 @@ M.get = function()
     -- stylua: ignore
     return {
         TelescopeNormal = { link = "NormalFloat" },
-        TelescopeTitle  = { link = "FloatTitle" },
+        TelescopeTitle  = { link = "FloatTitle"  },
         TelescopeBorder = { link = "FloatBorder" },
     }
 end

@@ -26,7 +26,7 @@ M.get = function()
         ["@lsp.type.string"]        = { link = "@string" },
         ["@lsp.type.struct"]        = { link = "@type" },
         ["@lsp.type.type"]          = { link = "@type" },
-        ["@lsp.type.typeParameter"] = { link = "@type.definition" },
+        ["@lsp.type.typeParameter"] = { link = "@variable.parameter" },
         ["@lsp.type.variable"]      = { link = "@variable" },
     }
 end

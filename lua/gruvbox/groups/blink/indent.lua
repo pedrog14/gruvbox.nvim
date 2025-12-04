@@ -5,7 +5,7 @@ M.get = function(colors)
     ---@type GruvboxHighlights
     -- stylua: ignore
     return {
-        BlinkIndent = { fg = colors.bg2 },
+        BlinkIndent      = { fg = colors.bg2 },
         BlinkIndentScope = { fg = colors.orange },
 
         BlinkIndentRed    = { fg = colors.red },
@@ -16,12 +16,12 @@ M.get = function(colors)
         BlinkIndentBlue   = { fg = colors.blue },
         BlinkIndentViolet = { fg = colors.purple },
 
-        BlinkIndentRedUnderline    = { sp = colors.red, underline = true },
+        BlinkIndentRedUnderline    = { sp = colors.red   , underline = true },
         BlinkIndentOrangeUnderline = { sp = colors.orange, underline = true },
         BlinkIndentYellowUnderline = { sp = colors.yellow, underline = true },
-        BlinkIndentGreenUnderline  = { sp = colors.green, underline = true },
-        BlinkIndentCyanUnderline   = { sp = colors.aqua, underline = true },
-        BlinkIndentBlueUnderline   = { sp = colors.blue, underline = true },
+        BlinkIndentGreenUnderline  = { sp = colors.green , underline = true },
+        BlinkIndentCyanUnderline   = { sp = colors.aqua  , underline = true },
+        BlinkIndentBlueUnderline   = { sp = colors.blue  , underline = true },
         BlinkIndentVioletUnderline = { sp = colors.purple, underline = true },
     }
 end

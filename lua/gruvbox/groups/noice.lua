@@ -21,7 +21,7 @@ M.get = function(colors)
 
         NoiceConfirmBorder               = { link = "NoiceCmdlinePopupBorder" },
 
-        NoiceFormatProgressTodo          = { bg = colors.bg1, fg = colors.fg1 },
+        NoiceFormatProgressTodo          = { bg = colors.bg1   , fg = colors.fg1 },
         NoiceFormatProgressDone          = { bg = colors.yellow, fg = colors.bg0 },
 
         NoiceLspProgressTitle            = { link = "Comment" },

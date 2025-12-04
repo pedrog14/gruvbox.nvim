@@ -4,46 +4,42 @@ local M = {}
 ---@return GruvboxHighlights
 local kinds = function(colors)
     ---@type GruvboxHighlights
+    -- stylua: ignore
     return {
-        File = { fg = colors.fg1 },
-
-        Module = { fg = colors.aqua },
-        Namespace = { fg = colors.aqua },
-        Package = { fg = colors.aqua },
-
-        Class = { fg = colors.yellow },
-        Struct = { fg = colors.yellow },
-        Method = { fg = colors.green },
-        Property = { fg = colors.blue },
-        Field = { fg = colors.blue },
-        Constructor = { fg = colors.orange },
-        Interface = { fg = colors.yellow },
-        Object = { fg = colors.blue },
-
-        Enum = { fg = colors.purple },
-        EnumMember = { fg = colors.purple },
-
-        Function = { fg = colors.green },
-        Variable = { fg = colors.blue },
-        Constant = { fg = colors.purple },
-        String = { fg = colors.green },
-        Number = { fg = colors.purple },
-        Boolean = { fg = colors.purple },
-        Array = { fg = colors.orange },
-
-        Key = { fg = colors.purple },
-        Null = { fg = colors.purple },
-        Event = { fg = colors.orange },
-        Operator = { fg = colors.orange },
+        Array         = { fg = colors.orange },
+        Boolean       = { fg = colors.purple },
+        Class         = { fg = colors.yellow },
+        Color         = { fg = colors.purple },
+        Constant      = { fg = colors.purple },
+        Constructor   = { fg = colors.orange },
+        Enum          = { fg = colors.yellow },
+        EnumMember    = { fg = colors.purple },
+        Event         = { fg = colors.orange },
+        Field         = { fg = colors.blue   },
+        File          = { fg = colors.fg1    },
+        Folder        = { fg = colors.green  },
+        Function      = { fg = colors.green  },
+        Interface     = { fg = colors.yellow },
+        Key           = { fg = colors.purple },
+        Keyword       = { fg = colors.red    },
+        Method        = { fg = colors.green  },
+        Module        = { fg = colors.aqua   },
+        Namespace     = { fg = colors.aqua   },
+        Null          = { fg = colors.purple },
+        Number        = { fg = colors.purple },
+        Object        = { fg = colors.blue   },
+        Operator      = { fg = colors.orange },
+        Package       = { fg = colors.aqua   },
+        Property      = { fg = colors.blue   },
+        Reference     = { fg = colors.blue   },
+        Snippet       = { fg = colors.orange },
+        String        = { fg = colors.green  },
+        Struct        = { fg = colors.yellow },
+        Text          = { fg = colors.green  },
         TypeParameter = { fg = colors.yellow },
-        Text = { fg = colors.green },
-        Unit = { fg = colors.green },
-        Value = { fg = colors.purple },
-        Keyword = { fg = colors.red },
-        Snippet = { fg = colors.orange },
-        Color = { fg = colors.purple },
-        Reference = { fg = colors.blue },
-        Folder = { fg = colors.green },
+        Unit          = { fg = colors.green  },
+        Value         = { fg = colors.purple },
+        Variable      = { fg = colors.blue   },
     }
 end
 
@@ -53,13 +49,9 @@ end
 ---@return GruvboxHighlights
 M.kinds = function(colors, hl, pattern)
     hl = hl or {}
+    pattern = pattern or "LspKind%s"
     for kind, value in pairs(kinds(colors)) do
-        local base = "LspKind" .. kind
-        if pattern then
-            hl[pattern:format(kind)] = { link = base }
-        else
-            hl[base] = value
-        end
+        hl[pattern:format(kind)] = value
     end
     return hl
 end
