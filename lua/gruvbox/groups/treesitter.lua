@@ -5,7 +5,7 @@ M.get = function(colors)
     ---@type GruvboxHighlights
     -- stylua: ignore
     return {
-        ["@variable"]                   = { link = "Identifier" },
+        ["@variable"]                   = { fg = colors.fg1 },
         ["@variable.builtin"]           = { link = "Special" },
         ["@variable.parameter"]         = { link = "Identifier" },
         ["@variable.parameter.builtin"] = { link = "Special" },
@@ -21,9 +21,9 @@ M.get = function(colors)
 
         ["@string"]                = { link = "String" },
         ["@string.documentation"]  = { link = "String" },
-        ["@string.regexp"]         = { link = "Special", style = "string" },
-        ["@string.escape"]         = { link = "Special", style = "string" },
-        ["@string.special"]        = { link = "Special", style = "string" },
+        ["@string.regexp"]         = { link = "Special"   , style = "string" },
+        ["@string.escape"]         = { link = "Special"   , style = "string" },
+        ["@string.special"]        = { link = "Special"   , style = "string" },
         ["@string.special.symbol"] = { link = "Identifier", style = "string" },
         ["@string.special.path"]   = { link = "Underlined", style = "string" },
         ["@string.special.url"]    = { fg = colors.blue, underline = true, style = "string" },
@@ -79,10 +79,10 @@ M.get = function(colors)
         ["@comment"]               = { link = "Comment" },
         ["@comment.documentation"] = { link = "Comment" },
 
-        ["@comment.error"]   = { fg = colors.red, bold = true, style = "comment" },
+        ["@comment.error"]   = { fg = colors.red   , bold = true, style = "comment" },
         ["@comment.warning"] = { fg = colors.yellow, bold = true, style = "comment" },
-        ["@comment.todo"]    = { fg = colors.aqua, bold = true, style = "comment" },
-        ["@comment.note"]    = { fg = colors.blue, bold = true, style = "comment" },
+        ["@comment.todo"]    = { fg = colors.aqua  , bold = true, style = "comment" },
+        ["@comment.note"]    = { fg = colors.blue  , bold = true, style = "comment" },
 
         ["@markup.strong"]        = { bold = true },
         ["@markup.italic"]        = { italic = true },
