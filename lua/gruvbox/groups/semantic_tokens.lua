@@ -28,17 +28,6 @@ M.get = function()
         ["@lsp.type.type"]          = { link = "@type" },
         ["@lsp.type.typeParameter"] = { link = "@variable.parameter" },
         ["@lsp.type.variable"]      = { link = "@variable" },
-
-        -- ["@lsp.mod.abstract"]       = {},
-        -- ["@lsp.mod.async"]          = {},
-        -- ["@lsp.mod.declaration"]    = {},
-        ["@lsp.mod.defaultLibrary"] = { link = "@function.builtin" },
-        -- ["@lsp.mod.definition"]     = {},
-        -- ["@lsp.mod.deprecated"]     = {},
-        -- ["@lsp.mod.documentation"]  = {},
-        -- ["@lsp.mod.modification"]   = {},
-        -- ["@lsp.mod.readonly"]       = {},
-        -- ["@lsp.mod.static"]         = {},
     }
 end
 
