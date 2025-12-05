@@ -5,9 +5,15 @@ M.get = function(colors)
     ---@type GruvboxHighlights
     -- stylua: ignore
     local ret = {
-        BlinkCmpGhostText = { link = "NonText" },
+        BlinkCmpLabel           = { fg = colors.fg1 },
+        BlinkCmpLabelMatch      = { fg = colors.bg2, bg = colors.orange, reverse = true },
+        BlinkCmpLabelDeprecated = { fg = colors.yellow, strikethrough = true },
+        BlinkCmpMenuSelection   = { fg = colors.blue, bold = true, reverse = true },
     }
-    return require("gruvbox.groups.kinds").kinds(colors, ret, "BlinkCmpKind%s")
+
+    require("gruvbox.groups.kinds").kinds(colors, ret, "BlinkCmpKind%s")
+
+    return ret
 end
 
 return M
