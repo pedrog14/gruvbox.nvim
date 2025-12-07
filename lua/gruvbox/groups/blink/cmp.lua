@@ -6,7 +6,7 @@ M.get = function(colors)
     -- stylua: ignore
     local ret = {
         BlinkCmpLabel           = { fg = colors.fg1 },
-        BlinkCmpLabelMatch      = { fg = colors.bg2, bg = colors.orange, reverse = true },
+        BlinkCmpLabelMatch      = { fg = colors.bg2, bg = colors.red, reverse = true },
         BlinkCmpLabelDeprecated = { fg = colors.yellow, strikethrough = true },
         BlinkCmpMenuSelection   = { fg = colors.blue, bold = true, reverse = true },
     }
