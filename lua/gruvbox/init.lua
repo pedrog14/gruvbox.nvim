@@ -15,9 +15,10 @@ M.load = function()
     vim.api.nvim_set_var("colors_name", "gruvbox")
     vim.api.nvim_set_option_value("termguicolors", true, {})
 
+    local bg = vim.api.nvim_get_option_value("background", {})
     local opts = config.opts or config.default
 
-    local colors = require("gruvbox.colors").get(opts)
+    local colors = require("gruvbox.colors").get(bg, opts)
     local groups = require("gruvbox.groups").get(colors, opts)
 
     for group, hl in pairs(groups) do

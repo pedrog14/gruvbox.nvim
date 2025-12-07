@@ -1,5 +1,7 @@
+---@meta
+
 ---@alias Background "dark"|"light"
----@alias Contrast "hard"|"soft"
+---@alias Contrast "hard"|"medium"|"soft"
 ---@alias Style "comment"|"operator"|"selection"|"sign"|"string"
 
 ---@class GruvboxCache

@@ -91,29 +91,32 @@ The default settings for gruvbox are:
 ```lua
 {
     cache = true,
-    contrast = nil, ---@type Contrast
     dim_inactive = false,
     terminal_colors = true,
     transparent = false,
-
-    ---@type fun(colors: GruvboxColors)
-    color_override = nil,
-
-    ---@type fun(hl: GruvboxHighlightsResolved, colors: GruvboxColors)
-    group_override = nil,
 
     plugins = {
         all = package.loaded.lazy == nil,
         auto = true,
     },
 
-    style = { ---@type table<Style, vim.api.keyset.highlight>
+    ---@type table<Style, vim.api.keyset.highlight>
+    style = {
         comment = { italic = true },
         operator = {},
         selection = {},
         sign = {},
         string = {},
     },
+
+    ---@type Contrast
+    contrast = "medium",
+
+    ---@type fun(colors: GruvboxColors)?
+    color_override = nil,
+
+    ---@type fun(hl: GruvboxHighlightsResolved, colors: GruvboxColors)?
+    group_override = nil,
 }
 ```
 

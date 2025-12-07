@@ -1,10 +1,12 @@
+local config = require("gruvbox.config")
+
 ---@class GruvboxColorsInit
 ---@field dark GruvboxDark
+---@field default { dark: GruvboxDark, light: GruvboxLight }
 ---@field light GruvboxLight
 ---@field palette GruvboxPalette
 local M = {}
 
----@type { dark: GruvboxDark, light: GruvboxLight }
 M.default = setmetatable({}, {
     __index = function(_, k)
         if k == "dark" or k == "light" then
@@ -13,16 +15,14 @@ M.default = setmetatable({}, {
     end,
 })
 
+---@param bg Background
 ---@param opts GruvboxConfig
----@param bg? Background
 ---@return GruvboxColors
-M.get = function(opts, bg)
-    bg = bg or vim.api.nvim_get_option_value("background", {})
-
+M.get = function(bg, opts)
     local palette = require("gruvbox.colors.palette")
     local colors = require("gruvbox.colors." .. bg) ---@type GruvboxColors
 
-    if opts.contrast then
+    if opts.contrast ~= "medium" then
         colors["bg0"] = palette[bg .. "0_" .. opts.contrast]
     end
 
@@ -34,10 +34,9 @@ M.get = function(opts, bg)
 end
 
 return setmetatable(M, {
-    __index = function(_, k)
+    __index = function(t, k)
         if k == "dark" or k == "light" then
-            local opts = require("gruvbox.config").opts
-            return M.get(opts, k)
+            return t.get(k, config.opts or config.default)
         end
         if k == "palette" then
             return require("gruvbox.colors.palette")
