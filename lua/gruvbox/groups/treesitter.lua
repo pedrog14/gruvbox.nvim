@@ -21,12 +21,12 @@ M.get = function(colors)
 
         ["@string"]                = { link = "String" },
         ["@string.documentation"]  = { link = "String" },
-        ["@string.regexp"]         = { link = "Special"   , style = "string" },
-        ["@string.escape"]         = { link = "Special"   , style = "string" },
-        ["@string.special"]        = { link = "Special"   , style = "string" },
-        ["@string.special.symbol"] = { link = "Identifier", style = "string" },
-        ["@string.special.path"]   = { link = "Underlined", style = "string" },
-        ["@string.special.url"]    = { fg = colors.blue, underline = true, style = "string" },
+        ["@string.regexp"]         = { fg = colors.orange, style = "string" },
+        ["@string.escape"]         = { fg = colors.orange, style = "string" },
+        ["@string.special"]        = { fg = colors.orange, style = "string" },
+        ["@string.special.symbol"] = { fg = colors.blue  , style = "string" },
+        ["@string.special.path"]   = { fg = colors.fg1   , style = "string", underline = true },
+        ["@string.special.url"]    = { fg = colors.blue  , style = "string", underline = true },
 
         ["@character"]         = { link = "Character" },
         ["@character.special"] = { link = "SpecialChar" },
