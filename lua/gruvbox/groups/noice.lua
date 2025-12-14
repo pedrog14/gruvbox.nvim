@@ -28,7 +28,10 @@ M.get = function(colors)
         NoiceLspProgressClient           = { fg = colors.green, bold = true },
         NoiceLspProgressSpinner          = { fg = colors.purple },
     }
-    return require("gruvbox.groups.kinds").kinds(colors, ret, "NoiceCompletionItemKind%s")
+
+    require("gruvbox.groups.kinds").kinds(colors, ret, "NoiceCompletionItemKind%s")
+
+    return ret
 end
 
 return M

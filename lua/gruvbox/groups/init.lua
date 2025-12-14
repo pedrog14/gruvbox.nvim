@@ -3,6 +3,7 @@ local M = {}
 -- stylua: ignore
 M.plugins = {
     ["bufferline.nvim"]       = "bufferline",
+    ["dropbar.nvim"]          = "dropbar",
     ["gitsigns.nvim"]         = "gitsigns",
     ["indent-blankline.nvim"] = "ibl",
     ["lazy.nvim"]             = "lazy",
