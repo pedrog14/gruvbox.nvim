@@ -2,13 +2,13 @@ local M = {}
 
 ---@type GruvboxHighlightsGet
 M.get = function(colors)
-    ---@type GruvboxHighlights
-    -- stylua: ignore
-    local ret = {}
+  ---@type GruvboxHighlights
+  -- stylua: ignore
+  local ret = {}
 
-    require("gruvbox.groups.kinds").kinds(colors, ret, "DropBarIconKind%s")
+  require("gruvbox.groups.kinds").kinds(colors, ret, "DropBarIconKind%s")
 
-    return ret
+  return ret
 end
 
 return M
