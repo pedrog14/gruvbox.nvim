@@ -174,8 +174,8 @@ M.get = function(colors, opts)
 
     WildMenu = { fg = colors.blue, bg = colors.bg2, bold = true },
 
-    WinBar   = { fg = colors.fg1 },
-    WinBarNC = { fg = colors.fg4 },
+    WinBar   = { fg = colors.fg1, bg = colors.bg0 },
+    WinBarNC = { fg = colors.fg4, bg = colors.bg0 },
 
     debugPC         = { fg = colors.fg3 },
     debugBreakpoint = { fg = colors.fg3, bg = colors.bg3 },
