@@ -6,6 +6,7 @@ M.plugins = {
   ["dropbar.nvim"]          = "dropbar",
   ["gitsigns.nvim"]         = "gitsigns",
   ["indent-blankline.nvim"] = "ibl",
+  ["indentmini.nvim"]       = "indentmini",
   ["lazy.nvim"]             = "lazy",
   ["mason.nvim"]            = "mason",
   ["noice.nvim"]            = "noice",
