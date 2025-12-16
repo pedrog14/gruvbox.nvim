@@ -122,10 +122,10 @@ You can modify and specify your own colors. For example:
 
 >lua
     require("gruvbox").setup({
-        color_override = function(colors)
-            colors.bg0 = colors.gray
-            colors.fg1 = "#ffffff"
-        end
+      color_override = function(colors)
+        colors.bg0 = colors.gray
+        colors.fg1 = "#ffffff"
+      end
     })
 <
 
@@ -137,10 +137,10 @@ can just override it in the setup. For example:
 
 >lua
     require("gruvbox").setup({
-        group_override = function(hl, colors)
-            hl.Normal = { bg = "#000000" }
-            hl.SignColumn = { fg = colors.orange }
-        end
+      group_override = function(hl, colors)
+        hl.Normal = { bg = "#000000" }
+        hl.SignColumn = { fg = colors.orange }
+      end
     })
 <
 
