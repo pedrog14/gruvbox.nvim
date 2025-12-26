@@ -123,9 +123,9 @@ M.get = function(colors, opts)
     -- FloatShadowThrough = {},
 
     Pmenu         = { fg = colors.fg1, bg = colors.bg2 },
-    PmenuMatch    = { fg = colors.orange, bg = colors.bg2 },
+    PmenuMatch    = { fg = colors.red, bg = colors.bg2 },
     PmenuSel      = { fg = colors.bg2, bg = colors.blue, bold = true },
-    PmenuMatchSel = { fg = colors.orange, bg = colors.blue, bold = true },
+    PmenuMatchSel = { fg = colors.red, bg = colors.blue, bold = true },
     PmenuSbar     = { bg = colors.bg2 },
     PmenuThumb    = { bg = colors.bg4 },
     -- PmenuKind = {},
@@ -206,7 +206,7 @@ M.get = function(colors, opts)
     LspReferenceWrite  = { bg = colors.bg2 },
     LspReferenceTarget = { bg = colors.bg2 },
 
-    LspInlayHint = { fg = colors.gray },
+    LspInlayHint = { fg = colors.gray, bg = colors.bg1 },
 
     LspCodeLens          = { fg = colors.gray },
     LspCodeLensSeparator = { link = "LspCodeLens" },
