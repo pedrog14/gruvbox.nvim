@@ -125,7 +125,7 @@ M.get = function(colors, opts)
     Pmenu         = { fg = colors.fg1, bg = colors.bg2 },
     PmenuMatch    = { fg = colors.red, bg = colors.bg2 },
     PmenuSel      = { bg = colors.bg3, bold = true },
-    PmenuMatchSel = { bg = colors.bg3, bold = true },
+    PmenuMatchSel = { fg = colors.red, bg = colors.bg3, bold = true },
     PmenuSbar     = { bg = colors.bg2 },
     PmenuThumb    = { bg = colors.bg4 },
     -- PmenuKind = {},
