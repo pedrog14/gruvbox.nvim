@@ -24,9 +24,9 @@ M.get = function(colors)
     ["@string.regexp"]         = { fg = colors.orange, style = "string" },
     ["@string.escape"]         = { fg = colors.orange, style = "string" },
     ["@string.special"]        = { fg = colors.orange, style = "string" },
-    ["@string.special.symbol"] = { fg = colors.blue  , style = "string" },
-    ["@string.special.path"]   = { fg = colors.fg1   , style = "string", underline = true },
-    ["@string.special.url"]    = { fg = colors.blue  , style = "string", underline = true },
+    ["@string.special.symbol"] = { fg = colors.blue, style = "string" },
+    ["@string.special.path"]   = { fg = colors.fg1, style = "string", underline = true },
+    ["@string.special.url"]    = { fg = colors.blue, style = "string", underline = true },
 
     ["@character"]         = { link = "Character" },
     ["@character.special"] = { link = "SpecialChar" },
@@ -79,10 +79,10 @@ M.get = function(colors)
     ["@comment"]               = { link = "Comment" },
     ["@comment.documentation"] = { link = "Comment" },
 
-    ["@comment.error"]   = { fg = colors.red   , bold = true, style = "comment" },
+    ["@comment.error"]   = { fg = colors.red, bold = true, style = "comment" },
     ["@comment.warning"] = { fg = colors.yellow, bold = true, style = "comment" },
-    ["@comment.todo"]    = { fg = colors.aqua  , bold = true, style = "comment" },
-    ["@comment.note"]    = { fg = colors.blue  , bold = true, style = "comment" },
+    ["@comment.todo"]    = { fg = colors.aqua, bold = true, style = "comment" },
+    ["@comment.note"]    = { fg = colors.blue, bold = true, style = "comment" },
 
     ["@markup.strong"]        = { bold = true },
     ["@markup.italic"]        = { italic = true },

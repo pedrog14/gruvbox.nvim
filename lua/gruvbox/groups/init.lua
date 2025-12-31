@@ -2,24 +2,24 @@ local M = {}
 
 -- stylua: ignore
 M.plugins = {
-  ["bufferline.nvim"]         = "bufferline",
-  ["dropbar.nvim"]            = "dropbar",
-  ["gitsigns.nvim"]           = "gitsigns",
-  ["indent-blankline.nvim"]   = "ibl",
-  ["indentmini.nvim"]         = "indentmini",
-  ["lazy.nvim"]               = "lazy",
-  ["mason.nvim"]              = "mason",
-  ["noice.nvim"]              = "noice",
-  ["snacks.nvim"]             = "snacks",
-  ["telescope.nvim"]          = "telescope",
+  ["bufferline.nvim"]       = "bufferline",
+  ["dropbar.nvim"]          = "dropbar",
+  ["gitsigns.nvim"]         = "gitsigns",
+  ["indent-blankline.nvim"] = "ibl",
+  ["indentmini.nvim"]       = "indentmini",
+  ["lazy.nvim"]             = "lazy",
+  ["mason.nvim"]            = "mason",
+  ["noice.nvim"]            = "noice",
+  ["snacks.nvim"]           = "snacks",
+  ["telescope.nvim"]        = "telescope",
 
-  ["blink.cmp"]               = "blink.cmp",
-  ["blink.indent"]            = "blink.indent",
+  ["blink.cmp"]    = "blink.cmp",
+  ["blink.indent"] = "blink.indent",
 
-  ["mini.icons"]              = "mini.icons",
-  ["mini.snippets"]           = "mini.snippets",
+  ["mini.icons"]    = "mini.icons",
+  ["mini.snippets"] = "mini.snippets",
 
-  ["nvim-treesitter-context"] = "treesitter.context"
+  ["nvim-treesitter-context"] = "treesitter-context"
 }
 
 ---@param colors GruvboxColors
