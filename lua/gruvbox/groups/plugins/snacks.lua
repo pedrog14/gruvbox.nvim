@@ -27,6 +27,10 @@ M.get = function(colors)
     SnacksPickerGitStatusUntracked = { link = "SnacksPickerPathIgnored" },
     SnacksPickerToggle             = { link = "FloatTitle" },
 
+    SnacksPickerCursorLine = { bg = colors.bg2 },
+    SnacksPickerListCursorLine = { link = "SnacksPickerCursorLine" },
+    SnacksPickerPreviewCursorLine = { link = "SnacksPickerCursorLine" },
+
     SnacksInputIcon = { fg = colors.red },
   }
 end

@@ -1,13 +1,13 @@
 local M = {}
 
 ---@type GruvboxHighlightsGet
-M.get = function(colors)
+M.get = function()
   ---@type GruvboxHighlights
   -- stylua: ignore
   return {
-    GitSignsAdd    = { fg = colors.green },
-    GitSignsChange = { fg = colors.aqua },
-    GitSignsDelete = { fg = colors.red },
+    GitSignsAdd    = { link = "Added" },
+    GitSignsChange = { link = "Changed" },
+    GitSignsDelete = { link = "Removed" },
   }
 end
 

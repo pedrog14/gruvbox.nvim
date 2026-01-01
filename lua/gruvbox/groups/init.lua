@@ -30,8 +30,11 @@ M.get = function(colors, opts)
 
   local groups = {
     base = true,
+    diagnostic = true,
     kinds = true,
+    lsp = true,
     semantic_tokens = true,
+    syntax = true,
     treesitter = true,
   }
 
