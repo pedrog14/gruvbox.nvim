@@ -83,8 +83,13 @@ M.get = function(colors, opts)
   local cache_key = vim.o.background
   local cache = opts.cache and utils.cache.read(cache_key)
 
+  local plugin_keys = vim.tbl_keys(plugins)
+  table.sort(plugin_keys)
+
   ---@type GruvboxInputs
   local inputs = {
+    id = utils.git_id(debug.getinfo(1).source:sub(2, -28)),
+    plugins = plugin_keys,
     colors = colors,
     opts = {
       contrast = opts.contrast,
@@ -93,9 +98,6 @@ M.get = function(colors, opts)
       style = opts.style,
     },
   }
-
-  inputs.id = utils.git_id(debug.getinfo(1).source:sub(2, -28)):sub(1, -2)
-  inputs.plugins = table.sort(vim.tbl_keys(plugins))
 
   local ret = cache and vim.deep_equal(inputs, cache.inputs) and cache.groups
 

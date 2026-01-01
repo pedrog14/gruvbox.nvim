@@ -3,11 +3,13 @@ local M = {}
 ---@param cwd string
 ---@return string
 M.git_id = function(cwd)
+  local id
   if vim.fn.has("nvim-0.10.0") == 1 then
-    return vim.system({ "git", "rev-parse", "HEAD" }, { cwd = cwd, text = true }):wait().stdout
+    id = vim.system({ "git", "rev-parse", "HEAD" }, { cwd = cwd, text = true }):wait().stdout
   else
-    return vim.fn.system("git -C " .. cwd .. " rev-parse HEAD")
+    id = vim.fn.system("git -C " .. cwd .. " rev-parse HEAD")
   end
+  return id and id:sub(1, -2) or ""
 end
 
 ---@param groups GruvboxHighlights
