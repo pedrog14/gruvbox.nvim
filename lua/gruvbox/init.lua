@@ -12,10 +12,10 @@ M.load = function()
     vim.cmd.hi("clear")
   end
 
-  vim.api.nvim_set_var("colors_name", "gruvbox")
-  vim.api.nvim_set_option_value("termguicolors", true, {})
+  vim.g.colors_name = "gruvbox"
+  vim.o.termguicolors = true
 
-  local bg = vim.api.nvim_get_option_value("background", {})
+  local bg = vim.o.background
   local opts = config.opts or config.default
 
   local colors = require("gruvbox.colors").get(bg, opts)

@@ -19,7 +19,7 @@ M.plugins = {
   ["mini.icons"]    = "mini.icons",
   ["mini.snippets"] = "mini.snippets",
 
-  ["nvim-treesitter-context"] = "treesitter-context"
+  ["nvim-treesitter-context"] = "treesitter.context"
 }
 
 ---@param colors GruvboxColors
@@ -35,23 +35,25 @@ M.get = function(colors, opts)
     treesitter = true,
   }
 
+  local plugins = {}
+
   if opts.plugins.all then
     for _, group in pairs(M.plugins) do
-      groups[group] = true
+      plugins[group] = true
     end
   elseif opts.plugins.auto and package.loaded.lazy then
     local lazy = require("lazy.core.config").plugins
 
     for plugin, group in pairs(M.plugins) do
       if lazy[plugin] then
-        groups[group] = true
+        plugins[group] = true
       end
     end
 
     if lazy["blink.nvim"] then
       for _, group in pairs(M.plugins) do
         if group:find("^blink%.") then
-          groups[group] = true
+          plugins[group] = true
         end
       end
     end
@@ -59,7 +61,7 @@ M.get = function(colors, opts)
     if lazy["mini.nvim"] then
       for _, group in pairs(M.plugins) do
         if group:find("^mini%.") then
-          groups[group] = true
+          plugins[group] = true
         end
       end
     end
@@ -68,26 +70,21 @@ M.get = function(colors, opts)
   for plugin, group in pairs(M.plugins) do
     local use = opts.plugins[group]
     use = use == nil and opts.plugins[plugin] or use
+
     if use ~= nil then
       if type(use) == "table" then
         use = use.enabled
       end
-      groups[group] = use or nil
+
+      plugins[group] = use or nil
     end
   end
 
-  local plugins = vim.tbl_keys(groups)
-  table.sort(plugins)
-
-  local cache_key = vim.api.nvim_get_option_value("background", {})
+  local cache_key = vim.o.background
   local cache = opts.cache and utils.cache.read(cache_key)
-
-  local id = utils.git_id(debug.getinfo(1).source:sub(2, -28)):sub(1, -2)
 
   ---@type GruvboxInputs
   local inputs = {
-    id = id,
-    plugins = plugins,
     colors = colors,
     opts = {
       contrast = opts.contrast,
@@ -97,17 +94,32 @@ M.get = function(colors, opts)
     },
   }
 
+  inputs.id = utils.git_id(debug.getinfo(1).source:sub(2, -28)):sub(1, -2)
+  inputs.plugins = table.sort(vim.tbl_keys(plugins))
+
   local ret = cache and vim.deep_equal(inputs, cache.inputs) and cache.groups
 
   if not ret then
+    local group_hl
+
     ret = {}
+
     for group, _ in pairs(groups) do
-      local group_hl = require("gruvbox.groups." .. group).get(colors, opts) ---@type GruvboxHighlights
+      group_hl = require("gruvbox.groups." .. group).get(colors, opts) --[[@as GruvboxHighlights]]
       for key, value in pairs(group_hl) do
         ret[key] = value
       end
     end
+
+    for group, _ in pairs(plugins) do
+      group_hl = require("gruvbox.groups.plugins." .. group).get(colors, opts) --[[@as GruvboxHighlights]]
+      for key, value in pairs(group_hl) do
+        ret[key] = value
+      end
+    end
+
     utils.resolve(ret --[[@as GruvboxHighlights]], opts)
+
     if opts.cache then
       utils.cache.write(cache_key, { inputs = inputs, groups = ret })
     end

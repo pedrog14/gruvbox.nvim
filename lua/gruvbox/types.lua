@@ -27,10 +27,10 @@
 ---@alias GruvboxHighlightsGet fun(colors: GruvboxColors, opts: GruvboxConfig): GruvboxHighlights
 
 ---@class GruvboxInputs
----@field id      string
----@field colors  GruvboxColors
----@field plugins table<string, string>
----@field opts    GruvboxConfig
+---@field id      string?
+---@field plugins string[]?
+---@field colors  GruvboxColors?
+---@field opts    GruvboxConfig?
 
 ---@class GruvboxCache
 ---@field inputs GruvboxInputs
