@@ -26,12 +26,13 @@ M.get = function(colors)
     SnacksPickerGitStatusIgnored   = { link = "SnacksPickerPathIgnored" },
     SnacksPickerGitStatusUntracked = { link = "SnacksPickerPathIgnored" },
     SnacksPickerToggle             = { link = "FloatTitle" },
+    SnacksPickerCursorLine         = { bg = colors.bg2 },
+    SnacksPickerListCursorLine     = { link = "SnacksPickerCursorLine" },
+    SnacksPickerPreviewCursorLine  = { link = "SnacksPickerCursorLine" },
 
-    SnacksPickerCursorLine = { bg = colors.bg2 },
-    SnacksPickerListCursorLine = { link = "SnacksPickerCursorLine" },
-    SnacksPickerPreviewCursorLine = { link = "SnacksPickerCursorLine" },
-
-    SnacksInputIcon = { fg = colors.red },
+    SnacksInputIcon   = { fg = colors.red },
+    SnacksInputTitle  = { fg = colors.blue },
+    SnacksInputBorder = { fg = colors.bg3 },
   }
 end
 
