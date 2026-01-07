@@ -1,7 +1,6 @@
 local M = {}
 
 ---@param colors GruvboxColors
----@return GruvboxHighlights
 local kinds = function(colors)
   ---@type GruvboxHighlights
   -- stylua: ignore
@@ -46,7 +45,6 @@ end
 ---@param colors GruvboxColors
 ---@param hl GruvboxHighlights?
 ---@param pattern string?
----@return GruvboxHighlights
 M.kinds = function(colors, hl, pattern)
   hl = hl or {}
   pattern = pattern or "LspKind%s"

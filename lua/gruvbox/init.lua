@@ -1,6 +1,5 @@
-local config = require("gruvbox.config")
-
 local M = {}
+local config = require("gruvbox.config")
 
 ---@param opts GruvboxConfig?
 M.setup = function(opts)

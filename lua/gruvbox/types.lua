@@ -21,9 +21,7 @@
 ---@class GruvboxHighlight: vim.api.keyset.highlight
 ---@field style Style?
 
----@alias GruvboxHighlights         table<string, GruvboxHighlight>
----@alias GruvboxHighlightsResolved table<string, vim.api.keyset.highlight>
-
+---@alias GruvboxHighlights    table<string, GruvboxHighlight>
 ---@alias GruvboxHighlightsGet fun(colors: GruvboxColors, opts: GruvboxConfig): GruvboxHighlights
 
 ---@class GruvboxInputs

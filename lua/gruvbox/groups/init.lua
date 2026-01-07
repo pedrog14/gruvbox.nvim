@@ -24,7 +24,6 @@ M.plugins = {
 
 ---@param colors GruvboxColors
 ---@param opts GruvboxConfig
----@return GruvboxHighlightsResolved
 M.get = function(colors, opts)
   local utils = require("gruvbox.utils")
 
@@ -91,7 +90,7 @@ M.get = function(colors, opts)
 
   ---@type GruvboxInputs
   local inputs = {
-    id = utils.git_id(debug.getinfo(1).source:sub(2, -28)),
+    id = utils.git_id(debug.getinfo(1, "S").source:sub(2, -28)),
     plugins = plugin_keys,
     colors = colors,
     opts = {
@@ -110,14 +109,14 @@ M.get = function(colors, opts)
     ret = {}
 
     for group, _ in pairs(groups) do
-      group_hl = require("gruvbox.groups." .. group).get(colors, opts) --[[@as GruvboxHighlights]]
+      group_hl = require("gruvbox.groups." .. group).get(colors, opts)
       for key, value in pairs(group_hl) do
         ret[key] = value
       end
     end
 
     for group, _ in pairs(plugins) do
-      group_hl = require("gruvbox.groups.plugins." .. group).get(colors, opts) --[[@as GruvboxHighlights]]
+      group_hl = require("gruvbox.groups.plugins." .. group).get(colors, opts)
       for key, value in pairs(group_hl) do
         ret[key] = value
       end

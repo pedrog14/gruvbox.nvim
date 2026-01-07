@@ -2,9 +2,10 @@ local M = {}
 
 ---@class GruvboxConfig
 ---@field contrast       Contrast?
+---@field plugins        table<string, boolean>?
 ---@field style          table<Style, vim.api.keyset.highlight>?
 ---@field color_override fun(colors: GruvboxColors)?
----@field group_override fun(hl: GruvboxHighlightsResolved, colors: GruvboxColors)?
+---@field group_override fun(hl: table<string, vim.api.keyset.highlight>, colors: GruvboxColors)?
 M.default = {
   cache = true,
   dim_inactive = false,

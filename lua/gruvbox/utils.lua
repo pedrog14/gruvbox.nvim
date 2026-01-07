@@ -1,7 +1,7 @@
 local M = {}
+local uv = vim.uv or vim.loop
 
 ---@param cwd string
----@return string
 M.git_id = function(cwd)
   local id
   if vim.fn.has("nvim-0.10.0") == 1 then
@@ -14,7 +14,6 @@ end
 
 ---@param groups GruvboxHighlights
 ---@param opts GruvboxConfig
----@return GruvboxHighlightsResolved
 M.resolve = function(groups, opts)
   for _, hl in pairs(groups) do
     if type(hl.style) == "string" then
@@ -28,23 +27,20 @@ M.resolve = function(groups, opts)
   return groups
 end
 
-local uv = vim.uv or vim.loop
-
 ---@param file string
 M.read = function(file)
   local fd = assert(io.open(file, "r"))
-  ---@type string
   local data = fd:read("*a")
   fd:close()
   return data
 end
 
 ---@param file string
----@param contents string
-M.write = function(file, contents)
+---@param content string
+M.write = function(file, content)
   vim.fn.mkdir(vim.fn.fnamemodify(file, ":h"), "p")
   local fd = assert(io.open(file, "w+"))
-  fd:write(contents)
+  fd:write(content)
   fd:close()
 end
 
@@ -61,10 +57,7 @@ M.cache.read = function(key)
   ---@type boolean, GruvboxCache
   local ok, ret = pcall(function()
     return vim.json.decode(M.read(M.cache.file(key)), {
-      luanil = {
-        object = true,
-        array = true,
-      },
+      luanil = { object = true, array = true },
     })
   end)
   return ok and ret or nil

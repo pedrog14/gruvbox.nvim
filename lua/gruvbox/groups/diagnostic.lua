@@ -1,7 +1,7 @@
 local M = {}
 
 ---@type GruvboxHighlightsGet
-M.get = function(colors, opts)
+M.get = function(colors)
   ---@type GruvboxHighlights
   -- stylua: ignore
   return {

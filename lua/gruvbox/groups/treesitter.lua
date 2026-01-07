@@ -44,9 +44,9 @@ M.get = function(colors)
     ["@property"]          = { link = "Identifier" },
 
     ["@function"]         = { link = "Function" },
-    ["@function.builtin"] = { link = "Special" },
     ["@function.call"]    = { link = "Function" },
-    ["@function.macro"]   = { link = "Macro" },
+    ["@function.builtin"] = { fg = colors.orange, bold = true },
+    ["@function.macro"]   = { fg = colors.aqua, bold = true },
 
     ["@function.method"]      = { link = "Function" },
     ["@function.method.call"] = { link = "Function" },
