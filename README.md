@@ -95,12 +95,13 @@ The default settings for gruvbox are:
   terminal_colors = true,
   transparent = false,
 
+  ---@type table<string, boolean>?
   plugins = {
     all = package.loaded.lazy == nil,
     auto = true,
   },
 
-  ---@type table<Style, vim.api.keyset.highlight>
+  ---@type table<Style, vim.api.keyset.highlight>?
   style = {
     comment = { italic = true },
     operator = {},
@@ -109,13 +110,13 @@ The default settings for gruvbox are:
     string = {},
   },
 
-  ---@type Contrast
+  ---@type Contrast?
   contrast = "medium",
 
   ---@type fun(colors: GruvboxColors)?
   color_override = nil,
 
-  ---@type fun(hl: GruvboxHighlightsResolved, colors: GruvboxColors)?
+  ---@type fun(hl: table<string, vim.api.keyset.highlight>, colors: GruvboxColors)?
   group_override = nil,
 }
 ```
