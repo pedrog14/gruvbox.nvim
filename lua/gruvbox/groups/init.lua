@@ -43,16 +43,25 @@ M.get = function(colors, opts)
     for _, group in pairs(M.plugins) do
       plugins[group] = true
     end
-  elseif opts.plugins.auto and package.loaded.lazy then
-    local lazy = require("lazy.core.config").plugins
+  elseif opts.plugins.auto then
+    local packages
+    if package.loaded.lazy then
+      packages = require("lazy.core.config").plugins
+    else
+      packages = {}
+      for _, pack in ipairs(vim.pack.get()) do
+        local name = pack.spec.name
+        packages[name] = true
+      end
+    end
 
     for plugin, group in pairs(M.plugins) do
-      if lazy[plugin] then
+      if packages[plugin] then
         plugins[group] = true
       end
     end
 
-    if lazy["blink.nvim"] then
+    if packages["blink.nvim"] then
       for _, group in pairs(M.plugins) do
         if group:find("^blink%.") then
           plugins[group] = true
@@ -60,7 +69,7 @@ M.get = function(colors, opts)
       end
     end
 
-    if lazy["mini.nvim"] then
+    if packages["mini.nvim"] then
       for _, group in pairs(M.plugins) do
         if group:find("^mini%.") then
           plugins[group] = true
