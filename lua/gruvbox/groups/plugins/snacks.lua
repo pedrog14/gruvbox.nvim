@@ -7,11 +7,11 @@ M.get = function(colors)
   return {
     SnacksDashboardHeader  = { fg = colors.blue },
     SnacksDashboardTitle   = { fg = colors.blue, bold = true },
-    SnacksDashboardIcon    = { link = "SnacksDashboardDesc" },
     SnacksDashboardDesc    = { fg = colors.gray },
-    SnacksDashboardKey     = { fg = colors.blue },
+    SnacksDashboardIcon    = { link = "SnacksDashboardDesc" },
+    SnacksDashboardKey     = { link = "SnacksDashboardDesc" },
     SnacksDashboardFooter  = { fg = colors.blue },
-    SnacksDashboardSpecial = { link = "Special" },
+    SnacksDashboardSpecial = { fg = colors.purple },
 
     SnacksPickerPrompt             = { fg = colors.red },
     SnacksPickerFile               = { fg = colors.fg1 },

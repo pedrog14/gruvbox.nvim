@@ -44,6 +44,7 @@ M.get = function(colors)
     Debug          = { fg = colors.orange },
 
     Underlined = { underline = true },
+    Dimmed     = { fg = colors.gray },
 
     Ignore = {},
 
