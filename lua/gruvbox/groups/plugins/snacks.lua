@@ -9,7 +9,7 @@ M.get = function(colors)
     SnacksDashboardTitle   = { fg = colors.blue, bold = true },
     SnacksDashboardDesc    = { fg = colors.gray },
     SnacksDashboardIcon    = { link = "SnacksDashboardDesc" },
-    SnacksDashboardKey     = { link = "SnacksDashboardDesc" },
+    SnacksDashboardKey     = { fg = colors.blue },
     SnacksDashboardFooter  = { fg = colors.blue },
     SnacksDashboardSpecial = { fg = colors.purple },
 
