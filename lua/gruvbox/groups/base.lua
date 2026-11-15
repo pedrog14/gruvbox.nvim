@@ -53,7 +53,7 @@ M.get = function(colors, opts)
     MatchParen = { bg = colors.bg3, bold = true },
 
     ModeMsg      = { fg = colors.yellow, bold = true },
-    MoreMsg      = { fg = colors.yellow, bold = true },
+    MoreMsg      = { link = "ModeMsg" },
     MsgArea      = { link = "Normal" },
     MsgSeparator = { link = "StatusLine" },
 

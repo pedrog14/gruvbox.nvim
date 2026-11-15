@@ -16,8 +16,9 @@ M.plugins = {
   ["blink.cmp"]    = "blink.cmp",
   ["blink.indent"] = "blink.indent",
 
-  ["mini.icons"]    = "mini.icons",
-  ["mini.snippets"] = "mini.snippets",
+  ["mini.icons"]        = "mini.icons",
+  ["mini.snippets"]     = "mini.snippets",
+  ["mini.statuscolumn"] = "mini.statuscolumn",
 
   ["nvim-treesitter-context"] = "treesitter.context"
 }

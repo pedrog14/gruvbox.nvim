@@ -1,6 +1,3 @@
----@class GruvboxColorsInit
----@field dark GruvboxDark
----@field light GruvboxLight
 local M = {}
 local config = require("gruvbox.config")
 
@@ -26,6 +23,9 @@ M.get = function(bg, opts)
 
   return colors
 end
+
+M.dark = nil ---@type GruvboxDark
+M.light = nil ---@type GruvboxLight
 
 return setmetatable(M, {
   __index = function(t, k)
