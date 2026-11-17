@@ -8,6 +8,7 @@ M.plugins = {
   ["indent-blankline.nvim"] = "ibl",
   ["indentmini.nvim"]       = "indentmini",
   ["lazy.nvim"]             = "lazy",
+  ["lualine.nvim"]          = "lualine",
   ["mason.nvim"]            = "mason",
   ["noice.nvim"]            = "noice",
   ["snacks.nvim"]           = "snacks",
